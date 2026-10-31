@@ -1,0 +1,23 @@
+{
+  "package": "Vila de Bolso — Meu Reino",
+  "document_version": "0.2",
+  "date": "2026-10-29",
+  "timezone": "America/Sao_Paulo",
+  "supersedes": "0.1",
+  "owner_requirement": "Mapas de fase e reino maiores que o viewport, com arrasto e zoom",
+  "prototype_parameters": {
+    "phase_width": 20,
+    "phase_height": 20,
+    "region_columns": 2,
+    "region_rows": 3,
+    "kingdom_width": 40,
+    "kingdom_height": 60,
+    "placements": 60,
+    "rerolls": 2,
+    "offers": 62,
+    "buildable_target_min": 80,
+    "buildable_target_max": 160
+  },
+  "runtime_test_status": "NOT_RUN",
+  "references_status": "LEGACY_STYLE_ONLY"
+}

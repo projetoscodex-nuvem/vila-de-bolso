@@ -1,0 +1,22 @@
+# Godot cache
+.godot/
+.import/
+
+# Build outputs and downloaded tools
+build/
+builds/
+dist/
+.tools/
+*.apk
+*.aab
+
+# Secrets and signing
+.env
+.env.*
+*.jks
+*.keystore
+export_credentials.cfg
+
+# Python helper cache
+__pycache__/
+*.pyc
