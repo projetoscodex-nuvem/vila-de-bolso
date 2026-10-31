@@ -137,7 +137,7 @@ NOT_RUN: engine, câmera/gestos em execução, gameplay, save real, exportação
 
 ## VALIDADO
 
-Somente conteúdo documental, integridade e reconciliação nos limites acima. Snapshot inicialmente verificado: working tree desta branch com os 29 caminhos listados. O registro de entrega abaixo será conciliado com commit real e confirmação remota antes da conclusão; hashes não são antecipados.
+Somente conteúdo documental, integridade e reconciliação nos limites acima. O snapshot inicialmente verificado da working tree foi gravado em `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce`; o verificador foi repetido nesse commit com árvore limpa e todos os resultados PASS. Esta atualização posterior acrescenta evidência real de commit/push/draft PR, sem mudar especificações ou iniciar implementação. A verificação do commit final é registrada também no draft PR.
 
 ## PENDÊNCIA
 
@@ -149,4 +149,20 @@ Revisar diff/draft PR, README.md, PROJECT_CONTEXT.md, MAP_AND_CAMERA.md e este r
 
 ## Registro de entrega
 
-Preparação local em `docs/importacao-v0-2`. Confirmação de commit e salvamento remoto serão registradas após a execução real, sem afirmar publicação antecipada.
+CONFIRMADO: commit documental `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce`, criado e verificado com árvore limpa; push da branch `docs/importacao-v0-2` concluído e SHA conferido por `git ls-remote`. A `main` permaneceu em `f1b59a2ab0f148abc71f0caf91a102a79e122cee`.
+
+CONFIRMADO: [draft PR #1](https://github.com/projetoscodex-nuvem/vila-de-bolso/pull/1), criado em 31/10/2026, aberto, draft=true e merged=false, base main e head docs/importacao-v0-2. Fontes/documentos/referências estão salvos no GitHub nessa branch; não foram integrados à main. Esta atualização de evidência é um commit documental posterior; a cabeça final pode ser consultada no PR. O verificador temporário também está transcrito integralmente neste relatório, sem depender da persistência de /tmp.
+
+Comandos de gravação e confirmação efetivamente usados:
+
+```bash
+git diff --cached --check
+git commit -m "docs: importar e reconciliar baseline Vila de Bolso v0.2"
+python /tmp/vila_verify_import.py
+git status --short --branch
+git rev-parse HEAD
+git push -u origin docs/importacao-v0-2
+git ls-remote origin refs/heads/docs/importacao-v0-2 refs/heads/main
+```
+
+O draft PR foi criado pela ferramenta GitHub, com base main e draft=true. Nenhum merge, publicação de jogo ou instalação de ferramentas foi realizado. O aceite humano desta importação continua pendente.

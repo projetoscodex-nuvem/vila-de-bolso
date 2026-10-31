@@ -10,13 +10,13 @@ Executar somente importação/reconciliação documental. M0.1 **NÃO INICIADO**
 
 CONFIRMADO: repositório https://github.com/projetoscodex-nuvem/vila-de-bolso, público segundo API GitHub. Base inicial `work`, correspondente à `main` remota em `f1b59a2ab0f148abc71f0caf91a102a79e122cee`, com árvore limpa: README.md e PROJECT_CONTEXT.md v0.1 e Vila_de_Bolso_M0_v0_2.zip.
 
-Importados os 28 arquivos do ZIP diretamente na raiz/pasta references, reconciliando os dois Markdown do mesmo projeto. Acrescentado [relatório](reports/IMPORT_V0_2_REPORT.md), atualizado estado/continuidade e preservados ZIP/manifesto original e histórico Git. PROJECT_CONTEXT.md é canônico; nenhum alias ou documento de outro projeto encontrado. Branch de entrega: `docs/importacao-v0-2`; sem merge automático. O relatório registra o estado de salvamento remoto.
+Importados os 28 arquivos do ZIP diretamente na raiz/pasta references, reconciliando os dois Markdown do mesmo projeto. Acrescentado [relatório](reports/IMPORT_V0_2_REPORT.md), atualizado estado/continuidade e preservados ZIP/manifesto original e histórico Git. PROJECT_CONTEXT.md é canônico; nenhum alias ou documento de outro projeto encontrado. Branch de entrega: `docs/importacao-v0-2`; sem merge automático. CONFIRMADO: commit `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce` salvo e verificado no remoto; [draft PR #1](https://github.com/projetoscodex-nuvem/vila-de-bolso/pull/1) aberto, sem merge. Esta atualização posterior registra a evidência de entrega; cabeça final consultável no PR. O relatório registra comandos e confirmação remota.
 
 CONFIRMADO: Git 2.52.0 e Python 3.12.14 disponíveis no ambiente Linux x86_64 desta tarefa; leitura do remoto funciona com permissão de rede do sandbox. Isso não comprova setup Godot/Android ou ambiente reutilizável. Sem código de jogo, câmera implementada, APK ou progresso de campanha nesta árvore.
 
 ## TESTE
 
-PASS: segurança de caminhos/tipos, CRC do ZIP, cobertura e 27 hashes do manifesto original, comparação prévia dos arquivos existentes. Conferências da árvore reconciliada e comandos/resultados em [reports/IMPORT_V0_2_REPORT.md](reports/IMPORT_V0_2_REPORT.md).
+PASS: segurança de caminhos/tipos, CRC do ZIP, cobertura e 27 hashes do manifesto original, comparação prévia dos arquivos existentes. Verificador repetido após o commit `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce`, com árvore limpa: PASS. Conferências da árvore reconciliada e comandos/resultados em [reports/IMPORT_V0_2_REPORT.md](reports/IMPORT_V0_2_REPORT.md).
 
 Engine, gestos/câmera em execução, domínio/gameplay, save real, exportação/instalação APK, toque, desempenho, balanceamento e diversão: **NOT_RUN**. Testes documentais não comprovam funcionamento do jogo.
 

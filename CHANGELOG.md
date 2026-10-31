@@ -7,6 +7,7 @@
 - Atualizados estado, handoff, decisões, guia e registro de assets com fatos auditados: remoto, base Git, branch de tarefa e visibilidade pública divergente da previsão privada.
 - Preservados ZIP e manifesto original como proveniência; PACKAGING_REPORT.md identificado como registro histórico e relatório de importação acrescentado.
 - Verificados segurança de caminhos, CRC, 27 hashes do manifesto, links, inventário e consistência dos parâmetros v0.2. Evidências em reports/IMPORT_V0_2_REPORT.md.
+- Entrega salva na branch docs/importacao-v0-2 e [draft PR #1](https://github.com/projetoscodex-nuvem/vila-de-bolso/pull/1), sem merge; commit inicial ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce verificado com árvore limpa, seguido por atualização documental de evidência.
 - Somente documentação; M0.1 não iniciado. Nenhuma instalação de engine, código de jogo, APK ou teste de gameplay/Android.
 
 ## 0.2 — 29/10/2026
