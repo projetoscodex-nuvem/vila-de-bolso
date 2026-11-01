@@ -1,5 +1,13 @@
 # Histórico
 
+## Ajustes da revisão externa v0.2 — 01/11/2026 (UTC)
+
+- Corrigido GAME_DESIGN.md: terrenos e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo/paleta, sem definir geografia, dimensões, câmera ou layout funcional.
+- Registrada D026 como pendência antes de implementar desfazer em M1/M2: sequência “colocar → trocar oferta → desfazer”, incluindo oferta, cursor e quota de trocas. Sem escolha ou implementação de regra nova; não bloqueia a fundação M0.1.
+- Atualizados PROJECT_STATE.md e HANDOFF.md e acrescentado atendimento à revisão externa em reports/IMPORT_V0_2_REPORT.md, preservando o histórico da importação.
+- Atualizado o verificador transcrito para incluir GAME_DESIGN.md nas diferenças esperadas; dez documentos reconciliados e 18 arquivos idênticos ao pacote. ZIP e manifesto originais preservados.
+- Mantidos fase 20 × 20, reino 40 × 60, 60 colocações, 62 ofertas e navegação por arrasto/zoom nas duas visões. M0.1 não iniciado; sem instalação de Godot/SDK, implementação ou testes de jogo/Android.
+
 ## Importação v0.2 — 31/10/2026 (UTC)
 
 - Importados 28 arquivos do ZIP v0.2 diretamente à raiz, incluindo quatro PNGs preservados em references/legacy_v0_1, exclusivamente para estilo.

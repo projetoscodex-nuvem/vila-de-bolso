@@ -60,13 +60,15 @@ A comparação prévia utilizou `difflib.unified_diff` entre cada arquivo existe
 
 ### Verificador documental executado
 
+Atualização de 01/11/2026: o código abaixo agora inclui GAME_DESIGN.md nas diferenças esperadas. Os resultados e contagens das seções históricas de 31/10 foram preservados; para reproduzir aquele snapshot, usar o relatório do commit `03d177a020ff673c209017fc0e640998c30fc7e4`. Resultados desta revisão constam na seção de atendimento à revisão externa ao final.
+
 ```python
 from pathlib import Path, PurePosixPath
 import zipfile, hashlib, json, stat, re, subprocess
 root = Path('/workspace/vila-de-bolso').resolve()
 archive = root / 'Vila_de_Bolso_M0_v0_2.zip'
 assert hashlib.sha256(archive.read_bytes()).hexdigest() == 'e5df94aeabd7eeca57dd844b1cface0108f929dc90ba41e6dd2c07f699755697'
-reconciled = {'README.md', 'PROJECT_CONTEXT.md', 'PROJECT_STATE.md', 'HANDOFF.md', 'DECISIONS.md', 'CHANGELOG.md', 'ASSETS_AND_LICENSES.md', 'GITHUB_CODEX_CLOUD_SETUP.md', 'PACKAGING_REPORT.md'}
+reconciled = {'README.md', 'PROJECT_CONTEXT.md', 'PROJECT_STATE.md', 'HANDOFF.md', 'DECISIONS.md', 'CHANGELOG.md', 'ASSETS_AND_LICENSES.md', 'GITHUB_CODEX_CLOUD_SETUP.md', 'PACKAGING_REPORT.md', 'GAME_DESIGN.md'}
 with zipfile.ZipFile(archive) as z:
     names = z.namelist()
     assert len(names) == len(set(n.casefold() for n in names)) == 28
@@ -88,7 +90,7 @@ with zipfile.ZipFile(archive) as z:
     assert changed == reconciled, changed
     assert all((root / n).read_bytes() == z.read(n) for n in names if n.startswith('references/'))
     assert (root / 'MANIFEST_SHA256.json').read_bytes() == z.read('MANIFEST_SHA256.json')
-print('PASS: ZIP seguro; CRC; SHA-256; manifesto 27/27; 28 arquivos; 9 reconciliados; 19 idênticos ao pacote')
+print(f'PASS: ZIP seguro; CRC; SHA-256; manifesto {len(manifest)}/{len(manifest)}; {len(names)} arquivos; {len(changed)} reconciliados; {len(names) - len(changed)} idênticos ao pacote')
 actual = {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and '.git' not in p.relative_to(root).parts}
 assert actual == set(names) | {'Vila_de_Bolso_M0_v0_2.zip', 'reports/IMPORT_V0_2_REPORT.md'}, actual
 mds = sorted(root.rglob('*.md'))
@@ -123,6 +125,13 @@ assert not any(n.endswith(('.gd','.tscn','.apk','.aab')) or n == 'project.godot'
 subprocess.run(['git','diff','--check'],cwd=root,check=True)
 subprocess.run(['git','diff','--cached','--check'],cwd=root,check=True)
 print('PASS: parâmetros v0.2 e câmera coerentes; referências legacy intactas; AGENTS < 32 KiB; sem projeto/gameplay/APK; git diff --check')
+review_base = '03d177a020ff673c209017fc0e640998c30fc7e4'
+review_files = {'GAME_DESIGN.md', 'DECISIONS.md', 'PROJECT_STATE.md', 'HANDOFF.md', 'CHANGELOG.md', 'reports/IMPORT_V0_2_REPORT.md'}
+review_changed = set(subprocess.check_output(['git','diff',review_base,'--name-only'],cwd=root,text=True).splitlines())
+assert review_changed == review_files, review_changed
+assert subprocess.check_output(['git','diff',review_base,'--','Vila_de_Bolso_M0_v0_2.zip','MANIFEST_SHA256.json','GAME_RULES.md','PACKAGE_VERSION.json','MAP_AND_CAMERA.md','references'],cwd=root) == b''
+subprocess.run(['git','diff',review_base,'--check'],cwd=root,check=True)
+print(f'PASS: revisão altera somente {len(review_changed)} Markdown autorizados; ZIP, manifesto, regras, parâmetros, câmera e referências preservados frente ao commit revisado')
 ```
 
 ### Resultados
@@ -166,3 +175,56 @@ git ls-remote origin refs/heads/docs/importacao-v0-2 refs/heads/main
 ```
 
 O draft PR foi criado pela ferramenta GitHub, com base main e draft=true. Nenhum merge, publicação de jogo ou instalação de ferramentas foi realizado. O aceite humano desta importação continua pendente.
+
+
+## Atendimento à revisão externa — 01/11/2026 (UTC)
+
+### Escopo e base conferida
+
+Solicitação do proprietário: somente ajustes documentais da revisão externa no PR #1, sem subagentes, instalação de Godot/SDK, escolha de regra nova ou início de M0.1. A conferência remota pela API GitHub confirmou PR aberto, draft e sem merge, branch docs/importacao-v0-2 e cabeça `03d177a020ff673c209017fc0e640998c30fc7e4`, igual ao último commit revisado. A base main continuava em `f1b59a2ab0f148abc71f0caf91a102a79e122cee`; nenhuma alteração posterior encontrada na conferência inicial.
+
+O checkout local estava limpo em a20de55, com a mesma árvore `6bcf28ee297f091af82b094221b6440f0e2bcd8a` do commit remoto revisado. O commit remoto foi obtido pela API GitHub e importado no Git local com verificação do SHA do objeto; o ponteiro local da branch foi alinhado ao remoto mantendo o checkpoint `checkpoint/importacao-v0-2-local`. Nenhum conteúdo foi descartado. A sincronização desta revisão usa as ferramentas GitHub para leitura, criação de árvore/commit e avanço da branch, sem depender de uma sessão de Git HTTP que ficou interrompida durante a tentativa anterior.
+
+### Ajustes atendidos
+
+- GAME_DESIGN.md, “Reino persistente”: terrenos, geografia e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo/paleta, sem definir geografia, dimensões, câmera ou layout funcional.
+- DECISIONS.md: D026 registrada como PENDING antes de implementar desfazer em M1/M2. Especificar a sequência “colocar → trocar oferta → desfazer”, incluindo oferta ativa, cursor e quota de trocas. Nenhuma solução foi escolhida ou implementada; GAME_RULES.md permanece intacto. D026 não bloqueia a fundação M0.1, que não foi iniciada.
+- PROJECT_STATE.md, HANDOFF.md e CHANGELOG.md atualizados com os ajustes, limites e próximo passo.
+- Este relatório preserva os resultados históricos e acrescenta esta seção. O verificador transcrito foi atualizado para incluir GAME_DESIGN.md entre os arquivos reconciliados e conferir os seis Markdown autorizados frente ao commit revisado.
+
+Arquivos efetivamente alterados nesta revisão: GAME_DESIGN.md, DECISIONS.md, PROJECT_STATE.md, HANDOFF.md, CHANGELOG.md e reports/IMPORT_V0_2_REPORT.md. Nenhum arquivo novo ou removido.
+
+### Proveniência e contagens
+
+Os resultados de 31/10 acima continuam históricos: nove documentos reconciliados e 19 idênticos ao ZIP, com 37 links locais naquele snapshot. Nesta revisão, GAME_DESIGN.md passa a diferir do pacote por uma alteração solicitada explicitamente; os quatro outros arquivos alterados que pertencem ao ZIP já estavam reconciliados. O relatório é adicional ao pacote e não integra suas 28 entradas. Portanto, agora são dez arquivos reconciliados e 18 idênticos ao ZIP; o verificador compara o conjunto exato de caminhos e imprime as contagens medidas.
+
+Não houve mudança nos totais de 28 arquivos do pacote, 30 arquivos de projeto, 22 Markdown ou 27 hashes do manifesto. ZIP e MANIFEST_SHA256.json originais preservados; o manifesto continua verificando o ZIP recebido, sem ser regenerado para os documentos reconciliados. Os quatro PNGs continuam idênticos ao pacote.
+
+### Verificações desta revisão
+
+Comandos executados em /workspace/vila-de-bolso para extrair o código transcrito do relatório e verificar a árvore atual:
+
+```bash
+python - <<'PYCODE'
+from pathlib import Path
+report = Path('reports/IMPORT_V0_2_REPORT.md').read_text()
+code = report.split('```python\n', 1)[1].split('```', 1)[0]
+Path('/tmp/vila_verify_import.py').write_text(code)
+PYCODE
+python /tmp/vila_verify_import.py
+git diff 03d177a020ff673c209017fc0e640998c30fc7e4 --check
+git diff --cached --check
+git status --short --branch
+```
+
+Snapshot verificado: working tree da branch docs/importacao-v0-2 sobre `03d177a020ff673c209017fc0e640998c30fc7e4`, com os seis arquivos listados acima. O hash real do commit final e a confirmação de envio da mesma árvore verificada serão registrados na descrição do PR #1 após a gravação e releitura remota, sem antecipar hash neste relatório.
+
+Resultados desta revisão, separados do histórico: PASS para segurança de caminhos/tipos, CRC, SHA-256 do ZIP, manifesto original 27/27, inventário exato, dez diferenças esperadas e 18 arquivos idênticos, integridade dos PNGs, 22 Markdown UTF-8 não vazios, 37 links locais medidos, parâmetros v0.2 e git diff --check. O verificador também confere que somente os seis Markdown autorizados diferem da base revisada e que ZIP, manifesto, GAME_RULES.md, PACKAGE_VERSION.json, MAP_AND_CAMERA.md e references permanecem intactos.
+
+Parâmetros preservados: fase 20 × 20, reino 40 × 60, seis regiões 2 × 3, 60 colocações, 62 ofertas e navegação por arrasto/zoom nas duas visões. Nenhuma verificação documental comprova execução do jogo.
+
+NOT_RUN: Godot/SDK, câmera ou gestos em execução, gameplay, comportamento do desfazer, save real, exportação/instalação APK, Android físico, desempenho e balanceamento. Não foram instaladas ferramentas nem iniciados M0.1/M1/M2.
+
+### Pendência e próximo passo
+
+Aguardar revisão/aceite destes ajustes no PR #1; não fazer merge automaticamente. Após revisão, o proprietário poderá enviar nova tarefa explícita de M0.1. Resolver D026 antes de implementar desfazer em M1/M2, sem tratar a pendência como bloqueio da fundação M0.1. A visibilidade pública e a licença autoral indefinida continuam registradas sem alteração nesta tarefa.

@@ -21,7 +21,7 @@ Puzzle estratégico 2D de colocação em mapas maiores que a tela, com aparênci
 
 ## Reino persistente
 
-Seis terrenos preparados manualmente e alinhados em 2 × 3. Nomes iniciais: Planície, Lago, Pedreiras, Campina, Bosque, Lagoa. A ordem é linha por linha, da esquerda à direita. Curso d'água, lagos e obstáculos são definidos nos templates e precisam combinar nas bordas. Os mockups ilustram essa geografia, sem definir coordenadas exatas.
+Seis terrenos preparados manualmente e alinhados em 2 × 3. Nomes iniciais: Planície, Lago, Pedreiras, Campina, Bosque, Lagoa. A ordem é linha por linha, da esquerda à direita. Terrenos, cursos d'água, lagos, obstáculos e encaixes entre regiões serão definidos e validados nos templates, incluindo a compatibilidade das bordas. Os PNGs de references/legacy_v0_1 orientam somente estilo e paleta, sem definir geografia, dimensões, câmera ou layout funcional.
 
 Cada região corresponde a uma fase de 20 × 20 células. O reino 2 × 3 tem 40 × 60 células, uma superfície contínua navegável com câmera; o mapa completo não é o enquadramento obrigatório da tela. A visão geral é um comando opcional. Casas, bosques plantados, plantações, moinhos, mercados e poços são projetados a partir do estado real salvo. Não gerar vila decorativa aleatória para representar o resultado. As demais regiões mantêm seus terrenos e estados.
 

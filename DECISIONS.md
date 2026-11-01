@@ -47,3 +47,13 @@ Origem: solicitação explícita do proprietário e PROMPT_IMPORTACAO_CODEX.md v
 | D025 | CONFIRMADO | GitHub informa repositório público, divergindo da previsão inicial de privado em ASSETS_AND_LICENSES.md/guia. Registrar fato e preservar configuração; visibilidade/licença autoral não são alteradas nesta tarefa |
 
 Efeitos: documentação e referências; nenhum código, dado de partida ou save alterado. Evidências, comandos, divergências e arquivos em [relatório de importação](reports/IMPORT_V0_2_REPORT.md). Critérios de câmera D015/D018 permanecem obrigatórios desde M0.1, que não foi iniciado.
+
+## Atendimento à revisão externa — 01/11/2026 (UTC)
+
+Origem: revisão externa da importação v0.2, commit revisado `03d177a020ff673c209017fc0e640998c30fc7e4`, encaminhada pelo proprietário. Escopo autorizado: somente ajustes documentais no PR #1, sem iniciar M0.1.
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D026 | PENDING — antes de implementar desfazer em M1/M2 | Especificar o comportamento da sequência “colocar → trocar oferta → desfazer”, incluindo qual oferta fica ativa, como fica o cursor da sequência e qual quota de trocas permanece. A restauração por snapshot e a afirmação de que trocas isoladas não são desfeitas em GAME_RULES.md não resolvem explicitamente essa combinação. Nenhuma regra nova foi escolhida ou implementada nesta revisão. Resolver e sincronizar regras, dados e testes antes de implementar desfazer em M1/M2; esta pendência não bloqueia a fundação M0.1 |
+
+GAME_DESIGN.md foi esclarecido: terrenos e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo e paleta, sem definir geografia, dimensões, câmera ou layout funcional. Mantidos fase 20 × 20, reino 40 × 60, 60 colocações, 62 ofertas e arrasto/zoom nas duas visões. Nenhuma regra de gameplay, código ou save foi alterado.
