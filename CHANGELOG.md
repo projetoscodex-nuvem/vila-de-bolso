@@ -1,5 +1,15 @@
 # Histórico
 
+## M0.1 — fundação em revisão, Android BLOCKED — 02/11/2026 (UTC)
+
+- Importação/revisão documental aceita pelo proprietário; PR #1 integrado com merge preservando commits em 2d80844b8bc4a147bf428ade00448b5f6d2f02ba. Implementação em branch separada feat/m0-1-foundation.
+- Projeto Godot 4.6.3/GDScript/Compatibility, Android retrato e offline; menu → reino 40 × 60 → região1 20 × 20 → voltar. Demais regiões bloqueadas; arte geométrica e ícone provisórios, sem reutilizar PNGs legados como telas.
+- Arrasto, pinça, zoom por botões/roda, recentrar/visão geral, limites, recorte inicial, transformação de coordenadas e HUD fixa. Seleção sem ação de construção; cancelamento/pausa/Voltar do Android tratados.
+- Save mínimo versionado com câmeras independentes, retomada, backup e preservação de arquivos inválidos. Sem salvar dedos, gestos ou seleção transitória.
+- Scripts fixados para setup/verificação/exportação, testes headless de dados/câmera/gestos/save/cena e relatório M0.1 com evidências. Relatório histórico da importação, ZIP e manifesto preservados.
+- Exportação debug tentada e marcada PARCIAL/BLOCKED: JDK completo/SDK/templates ausentes e download recusado no sandbox. Nenhum APK ou teste físico Android. Sem CI automático, release, publicação ou merge do novo PR.
+- Parâmetros futuros 60 colocações/62 ofertas e D026 pendente preservados. M1 não iniciado; não implementados partida, pontuação, construção, ofertas ou desfazer.
+
 ## Ajustes da revisão externa v0.2 — 01/11/2026 (UTC)
 
 - Corrigido GAME_DESIGN.md: terrenos e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo/paleta, sem definir geografia, dimensões, câmera ou layout funcional.

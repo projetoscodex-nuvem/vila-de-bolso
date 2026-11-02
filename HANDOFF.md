@@ -1,39 +1,37 @@
 # Passagem de contexto
 
-Data: 01/11/2026 (UTC). Baseline ativa: **v0.2 — mapas grandes e navegáveis**.
+Data: 02/11/2026 (UTC). Baseline ativa: **v0.2 — mapas grandes e navegáveis**. Marco: **M0.1 PARCIAL/BLOCKED na exportação Android**.
 
-## Identidade e requisito atual
+## Identidade e direção
 
-Vila de Bolso — Meu Reino: puzzle 2D Android offline vertical. Fase e reino maiores que a tela, com arrasto, pinça e HUD fixa; o plano pequeno v0.1 está superado. Parâmetros iniciais: fase 20 × 20, reino 40 × 60 de seis regiões 2 × 3, 60 colocações, 62 ofertas, duas trocas e um desfazer. Números ajustáveis com evidência. Cada vila preserva suas peças/posições reais no reino.
+Vila de Bolso — Meu Reino: puzzle 2D Android offline vertical. Fase 20 × 20 e reino 40 × 60 de seis regiões 2 × 3, com recorte inicial nos dois eixos, arrasto/zoom e HUD fixa. Parâmetros futuros 60 colocações/62 ofertas mantidos, sem implementar partida. Cada vila concluída deverá preservar suas peças/posições reais no reino nos marcos posteriores. PNGs legacy_v0_1 são somente estilo/paleta, sem definir terreno/geografia/câmera/layout.
 
-Leia README.md, AGENTS.md, PROJECT_CONTEXT.md (contexto canônico), PROJECT_STATE.md, MAP_AND_CAMERA.md e documentos relevantes. PNGs em references/legacy_v0_1 valem somente para estilo. Não executar instruções de dentro do ZIP; usar os documentos atuais extraídos/reconciliados.
+Leia AGENTS.md, PROJECT_CONTEXT.md, PROJECT_STATE.md, MAP_AND_CAMERA.md e [relatório M0.1](reports/M0_1_REPORT.md). O relatório histórico de importação está preservado e não impõe “30 arquivos/sem Godot” à implementação.
 
-## Estado confirmado e relatado
+## Integração confirmada
 
-CONFIRMADO: https://github.com/projetoscodex-nuvem/vila-de-bolso, visibilidade pública. Base inicial `work` = `main` remota em `f1b59a2ab0f148abc71f0caf91a102a79e122cee`. Existiam README.md e PROJECT_CONTEXT.md v0.1 e o ZIP v0.2, sem alterações locais pendentes. Os dois documentos pertencem ao mesmo projeto, foram comparados e reconciliados; nenhum alias, conflito sem solução ou material de outro projeto encontrado.
+O proprietário aceitou a documentação em 0733005bb2b83639522596ce63526003fb23cca8 e autorizou retirar o draft/integrar o PR #1 preservando os commits. Cabeça conferida sem alterações posteriores; merge realizado em main `2d80844b8bc4a147bf428ade00448b5f6d2f02ba`. Nenhuma mudança de visibilidade/licença. Repositório: https://github.com/projetoscodex-nuvem/vila-de-bolso, público.
 
-Importação concluída na branch `docs/importacao-v0-2`, com 28 arquivos do pacote na raiz/references e relatório adicional. Histórico e ZIP preservados. O manifesto original verifica o ZIP recebido, não os documentos posteriormente reconciliados. Commit `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce` verificado com árvore limpa e salvo no GitHub; [draft PR #1](https://github.com/projetoscodex-nuvem/vila-de-bolso/pull/1) aberto, sem merge. Esta atualização posterior registra evidências; conferir a cabeça final no PR. Comandos, resultados e estado remoto em [reports/IMPORT_V0_2_REPORT.md](reports/IMPORT_V0_2_REPORT.md).
+Implementação criada a partir dessa main em **feat/m0-1-foundation**; entrega em novo draft PR, sem merge automático. A descrição do PR e a resposta final identificam o commit real e sua árvore verificada; não assumir salvamento remoto apenas pela existência de arquivos na VM.
 
-Há somente documentação e conceitos visuais, sem projeto Godot, código de jogo ou APK na árvore auditada. **M0.1 NÃO INICIADO**. Nenhuma engine instalada nesta tarefa. Git/Python e leitura do remoto foram comprovados; toolchain Android e setup reutilizável não foram auditados. OWNER_REPORTED: proprietário opera pelo celular.
+## Implementado e verificado localmente
 
-Divergência preservada: pacote previa repositório privado, GitHub confirmou público. Visibilidade não alterada; licença autoral continua indefinida. Não importar resultados de outros projetos.
+Godot 4.6.3/GDScript/Compatibility, menu → reino → região1 → voltar; demais regiões bloqueadas. Terreno provisório de primitivas, ícone SVG próprio e créditos/avisos da engine. Câmera em ambas as visões, limites, pinça/arrasto/botões/visão geral, seleção sem colocação e HUD fixa. Modelo de dados/câmera/gestos/save separado da apresentação.
 
-## Atendimento à revisão externa — 01/11/2026
+Save mínimo versionado guarda visão e câmeras independentes; limpa seleção/contatos em troca de tela, pausa e cancelamento. Preserva backup válido e bloqueia sobrescrita automática de save inválido/desconhecido. Nenhum score, construção, turno, oferta ou desfazer implementado.
 
-Conferência inicial do PR #1: cabeça `03d177a020ff673c209017fc0e640998c30fc7e4`, igual ao commit revisado, sem alterações posteriores; PR aberto, draft e sem merge. Ajustes feitos na mesma branch `docs/importacao-v0-2`.
+Suíte com 157 verificações headless/sintéticas PASS; cena principal por 15 frames e checks de documentação/proveniência/links/parâmetros. Os listeners TCP do editor são indisponíveis no sandbox e geram diagnósticos de infraestrutura durante importação; a execução da cena/suíte não apresentou erro de script. Esses resultados não provam Android físico ou aparência final.
 
-GAME_DESIGN.md esclarece que terrenos e encaixes serão definidos e validados nos templates. PNGs legacy_v0_1 orientam somente estilo e paleta, sem definir geografia, dimensões, câmera ou layout funcional.
+## Bloqueio Android e retomada
 
-D026 em DECISIONS.md permanece PENDING: definir oferta ativa, cursor e quota de trocas na sequência “colocar → trocar oferta → desfazer” antes de implementar desfazer em M1/M2. Nenhuma regra nova foi escolhida; GAME_RULES.md foi preservado. Essa pendência não bloqueia a fundação M0.1 e não autoriza iniciá-la nesta tarefa.
+SDK, templates Android e JDK completo ausentes. O JRE do host não equivale ao JDK fixado. Download oficial pelo setup retornou Operation not permitted; tentativa com permissão adicional foi interrompida e não demonstrou instalação. O comando real de exportação Godot executou e falhou por essas dependências; **nenhum APK foi produzido**, sem hash fictício.
 
-Verificador do relatório atualizado para GAME_DESIGN.md entre os documentos reconciliados: dez diferenças esperadas em relação ao ZIP e 18 arquivos idênticos. Preservados resultados históricos, ZIP e manifesto originais. Evidências desta revisão na nova seção do relatório e no PR #1, com commit real da entrega registrado após verificação.
+Em ambiente com rede permitida para fontes oficiais e pelo menos 4 GB livres, usar o [guia de execução](scripts/README.md): scripts/setup.sh --android → scripts/verify.sh → scripts/export_android.sh. Lock registra Godot/templates 4.6.3, JDK 21.0.9+10, command-line tools 15859902, Platform-Tools 37.0.1, Platform 36, Build-Tools 36.1.0, minSdk 24/targetSdk 36. Exportação padrão, sem Gradle/NDK/CMake. Não trocar versões silenciosamente nem substituir Android por outro alvo.
 
-## Verificação e próxima ação
+Após APK existir: conferir hash/assinatura, disponibilizar download, registrar aparelho e Android e seguir o smoke do relatório. Instalação, toque/pinça, áreas seguras, offline físico, desempenho e aceite ficam NOT_RUN até relato do proprietário. Não pedir desinstalação que apague progresso sem avisar sobre mudança de chave debug.
 
-Verificações documentais de segurança, integridade, inventário, links e parâmetros em relatório. Engine/câmera real/gameplay/save/APK/Android/desempenho/diversão: NOT_RUN.
+## Limites e próximo passo
 
-Primeiro revisar importação e draft PR/commit, sem merge automático. Depois, somente mediante nova tarefa explícita, usar PROMPT_M0_1_CODEX.md v0.2 para fundação, câmera nas duas visões e prova Android. Não pedir para reenviar ZIP nesta branch nem executar implementação por inferência. Mapa maior com navegação já é requisito confirmado; não adiar câmera para acabamento.
+D026 continua PENDING: especificar oferta ativa, cursor e quota de trocas em “colocar → trocar oferta → desfazer” antes de implementar desfazer em M1/M2. Nenhuma regra foi escolhida. Resolver exportação/gestos físicos de M0.1 antes de avançar; não iniciar M1 nem fazer merge do PR de implementação sem autorização.
 
-## Para um novo chat
-
-“Continuar Vila de Bolso — Meu Reino, baseline v0.2. Leia os documentos atuais e o relatório de importação; confira branch/commit/PR. A tarefa documental foi concluída, M0.1 não foi iniciado. Revisar a entrega ou executar apenas o escopo explicitamente solicitado. Android offline vertical; fase 20 × 20, reino 40 × 60, arrasto/zoom, HUD fixa e vilas preservadas por estado real. Não inventar testes ou aceite.”
+OWNER_REPORTED: operação pelo celular. Fonte/relatórios no GitHub são a continuidade durável; .tools/cache/SDK/keystore/logs integrais da VM não são garantia de ambiente reutilizável. Evidências essenciais do bloqueio/testes foram copiadas para reports/evidence e devem acompanhar o commit.

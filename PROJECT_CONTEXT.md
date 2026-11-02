@@ -24,11 +24,13 @@ O proprietário pediu um jogo simples, intuitivo, interessante, realizável até
 
 O proprietário autorizou iniciar o projeto e pediu guia GitHub/Cloud, prompt e documentação de continuidade. Depois esclareceu que imaginou mapas grandes, com arrasto e zoom nas fases e no reino, e pediu corrigir o pacote inteiro antes de enviar o ZIP ao repositório. Esse requisito é OWNER_CONFIRMED. As dimensões 20 × 20 / 40 × 60 e 60 colocações são escolhas iniciais de planejamento, não medidas aprovadas individualmente ou balanceadas. As seis regiões delimitam o primeiro conteúdo; tamanho de campanha pode evoluir em decisão separada.
 
-## Estado real após importação — 31/10/2026 (UTC)
+## Estado real — M0.1, 02/11/2026 (UTC)
 
-CONFIRMADO: **DOCUMENTATION_V0_2_IMPORTED** na branch `docs/importacao-v0-2`, a partir de `work`/`main` em `f1b59a2ab0f148abc71f0caf91a102a79e122cee`. Repositório auditado: https://github.com/projetoscodex-nuvem/vila-de-bolso (público). A raiz inicial continha README.md e PROJECT_CONTEXT.md v0.1 e Vila_de_Bolso_M0_v0_2.zip. Os dois Markdown foram comparados e reconciliados com v0.2; não havia aliases, documentos de outro projeto ou alterações locais pendentes. Este PROJECT_CONTEXT.md é a fonte canônica de contexto.
+CONFIRMADO: o proprietário aceitou a documentação no commit `0733005bb2b83639522596ce63526003fb23cca8` e autorizou retirar o draft e integrar o PR #1, preservando os commits. Cabeça conferida sem alterações posteriores; merge realizado em `2d80844b8bc4a147bf428ade00448b5f6d2f02ba`, confirmado como main remota. Repositório: https://github.com/projetoscodex-nuvem/vila-de-bolso (público). A implementação foi isolada em `feat/m0-1-foundation`, a partir dessa main. Este PROJECT_CONTEXT.md continua canônico; ZIP/manifesto e o relatório de importação permanecem históricos.
 
-CONFIRMADO: ambiente desta tarefa executa Git, shell e Python e permitiu leitura do remoto. Isso não comprova toolchain Godot/Android ou setup reutilizável. Não há código de jogo ou APK na árvore auditada. M0.1 não foi iniciado e depende de nova tarefa explícita após revisão da importação. OWNER_REPORTED: operação pelo celular. Evidências, divergências preservadas e estado de entrega em [PROJECT_STATE.md](PROJECT_STATE.md) e [relatório](reports/IMPORT_V0_2_REPORT.md).
+CONFIRMADO: M0.1 autorizado nesta tarefa. Projeto Godot 4.6.3/GDScript/Compatibility, menu → reino 40 × 60 → região1 20 × 20 → voltar, câmera por visão, arrasto/pinça/zoom, HUD fixa, seleção e save mínimo implementados e verificados por testes headless/sintéticos. Demais regiões bloqueadas. Sem partida, score, construção ou desfazer. D026 continua pendente antes de implementar desfazer em M1/M2.
+
+Estado **M0_1_PARTIAL_ANDROID_EXPORT_BLOCKED**: a engine disponível foi verificada, mas JDK completo/SDK/templates Android estão ausentes e o download no sandbox retornou Operation not permitted. A exportação Godot foi executada e falhou com diagnóstico; nenhum APK produzido. Testes físicos, toque, desempenho, diversão e aceite de M0.1 permanecem NOT_RUN/pendentes. OWNER_REPORTED: operação pelo celular. Evidências, scripts de retomada e limites em [PROJECT_STATE.md](PROJECT_STATE.md) e [relatório M0.1](reports/M0_1_REPORT.md). Não inferir ambiente reutilizável da instalação local.
 
 ## Não confundir com outros projetos
 

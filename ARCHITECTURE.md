@@ -1,5 +1,11 @@
 # Arquitetura inicial
 
+## Fundação implementada — M0.1
+
+Godot 4.6.3/GDScript/Compatibility fixada em scripts/toolchain.lock.json. Código de dados/câmera/gestos/save em core/, dados provisórios em data/world.json e apresentação em presentation/ e scenes/. O mapa usa a transformação explícita do modelo de câmera, equivalente funcional a uma Camera2D, no desenho de um Control que ocupa apenas o viewport; HUD permanece fora dessa transformação. O router recebe somente contatos iniciados no mapa e captura seu ciclo até soltura/cancelamento, impedindo que gestos iniciados na HUD cheguem à câmera.
+
+Persistência implementada somente para apresentação: schema_version, app_version, active_view e cameras. Não há save de partida ou progresso implementado. Configurações de terreno são provisórias e versionadas; a produção de templates/metas e gameplay pertence aos marcos posteriores. [Relatório M0.1](reports/M0_1_REPORT.md) e [guia de execução](scripts/README.md) registram testes e bloqueio Android; a arquitetura abaixo continua descrevendo o destino, sem presumir que todas as camadas já existem.
+
 ## Stack
 
 Godot 4.x estável, GDScript, renderer Compatibility para 2D. A versão exata não foi fixada nesta preparação; M0.1 deve escolher uma release estável oficial, registrar versão e origem e usar templates de exportação da mesma release. Sem C#, engine própria ou backend.

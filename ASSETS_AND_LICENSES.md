@@ -1,5 +1,14 @@
 # Arte, áudio e licenças
 
+## Integração provisória M0.1 — 02/11/2026
+
+- assets/icon.svg: ícone geométrico criado para esta prova, sem pack externo; sem licença CC0 atribuída. Hash e fonte no relatório M0.1.
+- presentation/map_view.gd: desenho de terrenos/árvores/rochas com primitivas; provisório e independente dos PNGs legados. Nenhum sprite recortado dos mockups.
+- Godot 4.6.3: aviso MIT oficial preservado em licenses/GODOT_LICENSE.txt; menu Créditos exibe também os avisos de terceiros/fontes incorporados disponibilizados pela engine. Não é uma licença do código autoral inteiro.
+- Nenhum pack Kenney, áudio ou fonte externa integrado. PNGs legacy_v0_1 permanecem no histórico, com .gdignore para evitar importação pela engine e excluídos da exportação.
+
+As fontes e seus hashes estão em scripts/toolchain.lock.json e [reports/M0_1_REPORT.md](reports/M0_1_REPORT.md). A exportação Android está bloqueada; não houve distribuição de um APK nesta tarefa.
+
 ## Direção
 
 Pixel art simples, contornos escuros, grama verde, casas de telhados vermelhos/cinza e UI creme/verde. Coerência de escala/paleta é mais importante do que quantidade de packs. Textos precisam continuar legíveis em celular.

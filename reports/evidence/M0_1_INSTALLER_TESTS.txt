@@ -1,0 +1,14 @@
+test_absolute_path_rejected (test_setup.SafePackages.test_absolute_path_rejected) ... ok
+test_bad_hash_never_becomes_installable_archive (test_setup.SafePackages.test_bad_hash_never_becomes_installable_archive) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_hash_and_cache_reuse (test_setup.SafePackages.test_hash_and_cache_reuse) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_only_selected_templates_extracted (test_setup.SafePackages.test_only_selected_templates_extracted) ... ok
+test_regular_file (test_setup.SafePackages.test_regular_file) ... ok
+test_symlink_rejected (test_setup.SafePackages.test_symlink_rejected) ... ok
+test_traversal_cannot_write_outside (test_setup.SafePackages.test_traversal_cannot_write_outside) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.003s
+
+OK

@@ -57,3 +57,14 @@ Origem: revisão externa da importação v0.2, commit revisado `03d177a020ff673c
 | D026 | PENDING — antes de implementar desfazer em M1/M2 | Especificar o comportamento da sequência “colocar → trocar oferta → desfazer”, incluindo qual oferta fica ativa, como fica o cursor da sequência e qual quota de trocas permanece. A restauração por snapshot e a afirmação de que trocas isoladas não são desfeitas em GAME_RULES.md não resolvem explicitamente essa combinação. Nenhuma regra nova foi escolhida ou implementada nesta revisão. Resolver e sincronizar regras, dados e testes antes de implementar desfazer em M1/M2; esta pendência não bloqueia a fundação M0.1 |
 
 GAME_DESIGN.md foi esclarecido: terrenos e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo e paleta, sem definir geografia, dimensões, câmera ou layout funcional. Mantidos fase 20 × 20, reino 40 × 60, 60 colocações, 62 ofertas e arrasto/zoom nas duas visões. Nenhuma regra de gameplay, código ou save foi alterado.
+
+## M0.1 — 02/11/2026 (UTC)
+
+Origem: proprietário aceitou a importação/revisão no commit `0733005bb2b83639522596ce63526003fb23cca8`, autorizou integração do PR #1 e execução exclusiva de PROMPT_M0_1_CODEX.md v0.2. Cabeça conferida; merge normal preservando os commits, sem force, realizado em `2d80844b8bc4a147bf428ade00448b5f6d2f02ba`. Código isolado em `feat/m0-1-foundation`; novo PR deve permanecer draft/sem merge.
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D027 | BASELINE / CONFIRMADO | Fixar Godot 4.6.3.stable.official.7d41c59c4, já disponível e conferida com release oficial, GDScript e Compatibility. Lock com URLs/hashes oficiais para engine, templates da mesma release, Temurin JDK 21.0.9+10 e command-line tools 15859902. Android: minSdk 24, target/Platform 36, Build-Tools 36.1.0 conforme source exato da release; Platform-Tools 37.0.1 conforme fonte Google. A página geral Godot 4.6 cita SDK 35 e recomenda JDK 17, aceitando versões superiores; source da release fixa os valores 36. Preferida exportação padrão com APK pré-compilado, sem Gradle/NDK/CMake. A engine foi executada; instalação da toolchain Android ficou BLOCKED, sem alegar fixação instalada ou APK |
+| D028 | BASELINE | Fundação sem gameplay: terreno geométrico provisório independente dos PNGs legados, IDs de seis regiões e somente region_1 liberada, câmera/modelo de gestos separados da apresentação e envelope JSON mínimo versionado. Salvar apenas visão/câmeras, limpar contatos/seleção em navegação, cancelamento e pausa; backup do último save válido e bloqueio de escrita sobre original inválido/desconhecido. Tests sintéticos/headless não equivalem a gesto físico |
+
+D026 permanece PENDING para M1/M2, sem nova regra de desfazer. Os parâmetros futuros de 60 colocações/62 ofertas foram mantidos em dados, sem consumo ou implementação de partida neste marco. Evidências e bloqueios em [reports/M0_1_REPORT.md](reports/M0_1_REPORT.md).

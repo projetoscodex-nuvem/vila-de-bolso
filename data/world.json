@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "template_version": "m0.1-provisional-1",
+  "cell_size": 64,
+  "phase_width": 20,
+  "phase_height": 20,
+  "kingdom_width": 40,
+  "kingdom_height": 60,
+  "placements_future": 60,
+  "offers_future": 62,
+  "tap_drag_threshold": 18.0,
+  "regions": [
+    {"id":"region_1","name":"Planície","column":0,"row":0,"unlocked":true},
+    {"id":"region_2","name":"Lago","column":1,"row":0,"unlocked":false},
+    {"id":"region_3","name":"Pedreiras","column":0,"row":1,"unlocked":false},
+    {"id":"region_4","name":"Campina","column":1,"row":1,"unlocked":false},
+    {"id":"region_5","name":"Bosque","column":0,"row":2,"unlocked":false},
+    {"id":"region_6","name":"Lagoa","column":1,"row":2,"unlocked":false}
+  ]
+}
