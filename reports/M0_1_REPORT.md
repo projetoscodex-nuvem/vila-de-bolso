@@ -2,6 +2,8 @@
 
 Data: 02/11/2026 (UTC). Baseline documental v0.2. Resultado: **PARCIAL/BLOCKED — exportação Android**. Não é jogo completo, não é M1 e não é aprovação física do proprietário.
 
+Atualização após revisão de `653e9cd`: as seções iniciais registram a entrega original. Seus 157 checks de componentes/cena não cobriam acessibilidade da GUI pelo fluxo Input da Godot. A falha de toque e o risco de resultado de exportação antigo foram tratados na seção “Correções da revisão independente” ao final, com novas evidências. Os resultados históricos não foram convertidos em teste físico.
+
 ## DECISÃO
 
 Executar integralmente o escopo M0.1 de PROMPT_M0_1_CODEX.md após a integração documental autorizada. Sem subagentes, backend, conta, internet no jogo, monetização, telemetria, gameplay completo, release ou publicação.
@@ -124,3 +126,62 @@ Revisar a implementação no novo draft PR e resolver exportação Android antes
 3. Selecionar Planície e tocar Entrar. Repetir navegação e tocar célula fora do recorte inicial. Pan/pinça e toque na HUD não devem selecionar indevidamente; não existe construção neste marco.
 4. Voltar ao reino e conferir sua câmera anterior. Retomar a fase, fechar/reabrir o app e usar Retomar exploração; conferir câmeras independentes e ausência de seleção/gesto pendente. Testar botão Voltar e interrupção durante gesto.
 5. Relatar PASS/FAIL e passos de qualquer defeito, incluindo textos cortados/área de toque, pinça, saltos e perda de estado. Um APK instalado continua sem provar jogo completo ou diversão.
+
+
+## Correções da revisão independente — 02/11/2026 (UTC)
+
+### Base e escopo
+
+Cabeça do PR #2 conferida em `653e9cdab5a5bce956e86b15f6cf734f0f8fceff`, igual ao commit revisado, sem alterações posteriores na conferência inicial. Continuação na branch feat/m0-1-foundation; sem merge, release, publicação, M1 ou resolução de D026. Versões/hashes do lock, 60 colocações/62 ofertas e dimensões 20 × 20 / 40 × 60 preservados.
+
+### Entrada: reprodução e correção
+
+O teste novo, executado antes da correção com a configuração anterior, reproduziu a falha: um ScreenTouch no botão Explorar reino via Input.parse_input_event deixou a visão no menu (três verificações, uma falha). Isso mostra a limitação dos testes antigos que chamavam app._input diretamente e emitiam sinais de botões. O [log de reprodução](evidence/M0_1_INPUT_BEFORE_FIX.txt) é histórico de falha, não um resultado atual.
+
+Correção: project.godot habilita emulate_mouse_from_touch para a GUI; presentation/main.gd devolve somente InputEventMouse de DEVICE_ID_EMULATION ao fluxo da GUI, sem registrá-lo como contato do mapa. ScreenTouch/ScreenDrag continuam sendo a fonte dos gestos de dedos. Mouse físico device=0 continua no caminho de mouse. Não foi implementado um handler paralelo de clique para os botões.
+
+A nova suíte tests/test_input_pipeline.gd injeta eventos pela fila Input e os deixa passar pelo roteamento real da engine. Não chama app._input nem emite pressed como substituto do toque. PASS em **44 verificações**, cobrindo Explorar reino, Entrar, Retomar inclusive após reabrir, +/−, Recentrar, Visão geral e Voltar; um dedo cria exatamente um contato e produz tap/pan, dois produzem pinça, HUD não produz pan/seleção e mouse físico seleciona/arrasta. [Evidência atual](evidence/M0_1_INPUT_AFTER_FIX.txt). São eventos sintéticos na Godot headless; o adaptador de toque e a experiência física Android continuam NOT_RUN.
+
+Os 157 checks anteriores permanecem como componentes/cena e foram repetidos. scripts/verify.sh agora exige também o marcador de sucesso da suíte Input e rejeita seus erros, sem depender somente do código de saída da Godot.
+
+### Exportação: resultado por tentativa
+
+scripts/export_android.py agora é importável sem disparar exportação. A CLI cria um attempt_id único, arquiva o resultado anterior e grava RUNNING antes da validação das ferramentas/subprocessos. Um bloco finally grava o resultado final e o log mesmo para configuração/versão inválida, dependência ausente, erro de exportação, timeout, manifesto/dados/CRC inválidos, erro ou timeout de assinatura e interrupção. PASS, apk e sha256 atuais só são adicionados após conteúdo/assinatura válidos.
+
+Histórico por tentativa em build/export_attempts/<attempt_id>/: previous_result.json, previous-export_android.log e previous-debug.apk identificam o resultado/log/artefato anteriores. Um arquivo novo que falhou ou ficou parcial é preservado como unverified-debug.apk e removido do caminho instalável atual. Os artefatos não são apagados nem reapresentados como sucesso da tentativa nova. Arquivos legados previous-debug.apk não são removidos. Resultado estruturado atual tem schema_version 2, horários, estágio, retorno do processo e retorno do wrapper.
+
+PASS: **25 testes Python**, sendo sete do instalador e 18 novos de exportação. Os novos testes começam com resultado anterior PASS e artefato anterior, verificam RUNNING antes de qualquer ferramenta, falhas de dependência/exportação/timeout/manifesto/CRC/assinatura/versão/keystore, interrupção, preservação de histórico e sucesso somente após verificação. Todos usam raízes temporárias, ZIPs falsos e runner substituto; nenhuma dessas fixtures é um APK, uma assinatura Android real ou um download de ferramenta. [Evidência das fixtures](evidence/M0_1_EXPORT_FIXTURE_TESTS.txt).
+
+### Rede do processo, setup e tentativa Android real
+
+`python scripts/diagnose_network.py` registrou **BLOCKED_BEFORE_PROXY_DNS_TLS**: socket(AF_INET, SOCK_STREAM) retornou PermissionError/errno 1 (EPERM) antes de tentar DNS, conexão ao proxy, TLS ou autorização HTTP. Os hosts github.com, release-assets.githubusercontent.com e dl.google.com constam na configuração, com proxy configurado. Essa permissão declarativa e a conectividade observada do ambiente não concedem automaticamente rede ao processo sandbox. O acesso do conector GitHub é uma capacidade distinta e não foi usado como prova de download pelo Python/curl.
+
+Nenhuma política foi editada, proxy removido, TLS desabilitado ou grant presumido. [Diagnóstico estruturado](evidence/M0_1_NETWORK_RETRY.json). Alterar acesso ao repositório GitHub não corrige uma negação de criação de socket. Uma liberação precisa alcançar o processo de execução pelo fluxo suportado do ambiente/sandbox, ou usar outro executor autorizado; não há evidência de que isso tenha ocorrido aqui.
+
+Depois das correções, `scripts/setup.sh --android` foi executado novamente mantendo URLs/versões/hashes. O download oficial do JDK retornou `urlopen error [Errno 1] Operation not permitted`; [log atual do setup](evidence/M0_1_SETUP_RETRY.txt). `scripts/export_android.sh` também foi executado de fato, e Godot retornou 1 por JDK/SDK/templates ausentes. O wrapper retornou 2, gravou BLOCKED no estágio export, com attempt_id `20261102T203711007145Z-39e0d3db` e horários de início/fim; não herdou PASS ou hash anterior. [Resultado atual](evidence/M0_1_EXPORT_RETRY_RESULT.json) e [log atual](evidence/M0_1_EXPORT_RETRY.txt).
+
+**Nenhum APK real foi produzido nesta retentativa; SHA-256 de APK indisponível.** A validação bem sucedida de uma fixture não muda esse resultado. Instalação e testes físicos seguem NOT_RUN.
+
+### Alternativa concreta, sem execução não autorizada
+
+[Receita CI manual e condições](ci/README.md), com YAML pronto para revisão em reports/ci/M0_1_ANDROID_MANUAL.yml. Está fora de .github/workflows e não foi ativada/dispatchada. Usa runner padrão ubuntu-24.04, timeout 30 minutos, concorrência única, contents:read, actions fixadas por SHA, código de um SHA revisado e retenção de três dias; não usa secrets, não faz push/merge/release e não sobe SDK/keystore/fixtures como APK. Só envia APK e checksum após exportação real com assinatura verificada; diagnóstico fica separado em caso de falha.
+
+As referências das actions foram conferidas pela API oficial e o YAML foi parseado localmente, mas a execução CI é NOT_RUN. A tentativa de consultar actions/permissions pelo conector retornou INVALID_ARGUMENT porque o endpoint não é admitido por essa ferramenta; não foi um 403 do GitHub e não demonstra Actions desabilitado. Billing/quota/armazenamento não foram confirmados. O proprietário precisa verificar essas condições antes de marcar account_limits_verified e consumir recursos. Ativar workflow no branch padrão exige alteração de configuração separadamente aprovada; não foi feito merge do PR #2 para isso.
+
+### Verificações e limites atuais
+
+```bash
+source scripts/env.sh
+"$GODOT_BIN" --headless --path . --script tests/test_input_pipeline.gd
+python -m unittest discover -s tests -p 'test_*.py' -v
+python scripts/diagnose_network.py
+scripts/setup.sh --android
+scripts/export_android.sh
+scripts/verify.sh
+python -m py_compile scripts/export_android.py scripts/diagnose_network.py tests/test_export_android.py
+git diff --check
+```
+
+PASS local: 157 checks de componentes/cena, 44 do fluxo Input/GUI, 25 testes Python, cena principal por 15 frames, sintaxe, proveniência/links/parâmetros e diff. Os diagnósticos específicos de listeners do editor continuam separados; nenhuma restrição do verificador antigo de árvore documental foi aplicada à implementação. D026, ZIP, manifesto, PNGs e relatório histórico de importação preservados.
+
+A árvore desta correção é registrada inicialmente como working tree; o commit real testado pós-gravação e a confirmação da cabeça remota são conciliados na descrição do PR #2 e na resposta final, sem antecipar hash neste arquivo. Próximo passo: revisar as correções no mesmo draft PR e resolver rede/toolchain no executor autorizado, ou aprovar/configurar a alternativa manual após conferir permissões/limites. Não tratar M0.1 como aprovado nem iniciar M1. O roteiro físico acima só deve ser executado quando existir APK concreto com hash.

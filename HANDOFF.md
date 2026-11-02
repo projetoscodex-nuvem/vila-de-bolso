@@ -22,9 +22,17 @@ Save mínimo versionado guarda visão e câmeras independentes; limpa seleção/
 
 Suíte com 157 verificações headless/sintéticas PASS; cena principal por 15 frames e checks de documentação/proveniência/links/parâmetros. Os listeners TCP do editor são indisponíveis no sandbox e geram diagnósticos de infraestrutura durante importação; a execução da cena/suíte não apresentou erro de script. Esses resultados não provam Android físico ou aparência final.
 
+Correção da revisão de 653e9cd: aqueles 157 checks acionavam componentes diretamente e sinais de botões, sem comprovar GUI por toque. A falha foi reproduzida com Input.parse_input_event. Agora a emulação touch→mouse atende à GUI e somente o mouse DEVICE_ID_EMULATION é excluído dos gestos do mapa; mouse físico continua funcionando. Nova suíte pelo fluxo Input passou em 44 verificações sem app._input direto ou pressed.emit, cobrindo menu/Entrar/Retomar/zoom/retorno, tap/pan/pinça/HUD e mouse.
+
+Exportador atualizado para invalidar o resultado anterior antes dos subprocessos, registrar toda tentativa e finalizar também falhas/timeout/manifesto/assinatura. Histórico e artefatos prévios identificados por attempt_id; saída não verificada fica fora do caminho de APK atual. Os 25 testes Python incluem 18 cenários de exportação com runner simulado e ZIPs falsos isolados; não apresentar fixtures como APK ou assinatura Android real.
+
 ## Bloqueio Android e retomada
 
 SDK, templates Android e JDK completo ausentes. O JRE do host não equivale ao JDK fixado. Download oficial pelo setup retornou Operation not permitted; tentativa com permissão adicional foi interrompida e não demonstrou instalação. O comando real de exportação Godot executou e falhou por essas dependências; **nenhum APK foi produzido**, sem hash fictício.
+
+Na retentativa desta correção, a criação de socket IPv4 pelo processo foi negada com EPERM, antes de proxy/DNS/TLS. O acesso do conector ao GitHub e os hosts permitidos na configuração não provam que esse processo pode baixar arquivos. Setup e exportação reais foram repetidos, novamente BLOCKED. Resultado estruturado schema 2 tem attempt_id/horários e motivo atual; resultado anterior arquivado.
+
+[Receita de CI manual](reports/ci/README.md) fornecida em reports/ci, sem ativação/dispatch. Limites de Actions/billing/armazenamento não foram confirmados; a ferramenta não admite consultar actions/permissions, o que não é uma resposta de permissão negada do GitHub. Proprietário deve conferir condições e aprovar separadamente eventual configuração no branch padrão. Não contornar o sandbox, não usar force, não iniciar CI pago/maior ou mudar lock automaticamente.
 
 Em ambiente com rede permitida para fontes oficiais e pelo menos 4 GB livres, usar o [guia de execução](scripts/README.md): scripts/setup.sh --android → scripts/verify.sh → scripts/export_android.sh. Lock registra Godot/templates 4.6.3, JDK 21.0.9+10, command-line tools 15859902, Platform-Tools 37.0.1, Platform 36, Build-Tools 36.1.0, minSdk 24/targetSdk 36. Exportação padrão, sem Gradle/NDK/CMake. Não trocar versões silenciosamente nem substituir Android por outro alvo.
 

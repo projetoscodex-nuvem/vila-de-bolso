@@ -14,17 +14,21 @@ Menu → reino vazio → região1 → voltar. Cinco regiões bloqueadas. Dados/I
 
 Save JSON mínimo versionado para visão/câmeras, com último backup válido; bloqueio de escrita sobre save inválido/desconhecido. Dedos, gesto e seleção não são persistidos. Scripts de setup/verificação/exportação e lock com URLs/hashes oficiais. Arte e ícone geométricos provisórios, avisos de licença da engine acessíveis em Créditos.
 
-Arquivos centrais: project.godot, scenes/, core/, data/world.json, presentation/, tests/test_suite.gd, scripts/, export_presets.cfg e licenses/. Evidências e limites em [reports/M0_1_REPORT.md](reports/M0_1_REPORT.md). ZIP, manifesto, PNGs e relatório histórico de importação preservados; sua antiga restrição de árvore documental não se aplica a M0.1.
+Arquivos centrais: project.godot, scenes/, core/, data/world.json, presentation/, tests/, scripts/, export_presets.cfg e licenses/. Evidências e limites em [reports/M0_1_REPORT.md](reports/M0_1_REPORT.md). ZIP, manifesto, PNGs e relatório histórico de importação preservados; sua antiga restrição de árvore documental não se aplica a M0.1.
+
+Correção da revisão do commit 653e9cd: emulação touch→mouse habilitada para a GUI; o controlador de mapa ignora somente mouse DEVICE_ID_EMULATION, sem duplicar contatos e preservando mouse físico. Novo teste de entrada usa Input.parse_input_event para botões/gestos, sem app._input direto ou emissão de pressed. Exportador grava resultado fresco por tentativa, inclusive em timeout/erros de manifesto/assinatura, arquivando resultados/logs/APKs anteriores e isolando artefatos não verificados.
 
 ## TESTE
 
 PASS: 157 verificações headless/sintéticas de dados/IDs, regiões bloqueadas, coordenadas, recorte inicial, pan/zoom/limites/foco, cancelamento, toque iniciado na HUD, fluxo da cena, save/backup/corrupção/erro de I/O e retomada com câmeras independentes. PASS: cena principal por 15 frames headless, proveniência/links/parâmetros, sintaxe Python/shell e git diff --check, conforme relatório.
 
-PASS: sete testes Python do instalador, sem downloads reais, cobrindo extração seletiva, caminhos inseguros/symlink, hash inválido e reutilização de cache verificado.
+Os 157 checks acima são testes de componentes/cena que usam chamadas diretas e sinais; sua aprovação anterior não comprovava acessibilidade dos botões por toque. A falha do menu foi reproduzida pelo novo teste do fluxo Input e corrigida. Agora PASS: 44 verificações adicionais pela entrada Godot (menu, Entrar, Retomar, zoom, retorno, HUD, tap/pan/pinça e mouse físico) e 25 testes Python: sete do instalador e 18 de exportação com fixtures isoladas, incluindo resultado anterior PASS e falhas de assinatura/manifesto/timeout/dependências. Fixtures não são APK real.
 
 Importação de recursos/scripts sem erro de parse; o editor emite os diagnósticos específicos de listeners TCP indisponíveis no sandbox, classificados separadamente no verificador e preservados no relatório. Engine 4.6.3 disponível e executada; isso não comprova setup reutilizável ou Android.
 
 BLOCKED: download da toolchain Android negado com Operation not permitted no sandbox; tentativa com permissão adicional interrompida sem evidência de instalação. Exportação debug executada pela Godot, exit 1, com templates/JDK/SDK ausentes. Script registra status BLOCKED e exit 2. Nenhum APK ou SHA-256 de APK disponível.
+
+Retentativa desta correção: socket(AF_INET) retornou EPERM no processo antes de proxy/DNS/TLS; hosts oficiais constam na configuração, mas isso não concede rede ao sandbox. Setup real retornou errno 1 e exportação real foi novamente bloqueada; export_result.json agora tem schema 2/attempt_id/horários/erro atual, sem PASS antigo ou hash de APK. [Alternativa CI manual](reports/ci/README.md) entregue inativa, sem dispatch: permissões/limites de Actions/billing/armazenamento não foram confirmados. A consulta actions/permissions não é admitida pelo conector; não interpretar isso como recusa do GitHub ou causa do bloqueio de socket.
 
 NOT_RUN: instalação, toque/pinça físicos, legibilidade/áreas seguras, comportamento offline real, desempenho, bateria/aquecimento, diversão e aceite de M0.1 no aparelho. Testes de pontuação/ofertas/desfazer não pertencem a este marco e não foram executados.
 

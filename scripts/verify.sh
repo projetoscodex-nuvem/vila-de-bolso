@@ -32,6 +32,15 @@ text=Path('build/tests.log').read_text()
 if 'ERROR:' in text or not re.search(r'M0\.1 checks=\d+ failures=0',text):
     raise SystemExit('FAIL: suíte headless; Godot pode sair com zero mesmo após erro de parse')
 PY
+"$GODOT_BIN" --headless --path . --script tests/test_input_pipeline.gd > build/input_pipeline.log 2>&1
+cat build/input_pipeline.log
+python3 - <<'PY'
+from pathlib import Path
+import re
+text=Path('build/input_pipeline.log').read_text()
+if 'ERROR:' in text or not re.search(r'M0\.1 input_pipeline checks=\d+ failures=0',text):
+    raise SystemExit('FAIL: integração Input/GUI/gestos; consulte build/input_pipeline.log')
+PY
 "$GODOT_BIN" --headless --path . --quit-after 15 > build/smoke.log 2>&1
 python3 - <<'PY'
 from pathlib import Path

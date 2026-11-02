@@ -68,3 +68,12 @@ Origem: proprietário aceitou a importação/revisão no commit `0733005bb2b8363
 | D028 | BASELINE | Fundação sem gameplay: terreno geométrico provisório independente dos PNGs legados, IDs de seis regiões e somente region_1 liberada, câmera/modelo de gestos separados da apresentação e envelope JSON mínimo versionado. Salvar apenas visão/câmeras, limpar contatos/seleção em navegação, cancelamento e pausa; backup do último save válido e bloqueio de escrita sobre original inválido/desconhecido. Tests sintéticos/headless não equivalem a gesto físico |
 
 D026 permanece PENDING para M1/M2, sem nova regra de desfazer. Os parâmetros futuros de 60 colocações/62 ofertas foram mantidos em dados, sem consumo ou implementação de partida neste marco. Evidências e bloqueios em [reports/M0_1_REPORT.md](reports/M0_1_REPORT.md).
+
+## Correção da revisão M0.1 — 02/11/2026 (UTC)
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D029 | BASELINE / CONFIRMADO | Usar emulação touch→mouse da Godot para a GUI e filtrar somente DEVICE_ID_EMULATION no controlador do mapa, que processa os ScreenTouch/ScreenDrag originais. Evita duplicação de contatos e mantém mouse físico. Regressões pela fila Input substituem a inferência anterior de acessibilidade da GUI a partir de chamadas diretas/sinais |
+| D030 | BASELINE | Resultado de exportação por tentativa, com invalidação inicial de PASS anterior, finalização em falhas/timeout/validação/assinatura e histórico identificado; não tratar fixture de teste ou APK não verificado como artefato instalável. CI manual preparado como receita inativa; permissões/limites devem ser confirmados antes de ativar/consumir recursos |
+
+D026 e todas as regras de gameplay permanecem inalteradas. Não houve merge do PR #2, release, publicação ou início de M1 nesta correção.

@@ -1,5 +1,14 @@
 # Histórico
 
+## Correções da revisão M0.1 — 02/11/2026 (UTC)
+
+- Reproduzida a falha de toque na GUI via Input.parse_input_event; habilitada emulação touch→mouse para botões e ignorado somente mouse DEVICE_ID_EMULATION nos gestos, preservando mouse físico e evitando contato duplicado/pinça com um dedo.
+- Adicionadas 44 verificações pelo fluxo Input/GUI da Godot, sem app._input direto ou emissão de pressed; 157 checks anteriores mantidos como componentes/cena, sem alegar teste físico.
+- Exportação com resultado novo por tentativa desde RUNNING até status final, inclusive falhas de dependência/exportação/timeout/manifesto/CRC/assinatura. Resultado/log/APK anteriores arquivados por attempt_id; saída não verificada separada do APK atual.
+- Adicionados 18 testes de exportação com fixtures isoladas e runner simulado, totalizando 25 testes Python; nenhuma fixture é APK real.
+- Diagnosticado EPERM na criação de socket do processo antes de proxy/DNS/TLS; setup e exportação Android reais repetidos e BLOCKED. Receita CI manual inativa entregue, sem executar ou presumir permissões/limites da conta.
+- Atualizados relatório, evidências e continuidade na mesma branch/PR #2, sem merge, release, publicação, M1 ou resolução de D026. Versões/hashes e parâmetros v0.2 preservados; testes físicos NOT_RUN.
+
 ## M0.1 — fundação em revisão, Android BLOCKED — 02/11/2026 (UTC)
 
 - Importação/revisão documental aceita pelo proprietário; PR #1 integrado com merge preservando commits em 2d80844b8bc4a147bf428ade00448b5f6d2f02ba. Implementação em branch separada feat/m0-1-foundation.

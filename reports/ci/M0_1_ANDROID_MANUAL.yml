@@ -1,0 +1,70 @@
+# Inactive recipe: not installed under .github/workflows and not dispatched.
+# Activating on the default branch needs a separately reviewed configuration change.
+name: Vila M0.1 Android manual
+"on":
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: 'Full 40-character SHA reviewed in PR 2 (no branch names)'
+        type: string
+        required: true
+      account_limits_verified:
+        description: 'Owner verified Actions permission, billing/usage and artifact storage limits'
+        type: boolean
+        required: true
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: vila-m01-android-manual
+  cancel-in-progress: false
+jobs:
+  debug:
+    if: ${{ inputs.account_limits_verified }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Validate reviewed SHA
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          python3 - <<'PY'
+          import os, re
+          assert re.fullmatch(r'[0-9a-f]{40}', os.environ['SOURCE_COMMIT']), 'Use the reviewed full SHA'
+          PY
+      - name: Checkout reviewed source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # official v4, checked via GitHub API
+        with:
+          ref: ${{ inputs.source_commit }}
+          fetch-depth: 0 # Provenance checks need the original documentation commit.
+          persist-credentials: false
+      - name: Install pinned toolchain with official hash checks
+        run: |
+          mkdir -p build
+          scripts/setup.sh --android > build/setup_ci.log 2>&1
+      - name: Verify components, Input pipeline and exporter fixtures
+        run: scripts/verify.sh > build/verify_ci.log 2>&1
+      - name: Export debug and record actual APK checksum
+        run: |
+          scripts/export_android.sh > build/export_ci.log 2>&1
+          sha256sum build/vila-de-bolso-m0.1-debug.apk > build/vila-de-bolso-m0.1-debug.apk.sha256
+      - name: Upload verified debug artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # official v4, checked via GitHub API
+        with:
+          name: vila-m01-debug-${{ github.run_id }}
+          retention-days: 3
+          if-no-files-found: error
+          path: |
+            build/vila-de-bolso-m0.1-debug.apk
+            build/vila-de-bolso-m0.1-debug.apk.sha256
+            build/export_result.json
+      - name: Upload diagnostics even if setup/export fails
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: vila-m01-diagnostics-${{ github.run_id }}
+          retention-days: 3
+          if-no-files-found: ignore
+          path: |
+            build/*.log
+            build/export_result.json

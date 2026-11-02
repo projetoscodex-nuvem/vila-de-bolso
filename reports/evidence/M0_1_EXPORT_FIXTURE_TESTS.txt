@@ -1,0 +1,32 @@
+test_corrupt_zip_crc (test_export_android.ExportAttemptFixtures.test_corrupt_zip_crc) ... ok
+test_export_error (test_export_android.ExportAttemptFixtures.test_export_error) ... ok
+test_export_timeout_archives_partial_file (test_export_android.ExportAttemptFixtures.test_export_timeout_archives_partial_file) ... ok
+test_interruption_does_not_leave_pass (test_export_android.ExportAttemptFixtures.test_interruption_does_not_leave_pass) ... ok
+test_invalid_lock (test_export_android.ExportAttemptFixtures.test_invalid_lock) ... ok
+test_invalid_zip (test_export_android.ExportAttemptFixtures.test_invalid_zip) ... ok
+test_keytool_failure (test_export_android.ExportAttemptFixtures.test_keytool_failure) ... ok
+test_missing_artifact (test_export_android.ExportAttemptFixtures.test_missing_artifact) ... ok
+test_missing_dependency (test_export_android.ExportAttemptFixtures.test_missing_dependency) ... ok
+test_missing_engine (test_export_android.ExportAttemptFixtures.test_missing_engine) ... ok
+test_missing_manifest (test_export_android.ExportAttemptFixtures.test_missing_manifest) ... ok
+test_repeated_attempts_keep_separate_history (test_export_android.ExportAttemptFixtures.test_repeated_attempts_keep_separate_history) ... ok
+test_signature_exception_also_finalizes (test_export_android.ExportAttemptFixtures.test_signature_exception_also_finalizes) ... ok
+test_signature_failure_replaces_old_pass_and_preserves_artifacts (test_export_android.ExportAttemptFixtures.test_signature_failure_replaces_old_pass_and_preserves_artifacts) ... ok
+test_signature_timeout_also_finalizes (test_export_android.ExportAttemptFixtures.test_signature_timeout_also_finalizes) ... ok
+test_success_fixture_only_after_signature_verification (test_export_android.ExportAttemptFixtures.test_success_fixture_only_after_signature_verification) ... ok
+test_version_timeout (test_export_android.ExportAttemptFixtures.test_version_timeout) ... ok
+test_wrong_engine_version (test_export_android.ExportAttemptFixtures.test_wrong_engine_version) ... ok
+test_absolute_path_rejected (test_setup.SafePackages.test_absolute_path_rejected) ... ok
+test_bad_hash_never_becomes_installable_archive (test_setup.SafePackages.test_bad_hash_never_becomes_installable_archive) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_hash_and_cache_reuse (test_setup.SafePackages.test_hash_and_cache_reuse) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_only_selected_templates_extracted (test_setup.SafePackages.test_only_selected_templates_extracted) ... ok
+test_regular_file (test_setup.SafePackages.test_regular_file) ... ok
+test_symlink_rejected (test_setup.SafePackages.test_symlink_rejected) ... ok
+test_traversal_cannot_write_outside (test_setup.SafePackages.test_traversal_cannot_write_outside) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.033s
+
+OK

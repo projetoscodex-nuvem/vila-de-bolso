@@ -1,4 +1,6 @@
 extends SceneTree
+# Component/scene checks, including direct calls and button signals. These are
+# NOT the touch accessibility proof; test_input_pipeline.gd exercises Godot Input.
 
 const WorldData = preload("res://core/world_data.gd")
 const Camera = preload("res://core/map_camera.gd")

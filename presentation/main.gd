@@ -292,6 +292,12 @@ func _overview() -> void:
 	_persist()
 
 func _input(event: InputEvent) -> void:
+	# Godot's GUI needs touch-to-mouse emulation for Button controls. These
+	# emulated mouse events must reach the GUI, but never become a second map
+	# contact alongside the original ScreenTouch/ScreenDrag. Device 0 (physical
+	# mouse) continues through the mouse navigation path below.
+	if event is InputEventMouse and event.device == InputEvent.DEVICE_ID_EMULATION:
+		return
 	if view == "menu" or credits.visible:
 		return
 	if event.is_action_pressed("ui_cancel"):
