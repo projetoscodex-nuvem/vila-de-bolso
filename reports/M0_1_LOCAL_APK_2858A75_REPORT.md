@@ -75,3 +75,8 @@ OWNER_REPORTED: links internos de APK e ZIP falharam no aplicativo Android ("Nã
 O novo cálculo de integridade confirmou56.448.943 bytes e SHA-2566a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73. Nenhum byte do APK/ZIP foi alterado para esta correção documental. A sessão não dispõe de ferramenta nativa para anexar arquivos; as ferramentas de repositório conectadas não oferecem upload de binários. Não usar uma URL/caminho inventado ou um serviço público para contornar os limites de publicação. A proposta Dropbox permite buscar transferência privada após conexão e confirmação de suas ferramentas; sugestão não equivale a instalação, conexão ou upload.
 
 Verificações desta atualização: integridade/tamanho locais, links/proveniência/parâmetros via scripts/check_documents.py e git diff --check. Sem mudança em código/runtime, logo os testes do APK fonte2858a75 permanecem históricos, sem alegar nova execução Android ou aprovação.
+
+
+## Canal escolhido posteriormente
+
+O proprietário autorizou repositório privado antes de release de teste, substituindo a proposta Dropbox. A tentativa administrativa foi bloqueada no proxy; a privacidade depois foi alterada manualmente e confirmada, mas a tentativa de release também foi bloqueada; nada foi publicado. [Plano atual, diagnóstico e sequência já autorizada](M0_1_PRIVATE_RELEASE_STATUS.md). O APK/hash não mudaram e o teste físico continua pendente.

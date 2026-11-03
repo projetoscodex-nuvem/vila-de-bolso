@@ -98,3 +98,12 @@ OWNER_REPORTED: inicialização visual do APK60f2491 FAIL; demais físicos NOT_R
 
 
 Continuidade de D032 —03/11/2026 UTC: o desenvolvedor concluiu aqui a geração do APK fonte2858a75, incluindo gate real dos assets/cena/menu, assinatura e manifesto. A restrição EPERM padrão foi distinguida da permissão suportada por comando; cache Android local e proxy JVM permitiram instalar as ferramentas fixadas, sem mudar HOME/política global/CI. Não é tarefa do proprietário/ChatGPT Work compilar a entrega. Novo físico NOT_RUN; M0.1 sem aceite e D026 inalterada. A chave debug nova exige aviso de incompatibilidade de atualização/perda de save em eventual desinstalação. [Evidências e roteiro](reports/M0_1_LOCAL_APK_2858A75_REPORT.md).
+
+
+## Canal de entrega privado —03/11/2026 UTC
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D033 | OWNER_CONFIRMED / EXECUÇÃO BLOCKED | Tornar o repositório privado antes de criar pré-release de teste com o ZIP do APK2858a75. Exceção explícita ao veto anterior de release/publicação, somente para entrega privada; sem merge/CI/M1 ou alteração de D026. Privacidade efetivada manualmente pelo proprietário e confirmada por private=true; release não criada, pois proxy nega api.github.com/uploads.github.com. Confirmar private=true e validar asset baixado antes de declarar entregue |
+
+[Plano e diagnóstico](reports/M0_1_PRIVATE_RELEASE_STATUS.md). A conta conectada tem admin, mas as ferramentas não oferecem essas operações e a CLI está bloqueada na rede; não confundir ambos nem solicitar token no chat.

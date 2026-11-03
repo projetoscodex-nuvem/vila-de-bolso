@@ -1,5 +1,10 @@
 # Histórico
 
+## Canal privado GitHub Releases autorizado —03/11/2026 UTC
+
+- Proprietário autorizou tornar o repositório privado e depois enviar o ZIP em release de teste. Substitui o veto anterior somente nesse escopo; sem CI/merge/M1/D026.
+- Comando de visibilidade e probes públicos confirmaram túnel403 para api.github.com/uploads.github.com. Depois o proprietário alterou manualmente: PRIVATE confirmado; criação de rascunho também retornou POST Forbidden, sem release/upload. Plano/notas/checksum preparados, binário inalterado. Não exigir Dropbox nem nova aprovação para ações já autorizadas; falta acesso técnico do ambiente.
+
 ## Entrega do arquivo bloqueada —03/11/2026 UTC
 
 - Proprietário reportou erro ao abrir os links internos de APK/ZIP; não eram anexos com download confirmado. Estado corrigido para APK_VERIFIED_DELIVERY_BLOCKED, sem alterar a validação do binário.

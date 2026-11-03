@@ -44,3 +44,11 @@ Documentos reduzem perda de contexto; não garantem memória perfeita nem impede
 
 
 Atualização de entrega (03/11/2026 UTC): OWNER_REPORTED: links internos de APK e ZIP falharam no aplicativo Android ("Não foi possível abrir o arquivo"). Arquivos locais conferidos, com o mesmo SHA-256; isso é falha de entrega, não um novo teste de execução do jogo. Não há anexo binário confirmado nesta sessão. Um canal privado de arquivos precisa ser conectado; Dropbox foi sugerido e ainda não está conectado. Não repetir os caminhos internos como links de download, não recompilar o mesmo APK para corrigir transporte e não publicar release/CI por inferência. Fonte2858a75 e novo Android físico NOT_RUN preservados.
+
+
+## Canal de entrega autorizado —03/11/2026 UTC
+
+Proprietário escolheu GitHub Releases após tornar o repositório privado; Dropbox deixou de ser necessário. Autorização já concedida para essa sequência. Tentativa CLI bloqueada no proxy (api.github.com/ uploads.github.com: túnel403); naquela tentativa o repositório continuava PUBLIC; após mudança manual do proprietário, PRIVATE foi confirmado, ainda sem release/upload. Falta liberar esses destinos na rede do ambiente e então verificar autenticação CLI. ZIP/checksum/notas preparados; nunca enviar binário antes de confirmar private=true. [Plano e evidências](reports/M0_1_PRIVATE_RELEASE_STATUS.md).
+
+
+Privacidade confirmada após ação manual do proprietário: private=true/visibility=private. A tentativa subsequente de criar rascunho de release retornou POST Forbidden no proxy; consulta autenticada confirma zero releases. Falta somente acesso técnico da CLI à API/uploads (e validação de sua autenticação após liberar a rede), não nova aprovação de publicação privada. Fonte/binário2858a75 inalterados; físico NOT_RUN.
