@@ -1,5 +1,7 @@
 # M0.1 — Repositório privado e release de teste: preparação/bloqueio
 
+**Estado vigente posterior:** repo voltou a PUBLIC por ação do proprietário; há retorno de outra execução com rede200/user401 sem ZIP. Usar [retomada atual](M0_1_DELIVERY_RESUME.md) para evitar devolver a tarefa à execução original bloqueada. As confirmações PRIVATE e instruções abaixo descrevem seus snapshots históricos.
+
 03/11/2026 UTC. O proprietário autorizou tornar projetoscodex-nuvem/vila-de-bolso privado e, somente depois, enviar o ZIP em release. Essa autorização substitui o veto anterior a releases para esta distribuição privada de testes. Sem merge/CI/M1 e sem alteração de D026.
 
 ## Estado confirmado

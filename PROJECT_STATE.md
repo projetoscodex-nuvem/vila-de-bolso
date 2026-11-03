@@ -2,6 +2,8 @@
 
 03/11/2026 (UTC). Baseline v0.2. **M0_1_APK_VERIFIED_DELIVERY_BLOCKED — APK GERADO / ENTREGA NÃO CONCLUÍDA**.
 
+**Atualização vigente:** [retomada da entrega em uma única execução](reports/M0_1_DELIVERY_RESUME.md). Última API confirma repositório PUBLIC após reversão manual do proprietário. Nova sessão reportada tem rede, mas falta autenticação e ZIP; original preserva ZIP, porém continua sem rede de API. Resolver login na sessão com rede e gerar novamente do fonte corrigido2858a75 se não houver acesso ao artefato, registrando novo hash. Não devolver a tarefa indefinidamente ao executor original. Fatos históricos abaixo mantidos com seus snapshots.
+
 ## DECISÃO
 
 Corrigir somente inicialização/empacotamento M0.1, na branch feat/m0-1-foundation / PR #2 draft/sem merge. Cabeça inicial conferida em 0c4296c; main documental 2d80844 permanece sem implementação. Godot 4.6.3/GDScript/Compatibility, Android retrato/offline, Gradle desativado, SDKs herdados, ETC2/ASTC ativo e lock 24/36 preservados. Fase 20 × 20, reino 40 × 60, 60 colocações/62 ofertas futuras; sem M1 ou alteração de D026.

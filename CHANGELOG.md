@@ -1,5 +1,11 @@
 # Histórico
 
+## Retomada sem alternar execuções —03/11/2026
+
+- ZIP original preservado e hash conferido; API original ainda Forbidden. OWNER_REPORTED de outra sessão:API200, /user401/gh sem login, ZIP ausente. Registrar fronteiras sem misturar resultados.
+- Estado atual do repositório confirmado PUBLIC após reversão manual pelo proprietário; PRIVATE anterior é histórico. Entrega privada deve cumprir sua condição antes de publicação.
+- Handoff reescrito com estado vigente e autorização de gerar novamente o APK corrigido2858a75 na sessão que reúne rede/login, se não houver acesso ao ZIP. Registrar hash/assinatura novos e nunca usar o APK defeituoso60f2491. Sem reconstrução nesta atualização, release/upload/CI/merge/M1 ou alteração de D026.
+
 ## Ambiente publicado pelo proprietário; execução ainda antiga —03/11/2026
 
 - OWNER_REPORTED confirmou publicação; screenshots têm os domínios corretos. Runtime segue revisão4 sem hosts e API Forbidden. Registrar divergência entre editor/publicação e execução, sem pedir repetição da configuração ou presumir causa completa.

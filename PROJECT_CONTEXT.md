@@ -52,3 +52,6 @@ Proprietário escolheu GitHub Releases após tornar o repositório privado; Drop
 
 
 Privacidade confirmada após ação manual do proprietário: private=true/visibility=private. A tentativa subsequente de criar rascunho de release retornou POST Forbidden no proxy; consulta autenticada confirma zero releases. Falta somente acesso técnico da CLI à API/uploads (e validação de sua autenticação após liberar a rede), não nova aprovação de publicação privada. Fonte/binário2858a75 inalterados; físico NOT_RUN.
+
+
+Estado vigente de acesso/entrega (03/11/2026, America/Sao_Paulo): repo PUBLIC confirmado após o proprietário reverter para teste; referência PRIVATE anterior é histórica. Execução original guarda ZIP mas API Forbidden; outra execução reportada tem API200/user401 sem ZIP. [Plano atual](reports/M0_1_DELIVERY_RESUME.md): autenticar sessão com rede, recuperar ou gerar novamente do fonte corrigido2858a75 com novo hash/origem, e concluir upload/verificação nessa mesma sessão. Sem repetir configuração já publicada ou pedir token no chat; sem M1/CI/merge/D026.

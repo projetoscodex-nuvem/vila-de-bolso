@@ -80,3 +80,6 @@ Verificações desta atualização: integridade/tamanho locais, links/proveniên
 ## Canal escolhido posteriormente
 
 O proprietário autorizou repositório privado antes de release de teste, substituindo a proposta Dropbox. A tentativa administrativa foi bloqueada no proxy; a privacidade depois foi alterada manualmente e confirmada, mas a tentativa de release também foi bloqueada; nada foi publicado. [Plano atual, diagnóstico e sequência já autorizada](M0_1_PRIVATE_RELEASE_STATUS.md). O APK/hash não mudaram e o teste físico continua pendente.
+
+
+Estado vigente de distribuição e retorno de outra sessão: [plano de retomada](M0_1_DELIVERY_RESUME.md). Repositório PUBLIC confirmado após reversão manual; confirmações PRIVATE anteriores são históricas. Binário original íntegro aqui, sem upload; se outra sessão precisar gerar novo APK corrigido, deve registrar hash/assinatura reais sem herdar os deste artefato.
