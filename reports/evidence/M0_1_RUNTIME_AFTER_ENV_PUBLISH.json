@@ -1,0 +1,18 @@
+{
+  "classification": "OBSERVED_RUNTIME_AND_OWNER_REPORTED_EDITOR_STATE",
+  "owner_reported_environment_publication_complete": true,
+  "runtime_spec_revision": "4",
+  "runtime_observed_spec_revision": "4",
+  "observations_current": true,
+  "network_state": "enforced",
+  "custom_allowed_hosts": [],
+  "api_github_com_allowed": false,
+  "uploads_github_com_allowed": false,
+  "actual_gh_api_user_result": "Get https://api.github.com/user: Forbidden",
+  "interpretation": "Edited/published environment reported by owner is not reflected in this bound runtime; precise platform cause not confirmed",
+  "zip_preserved": true,
+  "zip_sha256": "b34eb6f00260230e3b584c2f9b7867bb4503f4d3dcd4e5e5942ef1a871050064",
+  "next_step": "New execution selecting published vila-de-bolso environment, then verify applied policy and authentication before upload; do not ask owner to repeat saving/publishing",
+  "new_release_created": false,
+  "physical_android": "NOT_RUN (new APK)"
+}

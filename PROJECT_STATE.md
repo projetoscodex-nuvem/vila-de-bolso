@@ -46,3 +46,8 @@ Proprietário escolheu GitHub Releases após tornar o repositório privado; Drop
 
 
 Privacidade confirmada após ação manual do proprietário: private=true/visibility=private. A tentativa subsequente de criar rascunho de release retornou POST Forbidden no proxy; consulta autenticada confirma zero releases. Falta somente acesso técnico da CLI à API/uploads (e validação de sua autenticação após liberar a rede), não nova aprovação de publicação privada. Fonte/binário2858a75 inalterados; físico NOT_RUN.
+
+
+## Publicação do ambiente confirmada pelo proprietário
+
+OWNER_REPORTED confirmou que salvou e publicou os domínios corretamente; screenshots mostram api.github.com e uploads.github.com. Mesmo depois, ambiente desta conversa continua na revisão4 aplicada/enforced, custom_allowed_hosts=[] e gh api user retorna Forbidden. Não pedir ao proprietário para repetir publicação/seleção/privatização: a alteração publicada não está refletida na execução vinculada. O mecanismo exato da plataforma não foi diagnosticado, e as ferramentas aqui não editam/revinculam a instância. Próximo passo: nova execução selecionando o ambiente publicado; conferir política aplicada/autenticação e retomar release privada já autorizada. Não excluir o ambiente/conversa atual que preserva o ZIP; se a nova execução não encontrar os artefatos, o desenvolvedor deve recuperar/regerar a partir do fonte2858a75 com hashes/versões fixados e registrar a nova origem/hash, sem fingir reutilização.

@@ -1,5 +1,10 @@
 # Histórico
 
+## Ambiente publicado pelo proprietário; execução ainda antiga —03/11/2026
+
+- OWNER_REPORTED confirmou publicação; screenshots têm os domínios corretos. Runtime segue revisão4 sem hosts e API Forbidden. Registrar divergência entre editor/publicação e execução, sem pedir repetição da configuração ou presumir causa completa.
+- ZIP original preservado e hash conferido; nova execução no ambiente publicado deve retomar o upload privado já autorizado. Código, APK, versão, assinatura e D026 inalterados; sem release/CI/merge/M1 ou novo teste físico.
+
 ## Canal privado GitHub Releases autorizado —03/11/2026 UTC
 
 - Proprietário autorizou tornar o repositório privado e depois enviar o ZIP em release de teste. Substitui o veto anterior somente nesse escopo; sem CI/merge/M1/D026.

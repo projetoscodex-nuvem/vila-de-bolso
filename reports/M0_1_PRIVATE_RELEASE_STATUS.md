@@ -50,3 +50,10 @@ gh release create m0.1-android-test-2858a75 build/Vila_de_Bolso_M0_1_2858a75_And
 ```
 
 Resultado: `Post "https://api.github.com/repos/projetoscodex-nuvem/vila-de-bolso/releases": Forbidden`. Consulta posterior pela integração: zero releases. Logo nenhum rascunho/upload/link foi criado. Falta habilitar api.github.com e uploads.github.com na política aplicada do ambiente, mantendo o proxy/CA; usuário recebeu os dois domínios exatos. Conexão GitHub App com admin continua funcional para leitura/conteúdo; não confundir com autenticação/rede da CLI. Assim que houver acesso: criar rascunho privado, enviar/verificar assets baixados, então publicar como pré-release privada, sem merge ou CI.
+
+
+## Após confirmação de publicação do ambiente
+
+OWNER_REPORTED confirmou que salvou e publicou os domínios corretamente; screenshots mostram api.github.com e uploads.github.com. Mesmo depois, ambiente desta conversa continua na revisão4 aplicada/enforced, custom_allowed_hosts=[] e gh api user retorna Forbidden. Não pedir ao proprietário para repetir publicação/seleção/privatização: a alteração publicada não está refletida na execução vinculada. O mecanismo exato da plataforma não foi diagnosticado, e as ferramentas aqui não editam/revinculam a instância. Próximo passo: nova execução selecionando o ambiente publicado; conferir política aplicada/autenticação e retomar release privada já autorizada. Não excluir o ambiente/conversa atual que preserva o ZIP; se a nova execução não encontrar os artefatos, o desenvolvedor deve recuperar/regerar a partir do fonte2858a75 com hashes/versões fixados e registrar a nova origem/hash, sem fingir reutilização.
+
+[Evidência resumida e integridade preservada](evidence/M0_1_RUNTIME_AFTER_ENV_PUBLISH.json). A seleção github-1439079463 corresponde ao ID real do Vila de Bolso, e a integração autenticada lê o repositório privado com admin. Nome genérico não demonstra vínculo quebrado. O bloqueio observado é anterior à autenticação GitHub da CLI. Metadados de diagnóstico retido consultados: nenhum registro disponível; isso não estabelece saúde nem altera o diagnóstico dos probes.
