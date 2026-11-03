@@ -1,0 +1,126 @@
+{
+  "classification": "REAL_GODOT_RESOURCE_EXPORT_AND_HEADLESS_RUNTIME",
+  "source_snapshot": "working tree; final tested commit reconciled in PR",
+  "godot_version": "4.6.3.stable.official.7d41c59c4",
+  "android_physical": "NOT_RUN",
+  "apk_generated": false,
+  "apk_wrapper_and_negative_mutations": "SIMULATED_FIXTURES",
+  "cases": [
+    {
+      "case": "previous_scenes_filter_missing_dependencies",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "REAL_GODOT_RESOURCE_EXPORT"
+    },
+    {
+      "case": "exported_zip_scene_menu",
+      "expected_runtime": "PASS",
+      "result": "PASS",
+      "classification": "REAL_GODOT_RESOURCE_EXPORT"
+    },
+    {
+      "case": "exported_native_pck_scene_menu",
+      "expected_runtime": "PASS",
+      "result": "PASS",
+      "classification": "REAL_GODOT_RESOURCE_EXPORT"
+    },
+    {
+      "case": "apk_shaped_fixture_real_exported_assets",
+      "expected_runtime": "PASS",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_core_world_data",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_core_map_camera",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_core_gesture_router",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_core_save_store",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_presentation_map_view",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "broken_compiled_remap",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "corrupt_compiled_script",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_binary_scene",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_exported_project_settings",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "missing_world_data",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    },
+    {
+      "case": "excluded_test_resource",
+      "expected_runtime": "FAIL",
+      "result": "PASS",
+      "classification": "SIMULATED_FIXTURE"
+    }
+  ],
+  "exported_zip_members": [
+    ".godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn",
+    ".godot/global_script_class_cache.cfg",
+    ".godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex",
+    ".godot/uid_cache.bin",
+    "assets/icon.svg",
+    "assets/icon.svg.import",
+    "core/gesture_router.gd.remap",
+    "core/gesture_router.gdc",
+    "core/map_camera.gd.remap",
+    "core/map_camera.gdc",
+    "core/save_store.gd.remap",
+    "core/save_store.gdc",
+    "core/world_data.gd.remap",
+    "core/world_data.gdc",
+    "data/world.json",
+    "licenses/GODOT_LICENSE.txt",
+    "presentation/main.gd.remap",
+    "presentation/main.gdc",
+    "presentation/map_view.gd.remap",
+    "presentation/map_view.gdc",
+    "project.binary",
+    "scenes/main.tscn.remap"
+  ],
+  "zip_sha256": "d35992be47908dcb3dc6538662ba5abb80e160d107c223e8acfa1cbef5726790",
+  "pck_sha256": "68023862fae443990f32666b794fa08dc5332cae70151923f415bdce16a53e66"
+}

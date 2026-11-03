@@ -4,13 +4,15 @@ Base documental v0.2 — 29/10/2026, America/Sao_Paulo.
 
 Puzzle estratégico 2D, offline, vertical para Android. Cada fase constrói uma vila; o estado real da vila concluída passa a compor uma região fixa do reino. O jogador vê seu reino crescer sem perder as construções anteriores.
 
-**Este repositório contém planejamento e referências, não o jogo implementado.** Importação documental v0.2 realizada em 31/10/2026, sem iniciar M0.1. Repositório confirmado: [projetoscodex-nuvem/vila-de-bolso](https://github.com/projetoscodex-nuvem/vila-de-bolso), público na auditoria. Veja [PROJECT_STATE.md](PROJECT_STATE.md) e o [relatório de importação](reports/IMPORT_V0_2_REPORT.md) para evidências e limites; não há APK ou teste Android nesta entrega.
+**Fundação M0.1 em revisão: projeto Godot/GDScript com navegação e seleção, sem partida completa.** A documentação v0.2 foi aceita pelo proprietário e integrada pelo [PR #1](https://github.com/projetoscodex-nuvem/vila-de-bolso/pull/1), preservando os commits, em `2d80844b8bc4a147bf428ade00448b5f6d2f02ba`. Implementação isolada na branch `feat/m0-1-foundation`. O proprietário instalou o APK `60f2491` e relatou **FAIL na inicialização visual: tela clara sem menu**. Dependências ausentes foram reproduzidas e corrigidas; **novo APK real gerado aqui do fonte 2858a75**, com runtime isolado/assinatura/manifesto conferidos. Entrega do arquivo bloqueada: os links internos falharam no aplicativo; a execução original ainda tem bloqueio de API; outra sessão reportou rede disponível sem login/ZIP. O repositório voltou a público por alteração do proprietário; veja a [retomada atual](reports/M0_1_DELIVERY_RESUME.md) para concluir autenticação, geração e upload em uma única execução. Novo teste físico pendente; assinatura debug diferente da antiga. Veja o [novo APK e roteiro](reports/M0_1_LOCAL_APK_2858A75_REPORT.md), a [correção de inicialização](reports/M0_1_STARTUP_FIX_REPORT.md) e o [build histórico](reports/M0_1_ANDROID_BUILD_REPORT.md). Veja [PROJECT_STATE.md](PROJECT_STATE.md) e o [relatório M0.1](reports/M0_1_REPORT.md).
+
+**Entrega vigente — 03/11/2026:** novo APK reconstruído do fonte2858a75 e disponibilizado em ZIP para download na conversa. [Origem, hashes e validação](reports/M0_1_WORK_APK_20261103_REPORT.md). Android físico ainda NOT_RUN; M0.1 sem aceite. Os bloqueios de transferência descritos acima são históricos. Não houve release GitHub, merge ou CI.
 
 ## Comece aqui
 
 1. Leia [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md), a memória de entrada.
-2. Revise a importação na branch `docs/importacao-v0-2` e seu [relatório](reports/IMPORT_V0_2_REPORT.md). O [guia de setup](GITHUB_CODEX_CLOUD_SETUP.md) e o [prompt de importação](PROMPT_IMPORTACAO_CODEX.md) permanecem como referência; não é necessário reenviar/extrair o ZIP nesta branch.
-3. Somente após revisar a importação, envie [PROMPT_M0_1_CODEX.md](PROMPT_M0_1_CODEX.md) v0.2 em nova tarefa, autorizando explicitamente a implementação.
+2. Leia o [relatório M0.1](reports/M0_1_REPORT.md), com limites, testes e roteiro físico. O [relatório de importação](reports/IMPORT_V0_2_REPORT.md) permanece histórico; sua restrição de árvore documental não se aplica à implementação.
+3. Use o [guia de execução](scripts/README.md) para instalar as ferramentas fixadas, verificar o projeto e tentar exportar Android. O [prompt M0.1](PROMPT_M0_1_CODEX.md) é o escopo desta entrega; M1 não foi iniciado.
 4. Após cada entrega, atualize [PROJECT_STATE.md](PROJECT_STATE.md) e [HANDOFF.md](HANDOFF.md).
 
 ## Fontes canônicas

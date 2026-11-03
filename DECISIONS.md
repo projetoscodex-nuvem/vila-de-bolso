@@ -57,3 +57,53 @@ Origem: revisão externa da importação v0.2, commit revisado `03d177a020ff673c
 | D026 | PENDING — antes de implementar desfazer em M1/M2 | Especificar o comportamento da sequência “colocar → trocar oferta → desfazer”, incluindo qual oferta fica ativa, como fica o cursor da sequência e qual quota de trocas permanece. A restauração por snapshot e a afirmação de que trocas isoladas não são desfeitas em GAME_RULES.md não resolvem explicitamente essa combinação. Nenhuma regra nova foi escolhida ou implementada nesta revisão. Resolver e sincronizar regras, dados e testes antes de implementar desfazer em M1/M2; esta pendência não bloqueia a fundação M0.1 |
 
 GAME_DESIGN.md foi esclarecido: terrenos e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo e paleta, sem definir geografia, dimensões, câmera ou layout funcional. Mantidos fase 20 × 20, reino 40 × 60, 60 colocações, 62 ofertas e arrasto/zoom nas duas visões. Nenhuma regra de gameplay, código ou save foi alterado.
+
+## M0.1 — 02/11/2026 (UTC)
+
+Origem: proprietário aceitou a importação/revisão no commit `0733005bb2b83639522596ce63526003fb23cca8`, autorizou integração do PR #1 e execução exclusiva de PROMPT_M0_1_CODEX.md v0.2. Cabeça conferida; merge normal preservando os commits, sem force, realizado em `2d80844b8bc4a147bf428ade00448b5f6d2f02ba`. Código isolado em `feat/m0-1-foundation`; novo PR deve permanecer draft/sem merge.
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D027 | BASELINE / CONFIRMADO | Fixar Godot 4.6.3.stable.official.7d41c59c4, já disponível e conferida com release oficial, GDScript e Compatibility. Lock com URLs/hashes oficiais para engine, templates da mesma release, Temurin JDK 21.0.9+10 e command-line tools 15859902. Android: minSdk 24, target/Platform 36, Build-Tools 36.1.0 conforme source exato da release; Platform-Tools 37.0.1 conforme fonte Google. A página geral Godot 4.6 cita SDK 35 e recomenda JDK 17, aceitando versões superiores; source da release fixa os valores 36. Preferida exportação padrão com APK pré-compilado, sem Gradle/NDK/CMake. A engine foi executada; instalação da toolchain Android ficou BLOCKED, sem alegar fixação instalada ou APK |
+| D028 | BASELINE | Fundação sem gameplay: terreno geométrico provisório independente dos PNGs legados, IDs de seis regiões e somente region_1 liberada, câmera/modelo de gestos separados da apresentação e envelope JSON mínimo versionado. Salvar apenas visão/câmeras, limpar contatos/seleção em navegação, cancelamento e pausa; backup do último save válido e bloqueio de escrita sobre original inválido/desconhecido. Tests sintéticos/headless não equivalem a gesto físico |
+
+D026 permanece PENDING para M1/M2, sem nova regra de desfazer. Os parâmetros futuros de 60 colocações/62 ofertas foram mantidos em dados, sem consumo ou implementação de partida neste marco. Evidências e bloqueios em [reports/M0_1_REPORT.md](reports/M0_1_REPORT.md).
+
+## Correção da revisão M0.1 — 02/11/2026 (UTC)
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D029 | BASELINE / CONFIRMADO | Usar emulação touch→mouse da Godot para a GUI e filtrar somente DEVICE_ID_EMULATION no controlador do mapa, que processa os ScreenTouch/ScreenDrag originais. Evita duplicação de contatos e mantém mouse físico. Regressões pela fila Input substituem a inferência anterior de acessibilidade da GUI a partir de chamadas diretas/sinais |
+| D030 | BASELINE | Resultado de exportação por tentativa, com invalidação inicial de PASS anterior, finalização em falhas/timeout/validação/assinatura e histórico identificado; não tratar fixture de teste ou APK não verificado como artefato instalável. CI manual preparado como receita inativa; permissões/limites devem ser confirmados antes de ativar/consumir recursos |
+
+D026 e todas as regras de gameplay permanecem inalteradas. Não houve merge do PR #2, release, publicação ou início de M1 nesta correção.
+
+## Exportação Android confirmada — 02/11/2026 (America/Sao_Paulo)
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D031 | BASELINE / CONFIRMADO | No APK pré-compilado sem Gradle, deixar min/target SDK vazios no preset e herdar os níveis do template oficial; manter min24/target36 no lock e verificar o manifesto real. Habilitar import_etc2_astc no projeto, requisito do exportador Android. Exportação do commit 60f2491 passou neste executor; o EPERM anterior permanece histórico. Isso não valida instalação/toque no aparelho nem autoriza merge/M1 |
+
+
+Validação complementar (03/11/2026 UTC): preservados 60f2491 e b89b16d, incluindo D031 e as evidências externas. O checker Python agora valida seções/campos efetivos, com dez regressões adicionais, sem alterar a configuração publicada ou os seis testes nativos. O processo local continua bloqueado; resultado de APK/hash registrado em b89b16d pertence ao executor de build e à fonte 60f2491. D026 segue intacta; sem CI/merge/M1.
+
+
+## Inicialização do pacote M0.1 — 03/11/2026 (UTC)
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D032 | BASELINE / CONFIRMADO no host | Selecionar recursos de runtime explicitamente no preset, pois scenes sozinho omitiu cinco preloads em export real. Exigir carga de dependências remapeadas/compiladas e cena/menu em Godot isolada da fonte antes do PASS de APK. ZIP/PCK locais passam; Android corrigido continua pendente, sem concluir causalidade física da tela clara. Manter engine4.6.3/Compatibility, Gradle falso, SDKs herdados e ETC2/ASTC; preservar exclusões e histórico |
+
+OWNER_REPORTED: inicialização visual do APK60f2491 FAIL; demais físicos NOT_RUN. Sem M1/CI/merge; D026 permanece inalterada. Evidências e limites no [relatório da correção](reports/M0_1_STARTUP_FIX_REPORT.md).
+
+
+Continuidade de D032 —03/11/2026 UTC: o desenvolvedor concluiu aqui a geração do APK fonte2858a75, incluindo gate real dos assets/cena/menu, assinatura e manifesto. A restrição EPERM padrão foi distinguida da permissão suportada por comando; cache Android local e proxy JVM permitiram instalar as ferramentas fixadas, sem mudar HOME/política global/CI. Não é tarefa do proprietário/ChatGPT Work compilar a entrega. Novo físico NOT_RUN; M0.1 sem aceite e D026 inalterada. A chave debug nova exige aviso de incompatibilidade de atualização/perda de save em eventual desinstalação. [Evidências e roteiro](reports/M0_1_LOCAL_APK_2858A75_REPORT.md).
+
+
+## Canal de entrega privado —03/11/2026 UTC
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D033 | OWNER_CONFIRMED / EXECUÇÃO BLOCKED | Tornar o repositório privado antes de criar pré-release de teste com o ZIP do APK2858a75. Exceção explícita ao veto anterior de release/publicação, somente para entrega privada; sem merge/CI/M1 ou alteração de D026. Privacidade efetivada manualmente pelo proprietário e confirmada por private=true; release não criada, pois proxy nega api.github.com/uploads.github.com. Confirmar private=true e validar asset baixado antes de declarar entregue |
+
+[Plano e diagnóstico](reports/M0_1_PRIVATE_RELEASE_STATUS.md). A conta conectada tem admin, mas as ferramentas não oferecem essas operações e a CLI está bloqueada na rede; não confundir ambos nem solicitar token no chat.

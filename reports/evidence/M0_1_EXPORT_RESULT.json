@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+    "--headless",
+    "--path",
+    "/workspace/vila-de-bolso",
+    "--export-debug",
+    "Android Debug",
+    "/workspace/vila-de-bolso/build/vila-de-bolso-m0.1-debug.apk"
+  ],
+  "exit_code": 1,
+  "missing_dependencies": [
+    "jdk/bin/java",
+    "jdk/bin/javac",
+    "jdk/bin/keytool",
+    "android-sdk/platform-tools/adb",
+    "android-sdk/build-tools/36.1.0/apksigner",
+    "data/godot/export_templates/4.6.3.stable/android_debug.apk"
+  ],
+  "status": "BLOCKED"
+}

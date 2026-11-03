@@ -1,0 +1,40 @@
+{
+  "classification": "OWNER_REPORTED_EXTERNAL_EVIDENCE",
+  "source": "Mensagem do proprietário: revisão independente em outro executor",
+  "reviewed_commit": "e3bc175f45e0f757a3a66bbfbe481122d3b4ec77",
+  "controlled_changes": {
+    "export_presets.cfg": {
+      "gradle_build/min_sdk": "",
+      "gradle_build/target_sdk": ""
+    },
+    "project.godot [rendering]": {
+      "textures/vram_compression/import_etc2_astc": true
+    }
+  },
+  "reported_export_exit_code": 0,
+  "reported_signature_verification": "PASS",
+  "reported_manifest": {
+    "minSdk": 24,
+    "targetSdk": 36
+  },
+  "reported_files_restored": true,
+  "reported_commit_or_push": false,
+  "reproduced_in_this_environment": false,
+  "physical_android_test_status": "NOT_RUN",
+  "initial_request_apk_provided": false,
+  "initial_request_apk_sha256_provided": false,
+  "subsequent_repository_evidence": {
+    "evidence_commit": "b89b16d993bb6819351c88ad48a02448a5347463",
+    "source_commit": "60f2491f1a04001d4903d6e8d12c519df6bafd1b",
+    "report": "reports/M0_1_ANDROID_BUILD_REPORT.md",
+    "bytes": 56427508,
+    "sha256": "fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7",
+    "reported_export_exit_code": 0,
+    "reported_signature_verification": "PASS",
+    "manifest": {
+      "minSdk": 24,
+      "targetSdk": 36
+    },
+    "apk_downloaded_or_hash_recomputed_in_this_environment": false
+  }
+}

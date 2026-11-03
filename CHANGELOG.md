@@ -1,5 +1,78 @@
 # Histórico
 
+## APK reconstruído e disponibilizado — 03/11/2026, America/Sao_Paulo
+
+- Novo build real do fonte2858a75, checkout limpo, com novo hash/certificado, sem alteração de código ou lock.
+- APK/ZIP e instruções salvos para download na conversa; download/Android físico ainda não confirmados. Sem release GitHub, merge, CI, M1 ou alteração de D026.
+- Rede observada200 para API/uploads; gh segue sem autenticação. Testes e evidências no [relatório atual](reports/M0_1_WORK_APK_20261103_REPORT.md).
+
+## Retomada sem alternar execuções —03/11/2026
+
+- ZIP original preservado e hash conferido; API original ainda Forbidden. OWNER_REPORTED de outra sessão:API200, /user401/gh sem login, ZIP ausente. Registrar fronteiras sem misturar resultados.
+- Estado atual do repositório confirmado PUBLIC após reversão manual pelo proprietário; PRIVATE anterior é histórico. Entrega privada deve cumprir sua condição antes de publicação.
+- Handoff reescrito com estado vigente e autorização de gerar novamente o APK corrigido2858a75 na sessão que reúne rede/login, se não houver acesso ao ZIP. Registrar hash/assinatura novos e nunca usar o APK defeituoso60f2491. Sem reconstrução nesta atualização, release/upload/CI/merge/M1 ou alteração de D026.
+
+## Ambiente publicado pelo proprietário; execução ainda antiga —03/11/2026
+
+- OWNER_REPORTED confirmou publicação; screenshots têm os domínios corretos. Runtime segue revisão4 sem hosts e API Forbidden. Registrar divergência entre editor/publicação e execução, sem pedir repetição da configuração ou presumir causa completa.
+- ZIP original preservado e hash conferido; nova execução no ambiente publicado deve retomar o upload privado já autorizado. Código, APK, versão, assinatura e D026 inalterados; sem release/CI/merge/M1 ou novo teste físico.
+
+## Canal privado GitHub Releases autorizado —03/11/2026 UTC
+
+- Proprietário autorizou tornar o repositório privado e depois enviar o ZIP em release de teste. Substitui o veto anterior somente nesse escopo; sem CI/merge/M1/D026.
+- Comando de visibilidade e probes públicos confirmaram túnel403 para api.github.com/uploads.github.com. Depois o proprietário alterou manualmente: PRIVATE confirmado; criação de rascunho também retornou POST Forbidden, sem release/upload. Plano/notas/checksum preparados, binário inalterado. Não exigir Dropbox nem nova aprovação para ações já autorizadas; falta acesso técnico do ambiente.
+
+## Entrega do arquivo bloqueada —03/11/2026 UTC
+
+- Proprietário reportou erro ao abrir os links internos de APK/ZIP; não eram anexos com download confirmado. Estado corrigido para APK_VERIFIED_DELIVERY_BLOCKED, sem alterar a validação do binário.
+- Recalculado SHA-256 do APK local:6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73, fonte2858a75,56.448.943 bytes. Sem reconstrução ou alteração do pacote.
+- Integração de transferência privada sugerida (Dropbox), ainda não conectada; não declarar upload/link real antes da confirmação. Sem release, CI, merge ou mudança de D026; físico do novo APK NOT_RUN.
+
+## Novo APK gerado pelo desenvolvedor — 03/11/2026 (UTC)
+
+- Exportação real aqui do commit 2858a75 com checkout limpo; APK 56.448.943 bytes, SHA-256 6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73. Runtime/assets/cena/menu isolados, assinatura v2/v3, CRC e manifesto 24/36/compile36 sem permissões PASS.
+- Setup resolvido com permissão adicional de rede por comando, proxy JVM e ANDROID_USER_HOME em .tools; hashes/versões preservados, HOME/política global/CI intactos. EPERM padrão e tentativas falhas continuam históricos.
+- Novo APK físico NOT_RUN; fonte 60f2491 continua OWNER_REPORTED FAIL visual. Chave debug diferente: aviso de atualização recusada/perda do save ao desinstalar incluído no pacote e no relatório. Sem aceite/M1/merge ou alteração de D026. Documentos/evidências atualizados; APK/SDK/keystore fora do Git.
+
+## Correção de inicialização/empacotamento M0.1 — 03/11/2026 (UTC)
+
+- OWNER_REPORTED: APK 60f2491 instalou/abriu com tela clara sem menu; inicialização visual FAIL, demais testes físicos NOT_RUN. Hash/origem e resultados antigos preservados como históricos.
+- O filtro scenes anterior reproduziu omissão dos cinco preloads. Preset resources agora lista cena, seis scripts e ícone explicitamente, mantendo dados/licenças e exclusões de privados/testes/ferramentas. Engine/renderer/SDKs/Gradle/ETC2/lock inalterados.
+- Gate do APK carrega recursos remapeados/compilados e cena/menu fora da fonte antes de PASS/hash. Regressões:40 Python, 163 Godot, 44 Input e 15 casos de pacote; ZIP/PCK reais PASS, fixtures claramente simuladas.
+- Novo APK BLOCKED no processo local por EPERM/toolchain ausente; sem downloads repetidos, CI, merge, M1 ou alteração de D026. Relatório/continuidade e evidências atualizados; M0.1 não aprovado.
+
+## Validação adicional Android — 03/11/2026 (UTC)
+
+- Preservados os commits concorrentes 60f2491 (três valores de configuração e seis checks nativos Godot) e b89b16d (APK, evidências e continuidade). Entrega final é filha de b89b16d, sem merge/force.
+- Checker importável valida seções efetivas, SDKs vazios, Gradle desativado, ETC2/ASTC e expectativas 24/36 no lock; dez novas regressões Python, total 35. Mantidos 163 checks Godot e 44 de Input.
+- Resultado do build externo 60f2491 preservado com seu hash/manifesto/assinatura e sua origem; não atribuído ao processo local, que segue EPERM e não repetiu instalações. Testes físicos NOT_RUN; CI não ativado, sem M1 ou alteração de D026.
+
+## APK M0.1 para smoke — 02/11/2026 (America/Sao_Paulo)
+
+- Corrigidos overrides SDK incompatíveis com exportação sem Gradle e habilitada importação ETC2/ASTC.
+- Acrescentados seis checks Godot de configuração e atualizado verificador documental; 163 checks de componentes, 44 de Input e 25 testes Python PASS.
+- Toolchain instalada no executor de continuação e APK real exportado do commit 60f2491, com assinatura, manifesto, CRC e dados conferidos.
+- Relatório/evidências e continuidade atualizados; bloqueios anteriores preservados como histórico. Estado READY_FOR_OWNER_SMOKE; sem merge, CI, M1 ou aceite físico.
+
+## Correções da revisão M0.1 — 02/11/2026 (UTC)
+
+- Reproduzida a falha de toque na GUI via Input.parse_input_event; habilitada emulação touch→mouse para botões e ignorado somente mouse DEVICE_ID_EMULATION nos gestos, preservando mouse físico e evitando contato duplicado/pinça com um dedo.
+- Adicionadas 44 verificações pelo fluxo Input/GUI da Godot, sem app._input direto ou emissão de pressed; 157 checks anteriores mantidos como componentes/cena, sem alegar teste físico.
+- Exportação com resultado novo por tentativa desde RUNNING até status final, inclusive falhas de dependência/exportação/timeout/manifesto/CRC/assinatura. Resultado/log/APK anteriores arquivados por attempt_id; saída não verificada separada do APK atual.
+- Adicionados 18 testes de exportação com fixtures isoladas e runner simulado, totalizando 25 testes Python; nenhuma fixture é APK real.
+- Diagnosticado EPERM na criação de socket do processo antes de proxy/DNS/TLS; setup e exportação Android reais repetidos e BLOCKED. Receita CI manual inativa entregue, sem executar ou presumir permissões/limites da conta.
+- Atualizados relatório, evidências e continuidade na mesma branch/PR #2, sem merge, release, publicação, M1 ou resolução de D026. Versões/hashes e parâmetros v0.2 preservados; testes físicos NOT_RUN.
+
+## M0.1 — fundação em revisão, Android BLOCKED — 02/11/2026 (UTC)
+
+- Importação/revisão documental aceita pelo proprietário; PR #1 integrado com merge preservando commits em 2d80844b8bc4a147bf428ade00448b5f6d2f02ba. Implementação em branch separada feat/m0-1-foundation.
+- Projeto Godot 4.6.3/GDScript/Compatibility, Android retrato e offline; menu → reino 40 × 60 → região1 20 × 20 → voltar. Demais regiões bloqueadas; arte geométrica e ícone provisórios, sem reutilizar PNGs legados como telas.
+- Arrasto, pinça, zoom por botões/roda, recentrar/visão geral, limites, recorte inicial, transformação de coordenadas e HUD fixa. Seleção sem ação de construção; cancelamento/pausa/Voltar do Android tratados.
+- Save mínimo versionado com câmeras independentes, retomada, backup e preservação de arquivos inválidos. Sem salvar dedos, gestos ou seleção transitória.
+- Scripts fixados para setup/verificação/exportação, testes headless de dados/câmera/gestos/save/cena e relatório M0.1 com evidências. Relatório histórico da importação, ZIP e manifesto preservados.
+- Exportação debug tentada e marcada PARCIAL/BLOCKED: JDK completo/SDK/templates ausentes e download recusado no sandbox. Nenhum APK ou teste físico Android. Sem CI automático, release, publicação ou merge do novo PR.
+- Parâmetros futuros 60 colocações/62 ofertas e D026 pendente preservados. M1 não iniciado; não implementados partida, pontuação, construção, ofertas ou desfazer.
+
 ## Ajustes da revisão externa v0.2 — 01/11/2026 (UTC)
 
 - Corrigido GAME_DESIGN.md: terrenos e encaixes serão definidos e validados nos templates; PNGs legacy_v0_1 orientam somente estilo/paleta, sem definir geografia, dimensões, câmera ou layout funcional.

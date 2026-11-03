@@ -1,0 +1,8 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: data, region IDs, locked regions and local/global boundaries
+PASS: camera crops, transforms, pan/zoom, focus, overview, bounds and restore
+PASS: tap/pan/pinch, cancellation, extra fingers, HUD and interrupted gestures
+PASS: save round trip, backup, interrupted write, corruption and I/O errors
+PASS: scene flow, locked regions, real input routing, selection, HUD, cameras and reopen
+M0.1 checks=157 failures=0

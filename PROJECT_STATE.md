@@ -1,41 +1,75 @@
 # Estado do projeto
 
-Data: 01/11/2026 (UTC). Baseline: v0.2. Estado: **DOCUMENTATION_V0_2_IMPORTED — AJUSTES DA REVISÃO EXTERNA DOCUMENTADOS**.
+03/11/2026, America/Sao_Paulo. **M0_1_APK_AVAILABLE_FOR_OWNER_SMOKE — ARQUIVO DISPONÍVEL / TESTE FÍSICO PENDENTE**.
+
+## Atualização vigente
+
+DECISÃO — Reconstruir o fonte corrigido2858a75 e disponibilizar o ZIP para download, conforme autorizado. Sem alteração de código/runtime, merge, CI, M1 ou D026.
+
+IMPLEMENTAÇÃO — Novo APK/ZIP gerado de checkout limpo2858a75. Arquivo persistente disponibilizado na conversa. SHA-256 APK `85c1f2303322f3faed22d350d31d3773036cfad4888961aa841484e3647b257e`; ZIP `60df741d5c83fb55f6555d0a03dd35fb2b45923dbec319df576a27a651537e1b`. [Relatório e origem](reports/M0_1_WORK_APK_20261103_REPORT.md).
+
+TESTE — PASS40 Python/163 Godot/44 Input/15 casos de pacote/smoke/proveniência. APK real: dependências/cena/menu isolados, assinatura v2/v3, manifesto24/36/compile36/sem permissões, ARMv7/ARM64/CRC/dados/hash.
+
+VALIDADO — Build e disponibilização do arquivo para download. Sem confirmação de download pelo proprietário; headless não prova renderização/toque Android. APIs200 nesta retomada, CLI gh sem autenticação; nenhuma release criada.
+
+PENDÊNCIA — Android físico NOT_RUN; M0.1 sem aceite. Upload manual em Releases proposto pelo proprietário depende de confirmar privacidade. Assinatura diferente: desinstalar apaga save local; sem inferir consentimento.
+
+PRÓXIMO PASSO — Proprietário testar primeiro menu offline e informar aparelho/Android/PASS-FAIL. Depois roteiro de gestos/navegação/HUD/persistência. Não retomar buscas pelo ZIP original inacessível, pois esta reconstrução está disponível.
+
+---
+
+# Estado do projeto — histórico anterior
+
+03/11/2026 (UTC). Baseline v0.2. **M0_1_APK_VERIFIED_DELIVERY_BLOCKED — APK GERADO / ENTREGA NÃO CONCLUÍDA**.
+
+**Atualização vigente:** [retomada da entrega em uma única execução](reports/M0_1_DELIVERY_RESUME.md). Última API confirma repositório PUBLIC após reversão manual do proprietário. Nova sessão reportada tem rede, mas falta autenticação e ZIP; original preserva ZIP, porém continua sem rede de API. Resolver login na sessão com rede e gerar novamente do fonte corrigido2858a75 se não houver acesso ao artefato, registrando novo hash. Não devolver a tarefa indefinidamente ao executor original. Fatos históricos abaixo mantidos com seus snapshots.
 
 ## DECISÃO
 
-Executar somente importação/reconciliação documental. M0.1 **NÃO INICIADO**; nenhuma instalação de engine autorizada nesta tarefa. Android offline em retrato; fases e reino maiores que o viewport, com arrasto/zoom e HUD fixa. Protótipo: fase 20 × 20, reino 40 × 60, seis regiões 2 × 3, 60 colocações e 62 ofertas. Números sujeitos a testes; requisito de câmera confirmado e obrigatório desde M0.1.
-
-Revisão externa de 01/11/2026: somente esclarecer a função dos PNGs legados e registrar D026 como pendência de desfazer para M1/M2, sem escolher nova regra. D026 não bloqueia a fundação M0.1; este marco continua dependendo de nova tarefa explícita.
+Corrigir somente inicialização/empacotamento M0.1, na branch feat/m0-1-foundation / PR #2 draft/sem merge. Cabeça inicial conferida em 0c4296c; main documental 2d80844 permanece sem implementação. Godot 4.6.3/GDScript/Compatibility, Android retrato/offline, Gradle desativado, SDKs herdados, ETC2/ASTC ativo e lock 24/36 preservados. Fase 20 × 20, reino 40 × 60, 60 colocações/62 ofertas futuras; sem M1 ou alteração de D026.
 
 ## IMPLEMENTAÇÃO
 
-CONFIRMADO: repositório https://github.com/projetoscodex-nuvem/vila-de-bolso, público segundo API GitHub. Base inicial `work`, correspondente à `main` remota em `f1b59a2ab0f148abc71f0caf91a102a79e122cee`, com árvore limpa: README.md e PROJECT_CONTEXT.md v0.1 e Vila_de_Bolso_M0_v0_2.zip.
-
-Importados os 28 arquivos do ZIP diretamente na raiz/pasta references, reconciliando os dois Markdown do mesmo projeto. Acrescentado [relatório](reports/IMPORT_V0_2_REPORT.md), atualizado estado/continuidade e preservados ZIP/manifesto original e histórico Git. PROJECT_CONTEXT.md é canônico; nenhum alias ou documento de outro projeto encontrado. Branch de entrega: `docs/importacao-v0-2`; sem merge automático. CONFIRMADO: commit `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce` salvo e verificado no remoto; [draft PR #1](https://github.com/projetoscodex-nuvem/vila-de-bolso/pull/1) aberto, sem merge. Esta atualização posterior registra a evidência de entrega; cabeça final consultável no PR. O relatório registra comandos e confirmação remota.
-
-CONFIRMADO: Git 2.52.0 e Python 3.12.14 disponíveis no ambiente Linux x86_64 desta tarefa; leitura do remoto funciona com permissão de rede do sandbox. Isso não comprova setup Godot/Android ou ambiente reutilizável. Sem código de jogo, câmera implementada, APK ou progresso de campanha nesta árvore.
-
-CONFIRMADO em 01/11/2026: o PR #1 permanecia aberto, draft e sem merge, com cabeça `03d177a020ff673c209017fc0e640998c30fc7e4`, igual ao último commit revisado; nenhuma alteração posterior encontrada na conferência inicial. GAME_DESIGN.md agora atribui a definição/validação dos terrenos e encaixes aos templates, limitando os PNGs a estilo e paleta. D026 registra a sequência “colocar → trocar oferta → desfazer”, com oferta, cursor e quota de trocas ainda por definir antes de implementar desfazer em M1/M2. Estado, handoff, changelog e relatório sincronizados; verificador atualizado para incluir GAME_DESIGN.md nas diferenças esperadas frente ao ZIP.
+Seleção explícita de cena, seis scripts e ícone no preset resources; dados/licença mantidos e exclusões de testes/ferramentas/relatórios/privados preservadas. Gate do exportador verifica dependências remapeadas/compiladas e cena/menu em Godot isolada antes de PASS/assinatura/hash. Nenhum recurso local da fonte pode completar o pacote no teste. Fluxo, UI, entrada, câmeras, save e gameplay não alterados.
 
 ## TESTE
 
-PASS: segurança de caminhos/tipos, CRC do ZIP, cobertura e 27 hashes do manifesto original, comparação prévia dos arquivos existentes. Verificador repetido após o commit `ebaa7abe53445e8a2b35a03cf4d1543a8eeb07ce`, com árvore limpa: PASS. Conferências da árvore reconciliada e comandos/resultados em [reports/IMPORT_V0_2_REPORT.md](reports/IMPORT_V0_2_REPORT.md).
-
-Os resultados acima são históricos da importação. As verificações e o snapshot dos ajustes de 01/11/2026 constam na seção “Atendimento à revisão externa” do relatório; a nova reconciliação tem dez arquivos diferentes do ZIP, incluindo GAME_DESIGN.md, e 18 idênticos. ZIP e manifesto originais preservados.
-
-Engine, gestos/câmera em execução, domínio/gameplay, save real, exportação/instalação APK, toque, desempenho, balanceamento e diversão: **NOT_RUN**. Testes documentais não comprovam funcionamento do jogo.
+- Projeto: PASS, 40 testes Python, 163 checks Godot, 44 Input sintéticos, smoke 15 frames, proveniência/links/parâmetros e diff.
+- Pacote: PASS, 15 casos de regressão. ZIP e PCK reais gerados pelo preset carregam cena/menu em bootstrap separado; filtro scenes anterior reproduz cinco scripts ausentes. Mutações negativas e wrapper APK são fixtures identificadas, sem APK Android novo.
+- Android físico: OWNER_REPORTED instalou APK fonte 60f2491, SHA-256 fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7; abriu com tela clara/sem menu: inicialização visual FAIL. Demais testes NOT_RUN.
+- Novo APK: PASS neste ambiente, fonte exata 2858a75b8742b3cf63d81293f7728d32647674b3 com checkout limpo. Wrapper/runtime/assinatura zero; manifesto 24/36/compile36, sem uses-permission, ARMv7/ARM64. 56.448.943 bytes; SHA-256 6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73. Novo físico NOT_RUN.
+- Ambiente: permissão adicional de rede por comando funcionou; JVM usou proxy explícito e ANDROID_USER_HOME gravável em .tools. JDK/SDK/templates instalados com versões/hashes fixados; EPERM padrão e falhas anteriores preservados como históricos, sem mudança global/CI.
 
 ## VALIDADO
 
-Somente importação/reconciliação e verificações documentais registradas. PNGs legacy_v0_1 são estilo, não layout/câmera atuais. Aceite da importação pelo proprietário ainda pendente.
+Omissão reproduzida e correção do pacote demonstrada no host, inclusive .remap/.gdc/PCK e cena com botões visíveis na árvore UI headless. Relação com a tela Android é hipótese forte; sem execução física da correção. Resultados históricos do build 60f2491 (assinatura/manifesto/CRC/hash) preservados e superados para aceite pelo FAIL do proprietário.
+
+[Relatório atual e comandos](reports/M0_1_STARTUP_FIX_REPORT.md), [histórico M0.1](reports/M0_1_REPORT.md), [build antigo](reports/M0_1_ANDROID_BUILD_REPORT.md). SHA exato testado e publicado é conciliado no PR #2 após gravação; evidências versionadas identificam o snapshot de working tree.
 
 ## PENDÊNCIA
 
-Revisar a entrega e resolver a integração pelo fluxo Git do proprietário. A visibilidade pública diverge da previsão privada do pacote; registrada sem alterar configuração nem presumir necessidade de mudança. Licença autoral segue indefinida. Em futura tarefa M0.1: fixar ferramentas e provar câmera/gestos e APK, com teste físico separado. Balanceamento e dimensões finais dependem de protótipo; câmera navegável não é pendência de escopo.
-
-D026: decidir oferta ativa, cursor e quota de trocas para “colocar → trocar oferta → desfazer” antes de implementar desfazer em M1/M2. Nenhuma escolha feita nesta tarefa; não bloqueia M0.1.
+APK novo produzido, conteúdo/runtime/assinatura/manifesto/hash validados; falta instalar/abrir no Android. Não declarar menu renderizado ou correção física a partir do headless. Modelo/Android do aparelho e logcat se repetir a falha. M0.1 sem aceite; D026 PENDING para antes do desfazer em M1/M2.
 
 ## PRÓXIMO PASSO
 
-Revisar os ajustes de GAME_DESIGN.md, a pendência D026 e a nova seção do relatório no PR #1. Após revisão, o proprietário enviará PROMPT_M0_1_CODEX.md v0.2 em nova tarefa explícita. O prompt foi apenas importado, não executado.
+O desenvolvedor concluiu a exportação aqui; não delegar a compilação ao proprietário/ChatGPT Work. Baixar o novo arquivo da tarefa e testar primeiro o menu offline conforme o [relatório do APK](reports/M0_1_LOCAL_APK_2858A75_REPORT.md). A assinatura debug mudou: atualização sobre o antigo pode ser recusada; desinstalar apaga o save local, portanto só remover se aceitar essa perda. Sem CI, merge, release ou M1.
+
+Fonte do binário:2858a75. Commit posterior é somente documental, sem reconstruir/renomear a origem do APK. M0.1 continua sem aceite.
+
+
+## Bloqueio de entrega —03/11/2026 UTC
+
+OWNER_REPORTED: links internos de APK e ZIP falharam no aplicativo Android ("Não foi possível abrir o arquivo"). Arquivos locais conferidos, com o mesmo SHA-256; isso é falha de entrega, não um novo teste de execução do jogo. Não há anexo binário confirmado nesta sessão. Um canal privado de arquivos precisa ser conectado; Dropbox foi sugerido e ainda não está conectado. Não repetir os caminhos internos como links de download, não recompilar o mesmo APK para corrigir transporte e não publicar release/CI por inferência. Fonte2858a75 e novo Android físico NOT_RUN preservados.
+
+
+## Canal de entrega autorizado —03/11/2026 UTC
+
+Proprietário escolheu GitHub Releases após tornar o repositório privado; Dropbox deixou de ser necessário. Autorização já concedida para essa sequência. Tentativa CLI bloqueada no proxy (api.github.com/ uploads.github.com: túnel403); naquela tentativa o repositório continuava PUBLIC; após mudança manual do proprietário, PRIVATE foi confirmado, ainda sem release/upload. Falta liberar esses destinos na rede do ambiente e então verificar autenticação CLI. ZIP/checksum/notas preparados; nunca enviar binário antes de confirmar private=true. [Plano e evidências](reports/M0_1_PRIVATE_RELEASE_STATUS.md).
+
+
+Privacidade confirmada após ação manual do proprietário: private=true/visibility=private. A tentativa subsequente de criar rascunho de release retornou POST Forbidden no proxy; consulta autenticada confirma zero releases. Falta somente acesso técnico da CLI à API/uploads (e validação de sua autenticação após liberar a rede), não nova aprovação de publicação privada. Fonte/binário2858a75 inalterados; físico NOT_RUN.
+
+
+## Publicação do ambiente confirmada pelo proprietário
+
+OWNER_REPORTED confirmou que salvou e publicou os domínios corretamente; screenshots mostram api.github.com e uploads.github.com. Mesmo depois, ambiente desta conversa continua na revisão4 aplicada/enforced, custom_allowed_hosts=[] e gh api user retorna Forbidden. Não pedir ao proprietário para repetir publicação/seleção/privatização: a alteração publicada não está refletida na execução vinculada. O mecanismo exato da plataforma não foi diagnosticado, e as ferramentas aqui não editam/revinculam a instância. Próximo passo: nova execução selecionando o ambiente publicado; conferir política aplicada/autenticação e retomar release privada já autorizada. Não excluir o ambiente/conversa atual que preserva o ZIP; se a nova execução não encontrar os artefatos, o desenvolvedor deve recuperar/regerar a partir do fonte2858a75 com hashes/versões fixados e registrar a nova origem/hash, sem fingir reutilização.

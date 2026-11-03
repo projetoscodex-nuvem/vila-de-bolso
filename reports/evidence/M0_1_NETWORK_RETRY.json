@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED_BEFORE_PROXY_DNS_TLS",
+  "checks": [
+    {
+      "stage": "AF_INET_socket_creation",
+      "status": "BLOCKED",
+      "error": "PermissionError",
+      "errno": 1,
+      "message": "[Errno 1] Operation not permitted"
+    }
+  ],
+  "note": "GitHub connector access is separate from network access of this process.",
+  "policy_version": 1,
+  "vpn_configured": false,
+  "proxy_configured": true,
+  "configured_download_hosts": {
+    "github.com": true,
+    "release-assets.githubusercontent.com": true,
+    "dl.google.com": true
+  }
+}

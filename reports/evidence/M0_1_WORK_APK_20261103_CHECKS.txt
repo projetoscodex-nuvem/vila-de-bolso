@@ -1,0 +1,243 @@
+=== installer_tests.log ===
+
+test_comment_cannot_satisfy_etc2_astc_setting (test_android_configuration.AndroidConfiguration.test_comment_cannot_satisfy_etc2_astc_setting) ... ok
+test_disabled_etc2_astc_is_rejected (test_android_configuration.AndroidConfiguration.test_disabled_etc2_astc_is_rejected) ... ok
+test_etc2_astc_in_wrong_section_is_rejected (test_android_configuration.AndroidConfiguration.test_etc2_astc_in_wrong_section_is_rejected) ... ok
+test_expected_min_sdk_stays_locked (test_android_configuration.AndroidConfiguration.test_expected_min_sdk_stays_locked) ... ok
+test_expected_target_sdk_stays_locked (test_android_configuration.AndroidConfiguration.test_expected_target_sdk_stays_locked) ... ok
+test_gradle_cannot_be_enabled_as_workaround (test_android_configuration.AndroidConfiguration.test_gradle_cannot_be_enabled_as_workaround) ... ok
+test_min_sdk_override_is_rejected (test_android_configuration.AndroidConfiguration.test_min_sdk_override_is_rejected) ... ok
+test_missing_etc2_astc_is_rejected (test_android_configuration.AndroidConfiguration.test_missing_etc2_astc_is_rejected) ... ok
+test_omitted_explicit_dependency_is_rejected (test_android_configuration.AndroidConfiguration.test_omitted_explicit_dependency_is_rejected) ... ok
+test_repository_inherits_sdk_and_imports_android_textures (test_android_configuration.AndroidConfiguration.test_repository_inherits_sdk_and_imports_android_textures) ... ok
+test_scene_only_filter_is_rejected (test_android_configuration.AndroidConfiguration.test_scene_only_filter_is_rejected) ... ok
+test_target_sdk_override_is_rejected (test_android_configuration.AndroidConfiguration.test_target_sdk_override_is_rejected) ... ok
+test_corrupt_zip_crc (test_export_android.ExportAttemptFixtures.test_corrupt_zip_crc) ... ok
+test_export_error (test_export_android.ExportAttemptFixtures.test_export_error) ... ok
+test_export_timeout_archives_partial_file (test_export_android.ExportAttemptFixtures.test_export_timeout_archives_partial_file) ... ok
+test_interruption_does_not_leave_pass (test_export_android.ExportAttemptFixtures.test_interruption_does_not_leave_pass) ... ok
+test_invalid_lock (test_export_android.ExportAttemptFixtures.test_invalid_lock) ... ok
+test_invalid_zip (test_export_android.ExportAttemptFixtures.test_invalid_zip) ... ok
+test_keytool_failure (test_export_android.ExportAttemptFixtures.test_keytool_failure) ... ok
+test_missing_artifact (test_export_android.ExportAttemptFixtures.test_missing_artifact) ... ok
+test_missing_dependency (test_export_android.ExportAttemptFixtures.test_missing_dependency) ... ok
+test_missing_engine (test_export_android.ExportAttemptFixtures.test_missing_engine) ... ok
+test_missing_manifest (test_export_android.ExportAttemptFixtures.test_missing_manifest) ... ok
+test_missing_runtime_dependencies_prevent_success_and_signature (test_export_android.ExportAttemptFixtures.test_missing_runtime_dependencies_prevent_success_and_signature) ... ok
+test_repeated_attempts_keep_separate_history (test_export_android.ExportAttemptFixtures.test_repeated_attempts_keep_separate_history) ... ok
+test_runtime_timeout_replaces_old_pass (test_export_android.ExportAttemptFixtures.test_runtime_timeout_replaces_old_pass) ... ok
+test_runtime_zero_without_marker_is_not_success (test_export_android.ExportAttemptFixtures.test_runtime_zero_without_marker_is_not_success) ... ok
+test_signature_exception_also_finalizes (test_export_android.ExportAttemptFixtures.test_signature_exception_also_finalizes) ... ok
+test_signature_failure_replaces_old_pass_and_preserves_artifacts (test_export_android.ExportAttemptFixtures.test_signature_failure_replaces_old_pass_and_preserves_artifacts) ... ok
+test_signature_timeout_also_finalizes (test_export_android.ExportAttemptFixtures.test_signature_timeout_also_finalizes) ... ok
+test_success_fixture_only_after_signature_verification (test_export_android.ExportAttemptFixtures.test_success_fixture_only_after_signature_verification) ... ok
+test_version_timeout (test_export_android.ExportAttemptFixtures.test_version_timeout) ... ok
+test_wrong_engine_version (test_export_android.ExportAttemptFixtures.test_wrong_engine_version) ... ok
+test_absolute_path_rejected (test_setup.SafePackages.test_absolute_path_rejected) ... ok
+test_bad_hash_never_becomes_installable_archive (test_setup.SafePackages.test_bad_hash_never_becomes_installable_archive) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_hash_and_cache_reuse (test_setup.SafePackages.test_hash_and_cache_reuse) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_only_selected_templates_extracted (test_setup.SafePackages.test_only_selected_templates_extracted) ... ok
+test_regular_file (test_setup.SafePackages.test_regular_file) ... ok
+test_symlink_rejected (test_setup.SafePackages.test_symlink_rejected) ... ok
+test_traversal_cannot_write_outside (test_setup.SafePackages.test_traversal_cannot_write_outside) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.057s
+
+OK
+
+
+
+=== tests.log ===
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: data, region IDs, locked regions and local/global boundaries
+PASS: standard Android export configuration and texture import
+PASS: camera crops, transforms, pan/zoom, focus, overview, bounds and restore
+PASS: tap/pan/pinch, cancellation, extra fingers, HUD and interrupted gestures
+PASS: save round trip, backup, interrupted write, corruption and I/O errors
+PASS: scene flow, locked regions, real input routing, selection, HUD, cameras and reopen
+M0.1 checks=163 failures=0
+
+
+
+=== input_pipeline.log ===
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+M0.1 input_pipeline checks=44 failures=0 (synthetic Godot Input; Android physical NOT_RUN)
+
+
+
+=== runtime_export.log ===
+
+PASS: previous_scenes_filter_missing_dependencies (real Godot export)
+PASS: exported_zip_scene_menu (real Godot export)
+PASS: exported_native_pck_scene_menu (real Godot export)
+PASS: apk_shaped_fixture_real_exported_assets (SIMULATED FIXTURE)
+PASS: missing_core_world_data (SIMULATED FIXTURE)
+PASS: missing_core_map_camera (SIMULATED FIXTURE)
+PASS: missing_core_gesture_router (SIMULATED FIXTURE)
+PASS: missing_core_save_store (SIMULATED FIXTURE)
+PASS: missing_presentation_map_view (SIMULATED FIXTURE)
+PASS: broken_compiled_remap (SIMULATED FIXTURE)
+PASS: corrupt_compiled_script (SIMULATED FIXTURE)
+PASS: missing_binary_scene (SIMULATED FIXTURE)
+PASS: missing_exported_project_settings (SIMULATED FIXTURE)
+PASS: missing_world_data (SIMULATED FIXTURE)
+PASS: excluded_test_resource (SIMULATED FIXTURE)
+PASS: runtime export regression cases=15 failures=0; Android physical NOT_RUN; no real APK produced
+
+
+
+=== delivery_signature.txt ===
+
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Android Debug, O=Vila de Bolso, C=BR
+Signer #1 certificate SHA-256 digest: 58f9e649a756d4d469755c4e938003a7b98a6fea4db51088220690cffea7055f
+Signer #1 certificate SHA-1 digest: bef845e907d87abe3bc8da67d16dd341d87ca456
+Signer #1 certificate MD5 digest: 7800a694ab3299db56c5690e4ff69a37
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: c28fdd5b960af1c3afd74dbf4b3588818c45c3ec81d617a62a843c2e2a594481
+Signer #1 public key SHA-1 digest: 15d278a3cbebf85622ae018e3cb939864c9ec23a
+Signer #1 public key MD5 digest: 01893b63f1527c40797048fd61f376af
+
+
+
+=== delivery_manifest.txt ===
+
+package: name='org.projetoscodex.viladebolso.m01' versionCode='1' versionName='0.0.1-m0.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+install-location:'auto'
+sdkVersion:'24'
+targetSdkVersion:'36'
+application-label:'Vila de Bolso M0.1'
+application-label-af:'Vila de Bolso M0.1'
+application-label-am:'Vila de Bolso M0.1'
+application-label-ar:'Vila de Bolso M0.1'
+application-label-as:'Vila de Bolso M0.1'
+application-label-az:'Vila de Bolso M0.1'
+application-label-be:'Vila de Bolso M0.1'
+application-label-bg:'Vila de Bolso M0.1'
+application-label-bn:'Vila de Bolso M0.1'
+application-label-bs:'Vila de Bolso M0.1'
+application-label-ca:'Vila de Bolso M0.1'
+application-label-cs:'Vila de Bolso M0.1'
+application-label-da:'Vila de Bolso M0.1'
+application-label-de:'Vila de Bolso M0.1'
+application-label-el:'Vila de Bolso M0.1'
+application-label-en:'Vila de Bolso M0.1'
+application-label-en-AU:'Vila de Bolso M0.1'
+application-label-en-CA:'Vila de Bolso M0.1'
+application-label-en-GB:'Vila de Bolso M0.1'
+application-label-en-IN:'Vila de Bolso M0.1'
+application-label-en-XC:'Vila de Bolso M0.1'
+application-label-es:'Vila de Bolso M0.1'
+application-label-es-ES:'Vila de Bolso M0.1'
+application-label-es-US:'Vila de Bolso M0.1'
+application-label-et:'Vila de Bolso M0.1'
+application-label-eu:'Vila de Bolso M0.1'
+application-label-fa:'Vila de Bolso M0.1'
+application-label-fi:'Vila de Bolso M0.1'
+application-label-fr:'Vila de Bolso M0.1'
+application-label-fr-CA:'Vila de Bolso M0.1'
+application-label-gl:'Vila de Bolso M0.1'
+application-label-gu:'Vila de Bolso M0.1'
+application-label-hi:'Vila de Bolso M0.1'
+application-label-hr:'Vila de Bolso M0.1'
+application-label-hu:'Vila de Bolso M0.1'
+application-label-hy:'Vila de Bolso M0.1'
+application-label-in:'Vila de Bolso M0.1'
+application-label-is:'Vila de Bolso M0.1'
+application-label-it:'Vila de Bolso M0.1'
+application-label-iw:'Vila de Bolso M0.1'
+application-label-ja:'Vila de Bolso M0.1'
+application-label-ka:'Vila de Bolso M0.1'
+application-label-kk:'Vila de Bolso M0.1'
+application-label-km:'Vila de Bolso M0.1'
+application-label-kn:'Vila de Bolso M0.1'
+application-label-ko:'Vila de Bolso M0.1'
+application-label-ky:'Vila de Bolso M0.1'
+application-label-lo:'Vila de Bolso M0.1'
+application-label-lt:'Vila de Bolso M0.1'
+application-label-lv:'Vila de Bolso M0.1'
+application-label-mk:'Vila de Bolso M0.1'
+application-label-ml:'Vila de Bolso M0.1'
+application-label-mn:'Vila de Bolso M0.1'
+application-label-mr:'Vila de Bolso M0.1'
+application-label-ms:'Vila de Bolso M0.1'
+application-label-my:'Vila de Bolso M0.1'
+application-label-nb:'Vila de Bolso M0.1'
+application-label-ne:'Vila de Bolso M0.1'
+application-label-nl:'Vila de Bolso M0.1'
+application-label-or:'Vila de Bolso M0.1'
+application-label-pa:'Vila de Bolso M0.1'
+application-label-pl:'Vila de Bolso M0.1'
+application-label-pt:'Vila de Bolso M0.1'
+application-label-pt-BR:'Vila de Bolso M0.1'
+application-label-pt-PT:'Vila de Bolso M0.1'
+application-label-ro:'Vila de Bolso M0.1'
+application-label-ru:'Vila de Bolso M0.1'
+application-label-si:'Vila de Bolso M0.1'
+application-label-sk:'Vila de Bolso M0.1'
+application-label-sl:'Vila de Bolso M0.1'
+application-label-sq:'Vila de Bolso M0.1'
+application-label-sr:'Vila de Bolso M0.1'
+application-label-sr-Latn:'Vila de Bolso M0.1'
+application-label-sv:'Vila de Bolso M0.1'
+application-label-sw:'Vila de Bolso M0.1'
+application-label-ta:'Vila de Bolso M0.1'
+application-label-te:'Vila de Bolso M0.1'
+application-label-th:'Vila de Bolso M0.1'
+application-label-tl:'Vila de Bolso M0.1'
+application-label-tr:'Vila de Bolso M0.1'
+application-label-uk:'Vila de Bolso M0.1'
+application-label-ur:'Vila de Bolso M0.1'
+application-label-uz:'Vila de Bolso M0.1'
+application-label-vi:'Vila de Bolso M0.1'
+application-label-zh:'Vila de Bolso M0.1'
+application-label-zh-CN:'Vila de Bolso M0.1'
+application-label-zh-HK:'Vila de Bolso M0.1'
+application-label-zh-TW:'Vila de Bolso M0.1'
+application-label-zu:'Vila de Bolso M0.1'
+application-icon-160:'res/mipmap-anydpi-v26/icon.xml'
+application-icon-240:'res/mipmap-anydpi-v26/icon.xml'
+application-icon-320:'res/mipmap-anydpi-v26/icon.xml'
+application-icon-480:'res/mipmap-anydpi-v26/icon.xml'
+application-icon-640:'res/mipmap-anydpi-v26/icon.xml'
+application-icon-65534:'res/mipmap-anydpi-v26/icon.xml'
+application: label='Vila de Bolso M0.1' icon='res/mipmap-anydpi-v26/icon.xml'
+application-isGame
+application-debuggable
+feature-group: label=''
+  uses-gl-es: '0x30000'
+  uses-feature: name='android.hardware.faketouch'
+  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'
+  uses-feature: name='android.hardware.screen.portrait'
+  uses-implied-feature: name='android.hardware.screen.portrait' reason='one or more activities have specified a portrait orientation'
+other-activities
+other-receivers
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--' 'af' 'am' 'ar' 'as' 'az' 'be' 'bg' 'bn' 'bs' 'ca' 'cs' 'da' 'de' 'el' 'en' 'en-AU' 'en-CA' 'en-GB' 'en-IN' 'en-XC' 'es' 'es-ES' 'es-US' 'et' 'eu' 'fa' 'fi' 'fr' 'fr-CA' 'gl' 'gu' 'hi' 'hr' 'hu' 'hy' 'in' 'is' 'it' 'iw' 'ja' 'ka' 'kk' 'km' 'kn' 'ko' 'ky' 'lo' 'lt' 'lv' 'mk' 'ml' 'mn' 'mr' 'ms' 'my' 'nb' 'ne' 'nl' 'or' 'pa' 'pl' 'pt' 'pt-BR' 'pt-PT' 'ro' 'ru' 'si' 'sk' 'sl' 'sq' 'sr' 'sr-Latn' 'sv' 'sw' 'ta' 'te' 'th' 'tl' 'tr' 'uk' 'ur' 'uz' 'vi' 'zh' 'zh-CN' 'zh-HK' 'zh-TW' 'zu'
+densities: '160' '240' '320' '480' '640' '65534'
+native-code: 'arm64-v8a' 'armeabi-v7a'
+
+
+
+=== delivery_permissions.txt ===
+
+package: org.projetoscodex.viladebolso.m01
+
+
