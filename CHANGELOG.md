@@ -1,5 +1,12 @@
 # Histórico
 
+## APK M0.1 para smoke — 02/11/2026 (America/Sao_Paulo)
+
+- Corrigidos overrides SDK incompatíveis com exportação sem Gradle e habilitada importação ETC2/ASTC.
+- Acrescentados seis checks Godot de configuração e atualizado verificador documental; 163 checks de componentes, 44 de Input e 25 testes Python PASS.
+- Toolchain instalada no executor de continuação e APK real exportado do commit 60f2491, com assinatura, manifesto, CRC e dados conferidos.
+- Relatório/evidências e continuidade atualizados; bloqueios anteriores preservados como histórico. Estado READY_FOR_OWNER_SMOKE; sem merge, CI, M1 ou aceite físico.
+
 ## Correções da revisão M0.1 — 02/11/2026 (UTC)
 
 - Reproduzida a falha de toque na GUI via Input.parse_input_event; habilitada emulação touch→mouse para botões e ignorado somente mouse DEVICE_ID_EMULATION nos gestos, preservando mouse físico e evitando contato duplicado/pinça com um dedo.

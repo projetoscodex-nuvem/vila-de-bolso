@@ -1,6 +1,6 @@
 # M0.1 — Fundação, câmera e tentativa Android
 
-Data: 02/11/2026 (UTC). Baseline documental v0.2. Resultado: **PARCIAL/BLOCKED — exportação Android**. Não é jogo completo, não é M1 e não é aprovação física do proprietário.
+Registro histórico das primeiras tentativas de 02/11/2026 (UTC), então PARCIAL/BLOCKED. O estado atual passou a READY_FOR_OWNER_SMOKE; consulte [relatório de build Android](M0_1_ANDROID_BUILD_REPORT.md). As evidências anteriores abaixo foram preservadas, sem converter resultados históricos em sucesso retroativo.
 
 Atualização após revisão de `653e9cd`: as seções iniciais registram a entrega original. Seus 157 checks de componentes/cena não cobriam acessibilidade da GUI pelo fluxo Input da Godot. A falha de toque e o risco de resultado de exportação antigo foram tratados na seção “Correções da revisão independente” ao final, com novas evidências. Os resultados históricos não foram convertidos em teste físico.
 

@@ -77,3 +77,9 @@ D026 permanece PENDING para M1/M2, sem nova regra de desfazer. Os parâmetros fu
 | D030 | BASELINE | Resultado de exportação por tentativa, com invalidação inicial de PASS anterior, finalização em falhas/timeout/validação/assinatura e histórico identificado; não tratar fixture de teste ou APK não verificado como artefato instalável. CI manual preparado como receita inativa; permissões/limites devem ser confirmados antes de ativar/consumir recursos |
 
 D026 e todas as regras de gameplay permanecem inalteradas. Não houve merge do PR #2, release, publicação ou início de M1 nesta correção.
+
+## Exportação Android confirmada — 02/11/2026 (America/Sao_Paulo)
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D031 | BASELINE / CONFIRMADO | No APK pré-compilado sem Gradle, deixar min/target SDK vazios no preset e herdar os níveis do template oficial; manter min24/target36 no lock e verificar o manifesto real. Habilitar import_etc2_astc no projeto, requisito do exportador Android. Exportação do commit 60f2491 passou neste executor; o EPERM anterior permanece histórico. Isso não valida instalação/toque no aparelho nem autoriza merge/M1 |

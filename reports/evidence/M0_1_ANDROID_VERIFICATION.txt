@@ -1,0 +1,25 @@
+SOURCE_COMMIT 60f2491f1a04001d4903d6e8d12c519df6bafd1b
+SHA256 fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7
+
+package: name='org.projetoscodex.viladebolso.m01' versionCode='1' versionName='0.0.1-m0.1' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+sdkVersion:'24'
+targetSdkVersion:'36'
+native-code: 'arm64-v8a' 'armeabi-v7a'
+
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Android Debug, O=Vila de Bolso, C=BR
+Signer #1 certificate SHA-256 digest: d67f6b09fa149061f7a78faca5f3b8991e35d3751b9bcfcc57930081e7743576
+Signer #1 certificate SHA-1 digest: f3ff893638d1189c25c393519048a9d7c0df9206
+Signer #1 certificate MD5 digest: c40ae01cfc079ee107d06ff45948a429
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: e98bee3ce409c7554af8e3932333f0c1859b6104ed1dbea01ee0b4590f2fbfb6
+Signer #1 public key SHA-1 digest: 3ae0884f21cfd9ab0128df0b58189b843e5f805d
+Signer #1 public key MD5 digest: 6a7454ce529d3ef8e819369421c95e02
