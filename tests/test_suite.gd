@@ -46,6 +46,16 @@ func test_world() -> void:
 		check(world.terrain("region_1", Vector2i(8, y)) == world.terrain("kingdom", Vector2i(8, y)), "terrain projection")
 	print("PASS: data, region IDs, locked regions and local/global boundaries")
 
+func test_android_export_configuration() -> void:
+	var preset := ConfigFile.new()
+	check(preset.load("res://export_presets.cfg") == OK, "Android preset loads through Godot ConfigFile")
+	check(not preset.get_value("preset.0.options", "gradle_build/use_gradle_build", true), "standard Android export keeps Gradle disabled")
+	check(preset.get_value("preset.0.options", "gradle_build/min_sdk", "MISSING") == "", "min SDK inherits the precompiled template without Gradle override")
+	check(preset.get_value("preset.0.options", "gradle_build/target_sdk", "MISSING") == "", "target SDK inherits the precompiled template without Gradle override")
+	check(ProjectSettings.get_setting("rendering/textures/vram_compression/import_etc2_astc", false), "Android texture import is enabled before export")
+	check(not preset.get_value("preset.0.options", "permissions/internet", true), "Android preset does not request Internet permission")
+	print("PASS: standard Android export configuration and texture import")
+
 func test_camera() -> void:
 	var camera := Camera.new()
 	for world in [Vector2(1280, 1280), Vector2(2560, 3840)]:
@@ -302,6 +312,7 @@ func test_ui() -> void:
 
 func run() -> void:
 	test_world()
+	test_android_export_configuration()
 	test_camera()
 	test_gestures()
 	test_saves()

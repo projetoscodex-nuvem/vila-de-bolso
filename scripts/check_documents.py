@@ -52,6 +52,8 @@ assert lock['android']['min_sdk'] == 24 and lock['android']['target_sdk'] == 36
 preset = (ROOT / 'export_presets.cfg').read_text()
 assert 'permissions/internet=false' in preset and 'permissions/access_network_state=false' in preset
 assert 'gradle_build/use_gradle_build=false' in preset
-assert 'gradle_build/min_sdk="24"' in preset and 'gradle_build/target_sdk="36"' in preset
+assert 'gradle_build/min_sdk=""' in preset and 'gradle_build/target_sdk=""' in preset
+project = (ROOT / 'project.godot').read_text()
+assert 'textures/vram_compression/import_etc2_astc=true' in project
 assert '| D026 | PENDING' in (ROOT / 'DECISIONS.md').read_text()
 print('PASS: parâmetros v0.2, primeira região desbloqueada, Android offline e D026 pendente')
