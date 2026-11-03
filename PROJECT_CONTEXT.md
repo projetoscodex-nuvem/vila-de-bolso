@@ -55,3 +55,8 @@ Privacidade confirmada após ação manual do proprietário: private=true/visibi
 
 
 Estado vigente de acesso/entrega (03/11/2026, America/Sao_Paulo): repo PUBLIC confirmado após o proprietário reverter para teste; referência PRIVATE anterior é histórica. Execução original guarda ZIP mas API Forbidden; outra execução reportada tem API200/user401 sem ZIP. [Plano atual](reports/M0_1_DELIVERY_RESUME.md): autenticar sessão com rede, recuperar ou gerar novamente do fonte corrigido2858a75 com novo hash/origem, e concluir upload/verificação nessa mesma sessão. Sem repetir configuração já publicada ou pedir token no chat; sem M1/CI/merge/D026.
+
+
+## Entrega vigente — 03/11/2026, America/Sao_Paulo
+
+APK_AVAILABLE_FOR_OWNER_SMOKE: nova reconstrução real do fonte2858a75, SHA-256 `85c1f2303322f3faed22d350d31d3773036cfad4888961aa841484e3647b257e`, disponibilizada em ZIP persistente na conversa. Download do proprietário ainda não confirmado e Android físico NOT_RUN. [Relatório atual](reports/M0_1_WORK_APK_20261103_REPORT.md) substitui o bloqueio de transferência anterior; fontes/hashes antigos ficam históricos. API/uploads200 nesta retomada; gh sem autenticação. Nenhum upload GitHub/release/merge/CI/M1 ou mudança em D026.

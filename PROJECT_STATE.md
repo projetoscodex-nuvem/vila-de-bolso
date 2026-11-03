@@ -1,5 +1,25 @@
 # Estado do projeto
 
+03/11/2026, America/Sao_Paulo. **M0_1_APK_AVAILABLE_FOR_OWNER_SMOKE — ARQUIVO DISPONÍVEL / TESTE FÍSICO PENDENTE**.
+
+## Atualização vigente
+
+DECISÃO — Reconstruir o fonte corrigido2858a75 e disponibilizar o ZIP para download, conforme autorizado. Sem alteração de código/runtime, merge, CI, M1 ou D026.
+
+IMPLEMENTAÇÃO — Novo APK/ZIP gerado de checkout limpo2858a75. Arquivo persistente disponibilizado na conversa. SHA-256 APK `85c1f2303322f3faed22d350d31d3773036cfad4888961aa841484e3647b257e`; ZIP `60df741d5c83fb55f6555d0a03dd35fb2b45923dbec319df576a27a651537e1b`. [Relatório e origem](reports/M0_1_WORK_APK_20261103_REPORT.md).
+
+TESTE — PASS40 Python/163 Godot/44 Input/15 casos de pacote/smoke/proveniência. APK real: dependências/cena/menu isolados, assinatura v2/v3, manifesto24/36/compile36/sem permissões, ARMv7/ARM64/CRC/dados/hash.
+
+VALIDADO — Build e disponibilização do arquivo para download. Sem confirmação de download pelo proprietário; headless não prova renderização/toque Android. APIs200 nesta retomada, CLI gh sem autenticação; nenhuma release criada.
+
+PENDÊNCIA — Android físico NOT_RUN; M0.1 sem aceite. Upload manual em Releases proposto pelo proprietário depende de confirmar privacidade. Assinatura diferente: desinstalar apaga save local; sem inferir consentimento.
+
+PRÓXIMO PASSO — Proprietário testar primeiro menu offline e informar aparelho/Android/PASS-FAIL. Depois roteiro de gestos/navegação/HUD/persistência. Não retomar buscas pelo ZIP original inacessível, pois esta reconstrução está disponível.
+
+---
+
+# Estado do projeto — histórico anterior
+
 03/11/2026 (UTC). Baseline v0.2. **M0_1_APK_VERIFIED_DELIVERY_BLOCKED — APK GERADO / ENTREGA NÃO CONCLUÍDA**.
 
 **Atualização vigente:** [retomada da entrega em uma única execução](reports/M0_1_DELIVERY_RESUME.md). Última API confirma repositório PUBLIC após reversão manual do proprietário. Nova sessão reportada tem rede, mas falta autenticação e ZIP; original preserva ZIP, porém continua sem rede de API. Resolver login na sessão com rede e gerar novamente do fonte corrigido2858a75 se não houver acesso ao artefato, registrando novo hash. Não devolver a tarefa indefinidamente ao executor original. Fatos históricos abaixo mantidos com seus snapshots.

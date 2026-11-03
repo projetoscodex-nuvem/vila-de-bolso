@@ -1,5 +1,11 @@
 # Histórico
 
+## APK reconstruído e disponibilizado — 03/11/2026, America/Sao_Paulo
+
+- Novo build real do fonte2858a75, checkout limpo, com novo hash/certificado, sem alteração de código ou lock.
+- APK/ZIP e instruções salvos para download na conversa; download/Android físico ainda não confirmados. Sem release GitHub, merge, CI, M1 ou alteração de D026.
+- Rede observada200 para API/uploads; gh segue sem autenticação. Testes e evidências no [relatório atual](reports/M0_1_WORK_APK_20261103_REPORT.md).
+
 ## Retomada sem alternar execuções —03/11/2026
 
 - ZIP original preservado e hash conferido; API original ainda Forbidden. OWNER_REPORTED de outra sessão:API200, /user401/gh sem login, ZIP ausente. Registrar fronteiras sem misturar resultados.
