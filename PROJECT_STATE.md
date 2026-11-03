@@ -1,6 +1,6 @@
 # Estado do projeto
 
-03/11/2026 (UTC). Baseline v0.2. **M0_1_READY_FOR_OWNER_RETEST — APK NOVO GERADO / ANDROID FÍSICO PENDENTE**.
+03/11/2026 (UTC). Baseline v0.2. **M0_1_APK_VERIFIED_DELIVERY_BLOCKED — APK GERADO / ENTREGA NÃO CONCLUÍDA**.
 
 ## DECISÃO
 
@@ -33,3 +33,8 @@ APK novo produzido, conteúdo/runtime/assinatura/manifesto/hash validados; falta
 O desenvolvedor concluiu a exportação aqui; não delegar a compilação ao proprietário/ChatGPT Work. Baixar o novo arquivo da tarefa e testar primeiro o menu offline conforme o [relatório do APK](reports/M0_1_LOCAL_APK_2858A75_REPORT.md). A assinatura debug mudou: atualização sobre o antigo pode ser recusada; desinstalar apaga o save local, portanto só remover se aceitar essa perda. Sem CI, merge, release ou M1.
 
 Fonte do binário:2858a75. Commit posterior é somente documental, sem reconstruir/renomear a origem do APK. M0.1 continua sem aceite.
+
+
+## Bloqueio de entrega —03/11/2026 UTC
+
+OWNER_REPORTED: links internos de APK e ZIP falharam no aplicativo Android ("Não foi possível abrir o arquivo"). Arquivos locais conferidos, com o mesmo SHA-256; isso é falha de entrega, não um novo teste de execução do jogo. Não há anexo binário confirmado nesta sessão. Um canal privado de arquivos precisa ser conectado; Dropbox foi sugerido e ainda não está conectado. Não repetir os caminhos internos como links de download, não recompilar o mesmo APK para corrigir transporte e não publicar release/CI por inferência. Fonte2858a75 e novo Android físico NOT_RUN preservados.

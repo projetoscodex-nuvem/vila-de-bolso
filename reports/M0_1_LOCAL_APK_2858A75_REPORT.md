@@ -1,6 +1,6 @@
 # M0.1 — Novo APK gerado pelo desenvolvedor neste ambiente
 
-03/11/2026 (UTC). **READY_FOR_OWNER_RETEST**, sem aceite de M0.1. PR #2 permanece draft/sem merge, sem CI, release, M1 ou alteração de D026.
+03/11/2026 (UTC). **APK_VERIFIED_DELIVERY_BLOCKED**, sem aceite de M0.1. PR #2 permanece draft/sem merge, sem CI, release, M1 ou alteração de D026.
 
 ## Responsabilidade e ambiente
 
@@ -17,7 +17,7 @@ Depois dos downloads com hash conferido, sdkmanager falhou ao usar cache em /hom
 - SHA-256: **6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73**.
 - ZIP de entrega: **Vila_de_Bolso_M0_1_2858a75_Android.zip**, com APK, SHA256SUMS.txt, ORIGEM.json e LEIA_ANTES_DE_INSTALAR.txt.
 
-Arquivos fora do Git em build/delivery_2858a75/ e build/Vila_de_Bolso_M0_1_2858a75_Android.zip, oferecidos como arquivos desta tarefa na resposta. Não foi criada URL pública, release ou workflow. APK, SDK e keystore não foram comitados. O commit posterior deste relatório contém apenas documentos/evidências e não muda a origem do binário.
+Arquivos fora do Git em build/delivery_2858a75/ e build/Vila_de_Bolso_M0_1_2858a75_Android.zip. Os links internos apresentados na resposta falharam no aplicativo Android do proprietário; não constituem upload/anexo nem entrega confirmada. Não foi criada URL pública, release ou workflow. APK, SDK e keystore não foram comitados. O commit posterior deste relatório contém apenas documentos/evidências e não muda a origem do binário.
 
 ## Verificações realmente executadas
 
@@ -66,3 +66,12 @@ O setup instalado não prova persistência em outra tarefa/VM. A chave debug des
 4. Se continuar tela clara ou ocorrer crash, precisamos do logcat de abertura, passos e origem/hash deste APK.
 
 **Novo APK: Android físico NOT_RUN até o relato.** O APK antigo60f2491 continua com inicialização visual OWNER_REPORTED FAIL. O headless do APK novo comprova carregamento/layout da UI, não pixels/GPU/toque no aparelho nem a causa completa do sintoma anterior. Não marcar M0.1 como aprovado, iniciar M1 ou resolver D026 nesta entrega.
+
+
+## Falha de download —03/11/2026 UTC
+
+OWNER_REPORTED: links internos de APK e ZIP falharam no aplicativo Android ("Não foi possível abrir o arquivo"). Arquivos locais conferidos, com o mesmo SHA-256; isso é falha de entrega, não um novo teste de execução do jogo. Não há anexo binário confirmado nesta sessão. Um canal privado de arquivos precisa ser conectado; Dropbox foi sugerido e ainda não está conectado. Não repetir os caminhos internos como links de download, não recompilar o mesmo APK para corrigir transporte e não publicar release/CI por inferência. Fonte2858a75 e novo Android físico NOT_RUN preservados.
+
+O novo cálculo de integridade confirmou56.448.943 bytes e SHA-2566a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73. Nenhum byte do APK/ZIP foi alterado para esta correção documental. A sessão não dispõe de ferramenta nativa para anexar arquivos; as ferramentas de repositório conectadas não oferecem upload de binários. Não usar uma URL/caminho inventado ou um serviço público para contornar os limites de publicação. A proposta Dropbox permite buscar transferência privada após conexão e confirmação de suas ferramentas; sugestão não equivale a instalação, conexão ou upload.
+
+Verificações desta atualização: integridade/tamanho locais, links/proveniência/parâmetros via scripts/check_documents.py e git diff --check. Sem mudança em código/runtime, logo os testes do APK fonte2858a75 permanecem históricos, sem alegar nova execução Android ou aprovação.

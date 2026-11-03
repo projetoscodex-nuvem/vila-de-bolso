@@ -1,5 +1,11 @@
 # Histórico
 
+## Entrega do arquivo bloqueada —03/11/2026 UTC
+
+- Proprietário reportou erro ao abrir os links internos de APK/ZIP; não eram anexos com download confirmado. Estado corrigido para APK_VERIFIED_DELIVERY_BLOCKED, sem alterar a validação do binário.
+- Recalculado SHA-256 do APK local:6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73, fonte2858a75,56.448.943 bytes. Sem reconstrução ou alteração do pacote.
+- Integração de transferência privada sugerida (Dropbox), ainda não conectada; não declarar upload/link real antes da confirmação. Sem release, CI, merge ou mudança de D026; físico do novo APK NOT_RUN.
+
 ## Novo APK gerado pelo desenvolvedor — 03/11/2026 (UTC)
 
 - Exportação real aqui do commit 2858a75 com checkout limpo; APK 56.448.943 bytes, SHA-256 6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73. Runtime/assets/cena/menu isolados, assinatura v2/v3, CRC e manifesto 24/36/compile36 sem permissões PASS.

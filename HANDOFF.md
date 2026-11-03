@@ -1,6 +1,6 @@
 # Passagem de contexto
 
-03/11/2026 (UTC). **M0.1 READY_FOR_OWNER_RETEST**, sem aceite; APK novo real gerado neste ambiente. Leia AGENTS.md, PROJECT_CONTEXT.md, PROJECT_STATE.md e [relatório atual](reports/M0_1_STARTUP_FIX_REPORT.md).
+03/11/2026 (UTC). **M0.1 APK_VERIFIED_DELIVERY_BLOCKED**, sem aceite; APK novo real gerado neste ambiente. Leia AGENTS.md, PROJECT_CONTEXT.md, PROJECT_STATE.md e [relatório atual](reports/M0_1_STARTUP_FIX_REPORT.md).
 
 ## Escopo e estado Git
 
@@ -21,3 +21,8 @@ PASS local: 40 testes Python (fixtures identificadas), 163 checks Godot, 44 Inpu
 O desenvolvedor concluiu setup/exportação nesta máquina, sem delegar ao ChatGPT Work/proprietário. O fonte exato do APK é 2858a75b8742b3cf63d81293f7728d32647674b3; os commits seguintes apenas registram documentos/evidências. Entrega na pasta build/delivery_2858a75/ e ZIP build/Vila_de_Bolso_M0_1_2858a75_Android.zip, fora do Git. [Relatório local do APK e roteiro](reports/M0_1_LOCAL_APK_2858A75_REPORT.md). Preservar chave debug fora do Git; ambiente instalado não comprova persistência em outra VM.
 
 Certificado debug diferente do antigo: o Android pode recusar atualizar. Desinstalar apaga o save de navegação/câmeras; só remover se o proprietário aceitar perder esses dados, sem inferir consentimento. Proprietário testar primeiro menu offline com novo APK e informar modelo/Android/PASS/FAIL; se falhar, coletar logcat e origem/hash. Demais físicos do novo binário NOT_RUN. Não aprovar M0.1, iniciar M1/CI/merge ou resolver D026 automaticamente.
+
+
+## Transferência pendente
+
+OWNER_REPORTED: links internos de APK e ZIP falharam no aplicativo Android ("Não foi possível abrir o arquivo"). Arquivos locais conferidos, com o mesmo SHA-256; isso é falha de entrega, não um novo teste de execução do jogo. Não há anexo binário confirmado nesta sessão. Um canal privado de arquivos precisa ser conectado; Dropbox foi sugerido e ainda não está conectado. Não repetir os caminhos internos como links de download, não recompilar o mesmo APK para corrigir transporte e não publicar release/CI por inferência. Fonte2858a75 e novo Android físico NOT_RUN preservados.
