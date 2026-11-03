@@ -1,5 +1,11 @@
 # Histórico
 
+## Validação adicional Android — 03/11/2026 (UTC)
+
+- Preservados os commits concorrentes 60f2491 (três valores de configuração e seis checks nativos Godot) e b89b16d (APK, evidências e continuidade). Entrega final é filha de b89b16d, sem merge/force.
+- Checker importável valida seções efetivas, SDKs vazios, Gradle desativado, ETC2/ASTC e expectativas 24/36 no lock; dez novas regressões Python, total 35. Mantidos 163 checks Godot e 44 de Input.
+- Resultado do build externo 60f2491 preservado com seu hash/manifesto/assinatura e sua origem; não atribuído ao processo local, que segue EPERM e não repetiu instalações. Testes físicos NOT_RUN; CI não ativado, sem M1 ou alteração de D026.
+
 ## APK M0.1 para smoke — 02/11/2026 (America/Sao_Paulo)
 
 - Corrigidos overrides SDK incompatíveis com exportação sem Gradle e habilitada importação ETC2/ASTC.

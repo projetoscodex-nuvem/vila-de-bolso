@@ -185,3 +185,39 @@ git diff --check
 PASS local: 157 checks de componentes/cena, 44 do fluxo Input/GUI, 25 testes Python, cena principal por 15 frames, sintaxe, proveniência/links/parâmetros e diff. Os diagnósticos específicos de listeners do editor continuam separados; nenhuma restrição do verificador antigo de árvore documental foi aplicada à implementação. D026, ZIP, manifesto, PNGs e relatório histórico de importação preservados.
 
 A árvore desta correção é registrada inicialmente como working tree; o commit real testado pós-gravação e a confirmação da cabeça remota são conciliados na descrição do PR #2 e na resposta final, sem antecipar hash neste arquivo. Próximo passo: revisar as correções no mesmo draft PR e resolver rede/toolchain no executor autorizado, ou aprovar/configurar a alternativa manual após conferir permissões/limites. Não tratar M0.1 como aprovado nem iniciar M1. O roteiro físico acima só deve ser executado quando existir APK concreto com hash.
+
+
+## Complemento da configuração Android — 03/11/2026 (UTC)
+
+### Alterações posteriores preservadas
+
+A conferência inicial encontrou o commit revisado e3bc175. Durante a gravação, as releituras encontraram 60f2491f1a04001d4903d6e8d12c519df6bafd1b e depois b89b16d993bb6819351c88ad48a02448a5347463. Ambos foram importados com SHA/árvore conferidos e preservados como ancestrais, sem merge ou force push. O trabalho local adicional foi guardado em checkpoints antes da reconciliação. A gravação 3b52083 não teve confirmação como cabeça remota e não é a entrega final; o commit final é filho de b89b16d.
+
+60f2491 contém min_sdk/target_sdk vazios no preset sem Gradle, import_etc2_astc=true em rendering, ajuste do checker e seis checks nativos via ConfigFile/ProjectSettings. Esses arquivos de configuração e testes nativos foram mantidos exatamente como publicados. b89b16d contém relatório/manifesto/assinatura/resultado do APK e a continuidade atualizada; os arquivos do build externo foram mantidos byte a byte.
+
+### Verificador e regressões adicionais
+
+scripts/check_documents.py agora é importável sem executar os checks de repositório durante importação. A função de configuração lê as seções INI efetivas, preserva case, exige Gradle desativado, overrides min/target vazios, ETC2/ASTC no rendering e expectativas min24/target36 no lock. O lock e seus hashes não foram modificados. As verificações anteriores de proveniência/links/dados foram preservadas.
+
+Dez regressões Python exercitam a configuração real e rejeitam overrides, Gradle ativado, ETC falso/ausente/em seção errada/somente em comentário e mudança das expectativas SDK. Total local: 35 testes Python, 163 checks Godot de componentes/configuração, 44 Input/GUI e smoke headless de 15 frames PASS. [Evidência local](evidence/M0_1_ANDROID_CONFIG_VERIFY.txt). As fixtures de exportação continuam simuladas, sem constituir APK real. Diagnósticos específicos dos listeners do editor permanecem classificados separadamente.
+
+### Evidência externa e bloqueio local
+
+OWNER_REPORTED / EVIDÊNCIA EXTERNA FORNECIDA: o proprietário informou exportação controlada no outro executor, com somente os três valores alterados, retorno zero, assinatura e manifesto 24/36, depois arquivos restaurados sem commit/push. [Relato inicial e evidência posterior](evidence/M0_1_CONFIG_EXTERNAL_REPORTED.json).
+
+Posteriormente, b89b16d registrou a exportação concreta de 60f2491. O [relatório de build externo](M0_1_ANDROID_BUILD_REPORT.md), seu resultado JSON e logs de manifesto/assinatura foram preservados integralmente. Registram APK de 56427508 bytes, SHA-256 fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7, minSdk 24/targetSdk 36, assinaturas v2/v3 válidas, CRC/dados conferidos e físicos NOT_RUN. Esses resultados pertencem ao executor externo e ao commit fonte 60f2491; não são execução deste processo nem build do novo commit de checker/testes/documentação. O binário não foi baixado nem seu hash recalculado aqui; não criar link de download inexistente nesta tarefa.
+
+O processo local continua BLOCKED_BEFORE_PROXY_DNS_TLS: criação de socket negada com EPERM; [diagnóstico e presença de ferramentas](evidence/M0_1_CONFIG_NETWORK_LOCAL.json). Esse bloqueio é deste processo e não invalida a exportação já registrada pelo outro executor. Conforme solicitado, nenhuma instalação ou exportação local sem dependências foi repetida. CI não ativado, sem merge, M1 ou alteração de D026.
+
+### Comandos, snapshot e próximo passo
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py' -v
+python scripts/check_documents.py
+python scripts/diagnose_network.py
+scripts/verify.sh
+python -m py_compile scripts/check_documents.py tests/test_android_configuration.py
+git diff --check
+```
+
+Snapshot inicial: working tree reconciliada sobre b89b16d. Após gravar a mesma árvore e repetir verificações no commit real, o SHA/cabeça remota são conciliados na descrição do PR #2 e na resposta final. Arquivos do relatório Android externo, lock, regras, dados, D026, ZIP, manifesto e relatório histórico de importação preservados. O novo commit deve retornar ao executor que já instalou a toolchain para correlacionar/reexportar a entrega e fornecer o APK/hash com a origem correta. O artefato já registrado continua sendo de 60f2491. Testes físicos seguem NOT_RUN; não confundir READY_FOR_OWNER_SMOKE do artefato externo com aceite de M0.1 ou autorização de M1.

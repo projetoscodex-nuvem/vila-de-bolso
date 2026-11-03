@@ -30,7 +30,7 @@ CONFIRMADO: o proprietário aceitou a documentação no commit `0733005bb2b83639
 
 CONFIRMADO: M0.1 autorizado nesta tarefa. Projeto Godot 4.6.3/GDScript/Compatibility, menu → reino 40 × 60 → região1 20 × 20 → voltar, câmera por visão, arrasto/pinça/zoom, HUD fixa, seleção e save mínimo implementados e verificados por testes headless/sintéticos. Demais regiões bloqueadas. Sem partida, score, construção ou desfazer. D026 continua pendente antes de implementar desfazer em M1/M2.
 
-Estado **M0_1_READY_FOR_OWNER_SMOKE**: correção Android salva em 60f2491f1a04001d4903d6e8d12c519df6bafd1b; toolchain instalada e APK exportado/assinado neste executor. minSdk 24/targetSdk 36, sem permissão de Internet. Testes físicos, desempenho, diversão e aceite continuam NOT_RUN. O EPERM do sandbox anterior está preservado como histórico de outro processo, sem alegar que foi liberado ou que o setup é persistente. Fonte e evidências em [PROJECT_STATE.md](PROJECT_STATE.md) e [relatório de build](reports/M0_1_ANDROID_BUILD_REPORT.md). OWNER_REPORTED: operação pelo celular.
+Estado **M0_1_READY_FOR_OWNER_SMOKE**: correção Android salva em 60f2491f1a04001d4903d6e8d12c519df6bafd1b; toolchain instalada e APK exportado/assinado no executor de build que registrou as evidências em b89b16d. minSdk 24/targetSdk 36, sem permissão de Internet. Testes físicos, desempenho, diversão e aceite continuam NOT_RUN. O EPERM do sandbox anterior está preservado como histórico de outro processo, sem alegar que foi liberado ou que o setup é persistente. Fonte e evidências em [PROJECT_STATE.md](PROJECT_STATE.md) e [relatório de build](reports/M0_1_ANDROID_BUILD_REPORT.md). OWNER_REPORTED: operação pelo celular.
 
 ## Não confundir com outros projetos
 

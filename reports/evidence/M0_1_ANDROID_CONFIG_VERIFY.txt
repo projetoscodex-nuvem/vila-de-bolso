@@ -1,0 +1,62 @@
+Recursos: CPU=3 disco_livre=7942766592 bytes
+PASS: Godot fixada 4.6.3.stable.official.7d41c59c4
+test_comment_cannot_satisfy_etc2_astc_setting (test_android_configuration.AndroidConfiguration.test_comment_cannot_satisfy_etc2_astc_setting) ... ok
+test_disabled_etc2_astc_is_rejected (test_android_configuration.AndroidConfiguration.test_disabled_etc2_astc_is_rejected) ... ok
+test_etc2_astc_in_wrong_section_is_rejected (test_android_configuration.AndroidConfiguration.test_etc2_astc_in_wrong_section_is_rejected) ... ok
+test_expected_min_sdk_stays_locked (test_android_configuration.AndroidConfiguration.test_expected_min_sdk_stays_locked) ... ok
+test_expected_target_sdk_stays_locked (test_android_configuration.AndroidConfiguration.test_expected_target_sdk_stays_locked) ... ok
+test_gradle_cannot_be_enabled_as_workaround (test_android_configuration.AndroidConfiguration.test_gradle_cannot_be_enabled_as_workaround) ... ok
+test_min_sdk_override_is_rejected (test_android_configuration.AndroidConfiguration.test_min_sdk_override_is_rejected) ... ok
+test_missing_etc2_astc_is_rejected (test_android_configuration.AndroidConfiguration.test_missing_etc2_astc_is_rejected) ... ok
+test_repository_inherits_sdk_and_imports_android_textures (test_android_configuration.AndroidConfiguration.test_repository_inherits_sdk_and_imports_android_textures) ... ok
+test_target_sdk_override_is_rejected (test_android_configuration.AndroidConfiguration.test_target_sdk_override_is_rejected) ... ok
+test_corrupt_zip_crc (test_export_android.ExportAttemptFixtures.test_corrupt_zip_crc) ... ok
+test_export_error (test_export_android.ExportAttemptFixtures.test_export_error) ... ok
+test_export_timeout_archives_partial_file (test_export_android.ExportAttemptFixtures.test_export_timeout_archives_partial_file) ... ok
+test_interruption_does_not_leave_pass (test_export_android.ExportAttemptFixtures.test_interruption_does_not_leave_pass) ... ok
+test_invalid_lock (test_export_android.ExportAttemptFixtures.test_invalid_lock) ... ok
+test_invalid_zip (test_export_android.ExportAttemptFixtures.test_invalid_zip) ... ok
+test_keytool_failure (test_export_android.ExportAttemptFixtures.test_keytool_failure) ... ok
+test_missing_artifact (test_export_android.ExportAttemptFixtures.test_missing_artifact) ... ok
+test_missing_dependency (test_export_android.ExportAttemptFixtures.test_missing_dependency) ... ok
+test_missing_engine (test_export_android.ExportAttemptFixtures.test_missing_engine) ... ok
+test_missing_manifest (test_export_android.ExportAttemptFixtures.test_missing_manifest) ... ok
+test_repeated_attempts_keep_separate_history (test_export_android.ExportAttemptFixtures.test_repeated_attempts_keep_separate_history) ... ok
+test_signature_exception_also_finalizes (test_export_android.ExportAttemptFixtures.test_signature_exception_also_finalizes) ... ok
+test_signature_failure_replaces_old_pass_and_preserves_artifacts (test_export_android.ExportAttemptFixtures.test_signature_failure_replaces_old_pass_and_preserves_artifacts) ... ok
+test_signature_timeout_also_finalizes (test_export_android.ExportAttemptFixtures.test_signature_timeout_also_finalizes) ... ok
+test_success_fixture_only_after_signature_verification (test_export_android.ExportAttemptFixtures.test_success_fixture_only_after_signature_verification) ... ok
+test_version_timeout (test_export_android.ExportAttemptFixtures.test_version_timeout) ... ok
+test_wrong_engine_version (test_export_android.ExportAttemptFixtures.test_wrong_engine_version) ... ok
+test_absolute_path_rejected (test_setup.SafePackages.test_absolute_path_rejected) ... ok
+test_bad_hash_never_becomes_installable_archive (test_setup.SafePackages.test_bad_hash_never_becomes_installable_archive) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_hash_and_cache_reuse (test_setup.SafePackages.test_hash_and_cache_reuse) ... Download oficial: https://example.invalid/fixture.zip
+ok
+test_only_selected_templates_extracted (test_setup.SafePackages.test_only_selected_templates_extracted) ... ok
+test_regular_file (test_setup.SafePackages.test_regular_file) ... ok
+test_symlink_rejected (test_setup.SafePackages.test_symlink_rejected) ... ok
+test_traversal_cannot_write_outside (test_setup.SafePackages.test_traversal_cannot_write_outside) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.046s
+
+OK
+LIMITAÇÃO: listeners TCP do editor indisponíveis no sandbox; build/import.log preservado
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: data, region IDs, locked regions and local/global boundaries
+PASS: standard Android export configuration and texture import
+PASS: camera crops, transforms, pan/zoom, focus, overview, bounds and restore
+PASS: tap/pan/pinch, cancellation, extra fingers, HUD and interrupted gestures
+PASS: save round trip, backup, interrupted write, corruption and I/O errors
+PASS: scene flow, locked regions, real input routing, selection, HUD, cameras and reopen
+M0.1 checks=163 failures=0
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+M0.1 input_pipeline checks=44 failures=0 (synthetic Godot Input; Android physical NOT_RUN)
+PASS: cena principal executou 15 frames headless sem erros
+PASS: ZIP/manifesto/PNGs e relatório histórico preservados; 27 hashes originais
+PASS: 27 Markdown UTF-8 não vazios e 74 links locais
+PASS: configuração APK padrão sem Gradle, SDKs herdados (lock 24/36) e ETC2/ASTC ativo
+PASS: parâmetros v0.2, primeira região desbloqueada, Android offline e D026 pendente

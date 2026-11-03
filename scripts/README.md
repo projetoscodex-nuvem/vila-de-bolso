@@ -39,7 +39,7 @@ A exportação só inclui a cena principal, dependências, dados JSON e avisos d
 
 ## Verificações e evidências
 
-`verify.sh` executa 25 testes Python (sete do instalador e 18 do resultado de exportação, todos isolados/sem downloads), importação, os 163 checks de componentes/configuração Godot, 44 regressões do fluxo Input/GUI/gestos, 15 frames da cena principal, proveniência/documentação e git diff --check. A nova suíte usa Input.parse_input_event, sem chamar app._input nem emitir pressed para simular acessibilidade de botões; cobre menu, Entrar, Retomar, zoom, retorno, um/dois dedos, HUD e mouse físico. O projeto habilita mouse emulado para a GUI e o mapa ignora somente eventos DEVICE_ID_EMULATION. Esses testes continuam sintéticos; Android físico é NOT_RUN.
+`verify.sh` executa 35 testes Python (sete do instalador, 18 do resultado de exportação e dez de configuração Android, todos isolados/sem downloads), importação, os 163 checks de componentes/configuração Godot, 44 regressões do fluxo Input/GUI/gestos, 15 frames da cena principal, proveniência/documentação e git diff --check. A nova suíte usa Input.parse_input_event, sem chamar app._input nem emitir pressed para simular acessibilidade de botões; cobre menu, Entrar, Retomar, zoom, retorno, um/dois dedos, HUD e mouse físico. O projeto habilita mouse emulado para a GUI e o mapa ignora somente eventos DEVICE_ID_EMULATION. Esses testes continuam sintéticos; Android físico é NOT_RUN.
 
 Logs integrais ficam em build/installer_tests.log, build/import.log, build/tests.log, build/input_pipeline.log e build/smoke.log. O verificador exige os dois marcadores Godot finais e rejeita erros de script mesmo se Godot sair com código zero. Somente os dois diagnósticos específicos de listeners TCP do editor indisponíveis no sandbox são classificados separadamente como limitação de infraestrutura; não são escondidos dos logs. Fixtures de exportação são ZIPs falsos em diretórios temporários com runner simulado; não são APKs nem prova de assinatura Android real.
 
@@ -56,3 +56,6 @@ Uma [receita inativa de CI manual](../reports/ci/README.md) acompanha a entrega.
 ## Preset Android confirmado
 
 Com Gradle desativado, min_sdk e target_sdk ficam vazios no preset e herdam os valores do template oficial (esperados no lock: 24/36). O projeto habilita rendering/textures/vram_compression/import_etc2_astc. A suíte verifica esses requisitos antes da exportação; conferir também os níveis no manifesto do APK concreto.
+
+
+Validação adicional de configuração (03/11/2026 UTC): scripts/check_documents.py lê as seções efetivas e preserva case das chaves, exige overrides vazios/Gradle desativado/ETC2-ASTC em rendering e mantém expectativas 24/36 no lock. Dez regressões Python rejeitam overrides, Gradle ativado, ETC ausente/falso/em seção errada/somente em comentário e mudanças nos níveis esperados. As evidências de build em b89b16d são do executor externo e do código 60f2491; o processo desta verificação continua EPERM e não repetiu instalações nem reexportou o novo SHA.

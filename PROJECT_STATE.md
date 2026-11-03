@@ -16,9 +16,9 @@ Correção Android: níveis SDK herdados do template sem overrides Gradle; impor
 
 ## TESTE
 
-PASS: 163 checks Godot, 44 regressões Input, 25 testes Python, smoke headless, proveniência/links e diff. PASS: instalação da toolchain no executor desta continuação; exportação real, assinatura, manifesto/CRC/dados do APK. minSdk 24, targetSdk 36; ARM64/ARMv7. APK 56427508 bytes, SHA-256 `fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7`.
+PASS: 163 checks Godot, 44 regressões Input, 25 testes Python, smoke headless, proveniência/links e diff. PASS: instalação da toolchain no executor externo de build; exportação real, assinatura, manifesto/CRC/dados do APK. minSdk 24, targetSdk 36; ARM64/ARMv7. APK 56427508 bytes, SHA-256 `fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7`.
 
-O bloqueio EPERM anterior está preservado em [relatório histórico](reports/M0_1_REPORT.md); era de outro processo. A instalação neste executor não prova ambiente Codex reutilizável. CI não ativado. Android físico e aceite: NOT_RUN.
+O bloqueio EPERM anterior está preservado em [relatório histórico](reports/M0_1_REPORT.md); era de outro processo. A instalação no executor externo não prova ambiente Codex reutilizável. CI não ativado. Android físico e aceite: NOT_RUN.
 
 ## VALIDADO
 
@@ -31,3 +31,12 @@ Proprietário informar aparelho/Android e testar instalação, navegação/toque
 ## PRÓXIMO PASSO
 
 Baixar o pacote Android entregue na conversa e seguir o roteiro do relatório. Reportar PASS/FAIL. Não fazer merge do PR #2 nem avançar para M1 antes do resultado/revisão.
+
+
+## Verificação complementar — 03/11/2026 (UTC)
+
+Os commits remotos concorrentes 60f2491 e b89b16d foram preservados como ancestrais. Permanecem os três valores corrigidos, os seis checks nativos ConfigFile/ProjectSettings e todos os relatórios/evidências do APK produzido no outro executor. O commit final acrescenta verificação Python por seções e dez regressões negativas/positiva: 35 testes Python, 163 checks de componentes/configuração Godot e 44 Input/GUI PASS. Lock, regras, dados e D026 intactos; sem CI, merge ou M1.
+
+Distinção de origem: a exportação e o hash documentados são do executor externo, fonte 60f2491, registrados em b89b16d; esses registros não foram substituídos. O processo desta verificação permanece EPERM antes de proxy/DNS/TLS, sem JDK/SDK/templates locais, e não executou nova instalação/exportação. O APK não foi baixado nem teve hash recalculado aqui. Testes físicos NOT_RUN.
+
+Devolver o SHA final ao executor que já funcionou para correlacionar/reexportar a entrega e disponibilizar APK/hash, preservando a origem do artefato já existente. Evidência externa não deve ser renomeada como build desse novo commit. O relatório anterior guarda a análise adicional e o bloqueio local; o relatório Android externo continua íntegro.

@@ -83,3 +83,6 @@ D026 e todas as regras de gameplay permanecem inalteradas. Não houve merge do P
 | ID | Estado | Decisão e motivo |
 | --- | --- | --- |
 | D031 | BASELINE / CONFIRMADO | No APK pré-compilado sem Gradle, deixar min/target SDK vazios no preset e herdar os níveis do template oficial; manter min24/target36 no lock e verificar o manifesto real. Habilitar import_etc2_astc no projeto, requisito do exportador Android. Exportação do commit 60f2491 passou neste executor; o EPERM anterior permanece histórico. Isso não valida instalação/toque no aparelho nem autoriza merge/M1 |
+
+
+Validação complementar (03/11/2026 UTC): preservados 60f2491 e b89b16d, incluindo D031 e as evidências externas. O checker Python agora valida seções/campos efetivos, com dez regressões adicionais, sem alterar a configuração publicada ou os seis testes nativos. O processo local continua bloqueado; resultado de APK/hash registrado em b89b16d pertence ao executor de build e à fonte 60f2491. D026 segue intacta; sem CI/merge/M1.
