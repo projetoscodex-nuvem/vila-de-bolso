@@ -140,6 +140,12 @@ def run_export(root=ROOT, runner=None, environ=None, export_timeout=180):
             required_members = {'AndroidManifest.xml', 'assets/data/world.json'}
             if not required_members.issubset(apk.namelist()):
                 raise ExportFailure('APK não contém manifesto ou dados esperados')
+        record['stage'] = 'runtime_validation'
+        result = execute([sys.executable, str(root / 'scripts/check_runtime_pack.py'),
+                          str(output), '--godot', binary], 60)
+        record['runtime_validation_exit_code'] = result.returncode
+        if result.returncode != 0 or 'PASS: isolated exported runtime dependencies, scene and visible menu' not in result.stdout:
+            raise ExportFailure('Dependências/cena/menu do APK falharam no runtime Godot isolado')
         record['stage'] = 'signature'
         result = execute([str(sdk / 'build-tools/36.1.0/apksigner'), 'verify', str(output)], 60)
         record['signature_exit_code'] = result.returncode

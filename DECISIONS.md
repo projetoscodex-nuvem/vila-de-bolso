@@ -86,3 +86,12 @@ D026 e todas as regras de gameplay permanecem inalteradas. Não houve merge do P
 
 
 Validação complementar (03/11/2026 UTC): preservados 60f2491 e b89b16d, incluindo D031 e as evidências externas. O checker Python agora valida seções/campos efetivos, com dez regressões adicionais, sem alterar a configuração publicada ou os seis testes nativos. O processo local continua bloqueado; resultado de APK/hash registrado em b89b16d pertence ao executor de build e à fonte 60f2491. D026 segue intacta; sem CI/merge/M1.
+
+
+## Inicialização do pacote M0.1 — 03/11/2026 (UTC)
+
+| ID | Estado | Decisão e motivo |
+| --- | --- | --- |
+| D032 | BASELINE / CONFIRMADO no host | Selecionar recursos de runtime explicitamente no preset, pois scenes sozinho omitiu cinco preloads em export real. Exigir carga de dependências remapeadas/compiladas e cena/menu em Godot isolada da fonte antes do PASS de APK. ZIP/PCK locais passam; Android corrigido continua pendente, sem concluir causalidade física da tela clara. Manter engine4.6.3/Compatibility, Gradle falso, SDKs herdados e ETC2/ASTC; preservar exclusões e histórico |
+
+OWNER_REPORTED: inicialização visual do APK60f2491 FAIL; demais físicos NOT_RUN. Sem M1/CI/merge; D026 permanece inalterada. Evidências e limites no [relatório da correção](reports/M0_1_STARTUP_FIX_REPORT.md).

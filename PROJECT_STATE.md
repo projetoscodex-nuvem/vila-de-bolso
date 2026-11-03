@@ -1,42 +1,32 @@
 # Estado do projeto
 
-Data: 02/11/2026 (America/Sao_Paulo). Baseline v0.2. Estado: **M0_1_READY_FOR_OWNER_SMOKE — APK GERADO / AGUARDANDO TESTE FÍSICO**.
+03/11/2026 (UTC). Baseline v0.2. **M0_1_STARTUP_FIX_PARTIAL_BLOCKED — NOVO APK PENDENTE / M0.1 NÃO APROVADO**.
 
 ## DECISÃO
 
-Continuação do M0.1 autorizada pelo proprietário. PR #1 integrado na main 2d80844b8bc4a147bf428ade00448b5f6d2f02ba. PR #2 / feat/m0-1-foundation permanece draft e sem merge. Código corrigido e exportado no commit 60f2491f1a04001d4903d6e8d12c519df6bafd1b. Evidências posteriores são documentais; não confundir seus commits com a origem do APK.
-
-Android retrato offline; Godot 4.6.3/GDScript/Compatibility; fase 20 × 20, reino 40 × 60 em seis regiões 2 × 3. Parâmetros futuros 60 colocações/62 ofertas preservados; sem gameplay completo. D026 continua PENDING para antes do desfazer em M1/M2.
+Corrigir somente inicialização/empacotamento M0.1, na branch feat/m0-1-foundation / PR #2 draft/sem merge. Cabeça inicial conferida em 0c4296c; main documental 2d80844 permanece sem implementação. Godot 4.6.3/GDScript/Compatibility, Android retrato/offline, Gradle desativado, SDKs herdados, ETC2/ASTC ativo e lock 24/36 preservados. Fase 20 × 20, reino 40 × 60, 60 colocações/62 ofertas futuras; sem M1 ou alteração de D026.
 
 ## IMPLEMENTAÇÃO
 
-Menu → reino → região1 → voltar; demais regiões bloqueadas. Arrasto/pinça/botões/limites, HUD fixa, seleção segura e save mínimo de visão/câmeras. Emulação de mouse atende à GUI sem duplicar contatos no mapa; mouse físico preservado. Exportador identifica e finaliza cada tentativa.
-
-Correção Android: níveis SDK herdados do template sem overrides Gradle; importação ETC2/ASTC habilitada. Lock e versões mantidos. Não há construção, pontuação, ofertas em execução ou desfazer. Arte geométrica provisória.
+Seleção explícita de cena, seis scripts e ícone no preset resources; dados/licença mantidos e exclusões de testes/ferramentas/relatórios/privados preservadas. Gate do exportador verifica dependências remapeadas/compiladas e cena/menu em Godot isolada antes de PASS/assinatura/hash. Nenhum recurso local da fonte pode completar o pacote no teste. Fluxo, UI, entrada, câmeras, save e gameplay não alterados.
 
 ## TESTE
 
-PASS: 163 checks Godot, 44 regressões Input, 25 testes Python, smoke headless, proveniência/links e diff. PASS: instalação da toolchain no executor externo de build; exportação real, assinatura, manifesto/CRC/dados do APK. minSdk 24, targetSdk 36; ARM64/ARMv7. APK 56427508 bytes, SHA-256 `fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7`.
-
-O bloqueio EPERM anterior está preservado em [relatório histórico](reports/M0_1_REPORT.md); era de outro processo. A instalação no executor externo não prova ambiente Codex reutilizável. CI não ativado. Android físico e aceite: NOT_RUN.
+- Projeto: PASS, 40 testes Python, 163 checks Godot, 44 Input sintéticos, smoke 15 frames, proveniência/links/parâmetros e diff.
+- Pacote: PASS, 15 casos de regressão. ZIP e PCK reais gerados pelo preset carregam cena/menu em bootstrap separado; filtro scenes anterior reproduz cinco scripts ausentes. Mutações negativas e wrapper APK são fixtures identificadas, sem APK Android novo.
+- Android físico: OWNER_REPORTED instalou APK fonte 60f2491, SHA-256 fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7; abriu com tela clara/sem menu: inicialização visual FAIL. Demais testes NOT_RUN.
+- Novo APK: BLOCKED neste processo; AF_INET/EPERM antes de proxy/DNS/TLS, JDK/SDK/templates ausentes. Nenhuma instalação/download inviável foi repetida.
 
 ## VALIDADO
 
-Fonte e APK para smoke, sem declarar jogo completo ou M0.1 aceito. Detalhes e roteiro em [relatório de build](reports/M0_1_ANDROID_BUILD_REPORT.md).
+Omissão reproduzida e correção do pacote demonstrada no host, inclusive .remap/.gdc/PCK e cena com botões visíveis na árvore UI headless. Relação com a tela Android é hipótese forte; sem execução física da correção. Resultados históricos do build 60f2491 (assinatura/manifesto/CRC/hash) preservados e superados para aceite pelo FAIL do proprietário.
+
+[Relatório atual e comandos](reports/M0_1_STARTUP_FIX_REPORT.md), [histórico M0.1](reports/M0_1_REPORT.md), [build antigo](reports/M0_1_ANDROID_BUILD_REPORT.md). SHA exato testado e publicado é conciliado no PR #2 após gravação; evidências versionadas identificam o snapshot de working tree.
 
 ## PENDÊNCIA
 
-Proprietário informar aparelho/Android e testar instalação, navegação/toque, HUD, offline e restauração. D026, licença autoral, balanceamento e compatibilidade física permanecem pendentes.
+Exportar novo APK do commit final, validar conteúdo/runtime, assinatura, manifesto 24/36 e hash; instalar/abrir no Android. Não declarar menu renderizado ou correção física a partir do headless. Modelo/Android do aparelho e logcat se repetir a falha. M0.1 sem aceite; D026 PENDING para antes do desfazer em M1/M2.
 
 ## PRÓXIMO PASSO
 
-Baixar o pacote Android entregue na conversa e seguir o roteiro do relatório. Reportar PASS/FAIL. Não fazer merge do PR #2 nem avançar para M1 antes do resultado/revisão.
-
-
-## Verificação complementar — 03/11/2026 (UTC)
-
-Os commits remotos concorrentes 60f2491 e b89b16d foram preservados como ancestrais. Permanecem os três valores corrigidos, os seis checks nativos ConfigFile/ProjectSettings e todos os relatórios/evidências do APK produzido no outro executor. O commit final acrescenta verificação Python por seções e dez regressões negativas/positiva: 35 testes Python, 163 checks de componentes/configuração Godot e 44 Input/GUI PASS. Lock, regras, dados e D026 intactos; sem CI, merge ou M1.
-
-Distinção de origem: a exportação e o hash documentados são do executor externo, fonte 60f2491, registrados em b89b16d; esses registros não foram substituídos. O processo desta verificação permanece EPERM antes de proxy/DNS/TLS, sem JDK/SDK/templates locais, e não executou nova instalação/exportação. O APK não foi baixado nem teve hash recalculado aqui. Testes físicos NOT_RUN.
-
-Devolver o SHA final ao executor que já funcionou para correlacionar/reexportar a entrega e disponibilizar APK/hash, preservando a origem do artefato já existente. Evidência externa não deve ser renomeada como build desse novo commit. O relatório anterior guarda a análise adicional e o bloqueio local; o relatório Android externo continua íntegro.
+Executor que já tem toolchain: atualizar branch por fast-forward, confirmar SHA final/checkout limpo, executar scripts/verify.sh e scripts/export_android.sh e seguir o relatório. Preservar chave debug, disponibilizar APK/hash identificado pelo novo commit; proprietário testar primeiro menu offline. Sem CI, merge, release ou M1.

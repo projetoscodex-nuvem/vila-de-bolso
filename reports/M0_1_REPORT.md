@@ -1,5 +1,7 @@
 # M0.1 — Fundação, câmera e tentativa Android
 
+**Atualização de 03/11/2026 UTC:** o proprietário instalou o APK60f2491 e relatou tela clara/sem menu: inicialização visual **FAIL**, demais físicos **NOT_RUN**. O READY_FOR_OWNER_SMOKE e os PASS de build abaixo são históricos. Ver [correção de inicialização/empacotamento](M0_1_STARTUP_FIX_REPORT.md); novo APK ainda não produzido neste processo. Resultados/logs históricos preservados.
+
 Registro histórico das primeiras tentativas de 02/11/2026 (UTC), então PARCIAL/BLOCKED. O estado atual passou a READY_FOR_OWNER_SMOKE; consulte [relatório de build Android](M0_1_ANDROID_BUILD_REPORT.md). As evidências anteriores abaixo foram preservadas, sem converter resultados históricos em sucesso retroativo.
 
 Atualização após revisão de `653e9cd`: as seções iniciais registram a entrega original. Seus 157 checks de componentes/cena não cobriam acessibilidade da GUI pelo fluxo Input da Godot. A falha de toque e o risco de resultado de exportação antigo foram tratados na seção “Correções da revisão independente” ao final, com novas evidências. Os resultados históricos não foram convertidos em teste físico.
@@ -221,3 +223,8 @@ git diff --check
 ```
 
 Snapshot inicial: working tree reconciliada sobre b89b16d. Após gravar a mesma árvore e repetir verificações no commit real, o SHA/cabeça remota são conciliados na descrição do PR #2 e na resposta final. Arquivos do relatório Android externo, lock, regras, dados, D026, ZIP, manifesto e relatório histórico de importação preservados. O novo commit deve retornar ao executor que já instalou a toolchain para correlacionar/reexportar a entrega e fornecer o APK/hash com a origem correta. O artefato já registrado continua sendo de 60f2491. Testes físicos seguem NOT_RUN; não confundir READY_FOR_OWNER_SMOKE do artefato externo com aceite de M0.1 ou autorização de M1.
+
+
+## Inicialização visual reprovada e fechamento de dependências — 03/11/2026 UTC
+
+O relato físico FAIL e a reprodução do pacote scenes sem cinco preloads substituem o estado de espera por smoke do APK60f2491. A correção resources explícita passa em ZIP/PCK reais isolados da fonte; gate do APK e regressões foram incorporados. Detalhes, origem/hash antigo, comandos, evidências, limites e pendências no [relatório desta correção](M0_1_STARTUP_FIX_REPORT.md). Sem novo APK local, sem concluir diagnóstico Android completo ou aceite de M0.1; D026 intacta.

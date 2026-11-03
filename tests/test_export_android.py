@@ -79,6 +79,12 @@ class ExportAttemptFixtures(unittest.TestCase):
                 if self.failure == 'crc':
                     self.output.write_bytes(self.output.read_bytes().replace(b'fixture-data-payload', b'fixture-data-damaged'))
             return subprocess.CompletedProcess(command, 0, 'fixture: fake ZIP generated')
+        if '--godot' in command:
+            if self.failure == 'runtime_timeout':
+                raise subprocess.TimeoutExpired(command, 60)
+            return subprocess.CompletedProcess(command, 1 if self.failure == 'runtime' else 0,
+                'fixture only: FAIL' if self.failure in ('runtime', 'runtime_no_marker') else
+                'PASS: isolated exported runtime dependencies, scene and visible menu (SIMULATED FIXTURE)')
         if 'verify' in command:
             if self.failure == 'signature_exception':
                 raise subprocess.CalledProcessError(1, command, output='fixture bad signature')
@@ -112,6 +118,17 @@ class ExportAttemptFixtures(unittest.TestCase):
         record = self.failed('signature', 'signature')
         self.assertEqual(record['signature_exit_code'], 1)
         self.assertTrue(Path(record['unverified_artifact']).exists())
+
+    def test_missing_runtime_dependencies_prevent_success_and_signature(self):
+        record = self.failed('runtime', 'runtime_validation')
+        self.assertEqual(record['runtime_validation_exit_code'], 1)
+        self.assertFalse(any('verify' in command for command in self.calls))
+
+    def test_runtime_zero_without_marker_is_not_success(self):
+        self.failed('runtime_no_marker', 'runtime_validation')
+
+    def test_runtime_timeout_replaces_old_pass(self):
+        self.failed('runtime_timeout', 'runtime_validation', 'BLOCKED')
 
     def test_signature_exception_also_finalizes(self):
         self.failed('signature_exception', 'signature')

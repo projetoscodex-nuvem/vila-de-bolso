@@ -26,6 +26,14 @@ class AndroidConfiguration(unittest.TestCase):
     def test_repository_inherits_sdk_and_imports_android_textures(self):
         self.verify()
 
+    def test_scene_only_filter_is_rejected(self):
+        with self.assertRaisesRegex(AssertionError, 'Exportar recursos de runtime'):
+            self.verify(preset=self.preset.replace('export_filter="resources"', 'export_filter="scenes"'))
+
+    def test_omitted_explicit_dependency_is_rejected(self):
+        with self.assertRaisesRegex(AssertionError, 'Recursos de runtime ausentes'):
+            self.verify(preset=self.preset.replace(', "res://core/gesture_router.gd"', ''))
+
     def test_min_sdk_override_is_rejected(self):
         preset = self.preset.replace('gradle_build/min_sdk=""', 'gradle_build/min_sdk="24"')
         with self.assertRaisesRegex(AssertionError, 'min_sdk deve estar vazio'):

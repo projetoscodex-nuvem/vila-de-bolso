@@ -1,0 +1,25 @@
+{
+  "classification": "OWNER_REPORTED",
+  "source": "Mensagem do proprietário nesta tarefa",
+  "apk_source_commit": "60f2491f1a04001d4903d6e8d12c519df6bafd1b",
+  "apk_sha256": "fb7abe176c9d96eef0131a6a654e06e77ff645fce7dbd96e9a7029a9da0307d7",
+  "installation": "PASS (OWNER_REPORTED)",
+  "visual_startup": "FAIL",
+  "observed": "Aplicativo abre com tela clara, sem menu",
+  "other_physical_tests": "NOT_RUN",
+  "screenshot_directly_inspected_here": false,
+  "independent_review": {
+    "classification": "EXTERNAL_REVIEW_REPORTED_BY_OWNER",
+    "apk_hash_checked": true,
+    "missing_runtime_scripts": [
+      "core/world_data.gd",
+      "core/map_camera.gd",
+      "core/gesture_router.gd",
+      "core/save_store.gd",
+      "presentation/map_view.gd"
+    ],
+    "main_gdc_and_remap_present": true
+  },
+  "causality": "Omissão do pacote reproduzida em export real ZIP/PCK; relação com a tela clara Android é hipótese forte, sem logcat/runtime físico local.",
+  "new_apk_produced_here": false
+}

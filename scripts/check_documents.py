@@ -25,6 +25,13 @@ def check_android_configuration(preset_text, project_text, lock):
     project.read_string('[godot_metadata]\n' + project_text)
     assert preset.has_section('preset.0.options'), 'Opções do preset Android ausentes'
     assert project.has_section('rendering'), 'Seção rendering ausente'
+    assert preset['preset.0'].get('export_filter') == '"resources"', 'Exportar recursos de runtime explicitamente'
+    selected = set(re.findall(r'"([^"]+)"', preset['preset.0'].get('export_files', '')))
+    required = {'res://scenes/main.tscn', 'res://presentation/main.gd',
+                'res://presentation/map_view.gd', 'res://core/world_data.gd',
+                'res://core/map_camera.gd', 'res://core/gesture_router.gd',
+                'res://core/save_store.gd', 'res://assets/icon.svg'}
+    assert required.issubset(selected), 'Recursos de runtime ausentes da seleção explícita'
     options = preset['preset.0.options']
     assert options.get('gradle_build/use_gradle_build') == 'false', 'Gradle deve permanecer desativado'
     assert options.get('gradle_build/min_sdk') == '""', 'min_sdk deve estar vazio para herdar o template'

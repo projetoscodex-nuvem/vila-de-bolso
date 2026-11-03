@@ -1,5 +1,12 @@
 # Histórico
 
+## Correção de inicialização/empacotamento M0.1 — 03/11/2026 (UTC)
+
+- OWNER_REPORTED: APK 60f2491 instalou/abriu com tela clara sem menu; inicialização visual FAIL, demais testes físicos NOT_RUN. Hash/origem e resultados antigos preservados como históricos.
+- O filtro scenes anterior reproduziu omissão dos cinco preloads. Preset resources agora lista cena, seis scripts e ícone explicitamente, mantendo dados/licenças e exclusões de privados/testes/ferramentas. Engine/renderer/SDKs/Gradle/ETC2/lock inalterados.
+- Gate do APK carrega recursos remapeados/compilados e cena/menu fora da fonte antes de PASS/hash. Regressões:40 Python, 163 Godot, 44 Input e 15 casos de pacote; ZIP/PCK reais PASS, fixtures claramente simuladas.
+- Novo APK BLOCKED no processo local por EPERM/toolchain ausente; sem downloads repetidos, CI, merge, M1 ou alteração de D026. Relatório/continuidade e evidências atualizados; M0.1 não aprovado.
+
 ## Validação adicional Android — 03/11/2026 (UTC)
 
 - Preservados os commits concorrentes 60f2491 (três valores de configuração e seis checks nativos Godot) e b89b16d (APK, evidências e continuidade). Entrega final é filha de b89b16d, sem merge/force.

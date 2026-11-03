@@ -1,5 +1,7 @@
 # M0.1 — APK de teste gerado
 
+**Atualização de 03/11/2026 UTC:** o proprietário instalou o APK60f2491 e relatou tela clara/sem menu: inicialização visual **FAIL**, demais físicos **NOT_RUN**. O READY_FOR_OWNER_SMOKE e os PASS de build abaixo são históricos. Ver [correção de inicialização/empacotamento](M0_1_STARTUP_FIX_REPORT.md); novo APK ainda não produzido neste processo. Resultados/logs históricos preservados.
+
 Data: 02/11/2026 (America/Sao_Paulo). Estado: **READY_FOR_OWNER_SMOKE**. M0.1 ainda aguarda teste físico e aceite; M1 não iniciado.
 
 ## DECISÃO E IMPLEMENTAÇÃO

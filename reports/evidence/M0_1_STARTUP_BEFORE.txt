@@ -1,0 +1,127 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+SCRIPT ERROR: Parse Error: Preload file "res://core/world_data.gd" does not exist.
+          at: GDScript::reload (res://presentation/main.gd:3)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Preload file "res://core/map_camera.gd" does not exist.
+          at: GDScript::reload (res://presentation/main.gd:4)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Preload file "res://core/gesture_router.gd" does not exist.
+          at: GDScript::reload (res://presentation/main.gd:5)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Preload file "res://core/save_store.gd" does not exist.
+          at: GDScript::reload (res://presentation/main.gd:6)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Preload file "res://presentation/map_view.gd" does not exist.
+          at: GDScript::reload (res://presentation/main.gd:7)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "world" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:9)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "camera" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:10)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "gestures" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:11)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "store" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:12)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "saved" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:34)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "error" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:202)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "region" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://presentation/main.gd:239)
+          GDScript backtrace (most recent call first):
+              [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+              [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: Failed to load script "res://presentation/main.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+   GDScript backtrace (most recent call first):
+       [0] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:45)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: FAIL RUNTIME PACK: required valid script: res://presentation/main.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:65)
+ERROR: FAIL RUNTIME PACK: missing resource: res://presentation/map_view.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:43)
+       [2] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: FAIL RUNTIME PACK: required valid script: res://presentation/map_view.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:65)
+ERROR: FAIL RUNTIME PACK: missing resource: res://core/world_data.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:43)
+       [2] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: FAIL RUNTIME PACK: required valid script: res://core/world_data.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:65)
+ERROR: FAIL RUNTIME PACK: missing resource: res://core/map_camera.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:43)
+       [2] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: FAIL RUNTIME PACK: required valid script: res://core/map_camera.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:65)
+ERROR: FAIL RUNTIME PACK: missing resource: res://core/gesture_router.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:43)
+       [2] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: FAIL RUNTIME PACK: required valid script: res://core/gesture_router.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:65)
+ERROR: FAIL RUNTIME PACK: missing resource: res://core/save_store.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] resource (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:43)
+       [2] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:64)
+ERROR: FAIL RUNTIME PACK: required valid script: res://core/save_store.gd
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:19)
+       [1] run (/tmp/vila-runtime-isolated-135amg5d/project/driver.gd:65)

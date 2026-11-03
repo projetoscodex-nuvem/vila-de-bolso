@@ -50,5 +50,7 @@ if 'ERROR:' in text:
     raise SystemExit('FAIL: inicialização da cena principal')
 print('PASS: cena principal executou 15 frames headless sem erros')
 PY
+python3 tests/verify_runtime_export.py > build/runtime_export.log 2>&1
+cat build/runtime_export.log
 python3 scripts/check_documents.py
 git diff --check
