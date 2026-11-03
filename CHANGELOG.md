@@ -1,5 +1,11 @@
 # Histórico
 
+## Novo APK gerado pelo desenvolvedor — 03/11/2026 (UTC)
+
+- Exportação real aqui do commit 2858a75 com checkout limpo; APK 56.448.943 bytes, SHA-256 6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73. Runtime/assets/cena/menu isolados, assinatura v2/v3, CRC e manifesto 24/36/compile36 sem permissões PASS.
+- Setup resolvido com permissão adicional de rede por comando, proxy JVM e ANDROID_USER_HOME em .tools; hashes/versões preservados, HOME/política global/CI intactos. EPERM padrão e tentativas falhas continuam históricos.
+- Novo APK físico NOT_RUN; fonte 60f2491 continua OWNER_REPORTED FAIL visual. Chave debug diferente: aviso de atualização recusada/perda do save ao desinstalar incluído no pacote e no relatório. Sem aceite/M1/merge ou alteração de D026. Documentos/evidências atualizados; APK/SDK/keystore fora do Git.
+
 ## Correção de inicialização/empacotamento M0.1 — 03/11/2026 (UTC)
 
 - OWNER_REPORTED: APK 60f2491 instalou/abriu com tela clara sem menu; inicialização visual FAIL, demais testes físicos NOT_RUN. Hash/origem e resultados antigos preservados como históricos.

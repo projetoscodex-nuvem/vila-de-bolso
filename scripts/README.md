@@ -58,7 +58,7 @@ Uma [receita inativa de CI manual](../reports/ci/README.md) acompanha a entrega.
 Com Gradle desativado, min_sdk e target_sdk ficam vazios no preset e herdam os valores do template oficial (esperados no lock: 24/36). O projeto habilita rendering/textures/vram_compression/import_etc2_astc. A suíte verifica esses requisitos antes da exportação; conferir também os níveis no manifesto do APK concreto.
 
 
-Validação adicional de configuração (03/11/2026 UTC): scripts/check_documents.py lê as seções efetivas e preserva case das chaves, exige overrides vazios/Gradle desativado/ETC2-ASTC em rendering e mantém expectativas 24/36 no lock. Dez regressões Python rejeitam overrides, Gradle ativado, ETC ausente/falso/em seção errada/somente em comentário e mudanças nos níveis esperados. As evidências de build em b89b16d são do executor externo e do código 60f2491; o processo desta verificação continua EPERM e não repetiu instalações nem reexportou o novo SHA.
+Validação adicional de configuração (03/11/2026 UTC): scripts/check_documents.py lê as seções efetivas e preserva case das chaves, exige overrides vazios/Gradle desativado/ETC2-ASTC em rendering e mantém expectativas 24/36 no lock. Dez regressões Python rejeitam overrides, Gradle ativado, ETC ausente/falso/em seção errada/somente em comentário e mudanças nos níveis esperados. As evidências de build em b89b16d são do executor externo e do código 60f2491; naquela verificação o processo ainda estava em EPERM e não havia reexportado o SHA; a continuação local está registrada abaixo.
 
 
 ## Gate de runtime exportado — correção da tela clara
@@ -69,4 +69,13 @@ Com GODOT_BIN fixado pelo env.sh, execute `python3 tests/verify_runtime_export.p
 
 O exportador chama automaticamente `python3 scripts/check_runtime_pack.py build/vila-de-bolso-m0.1-debug.apk --godot "$GODOT_BIN"` antes de assinatura/PASS. A mesma ferramenta aceita PCK/ZIP. Para APK, repacota somente assets/ sem consultar a fonte; paths inválidos/duplicados são rejeitados. Não exporta o próprio driver, testes, scripts de ferramentas, relatórios ou privados. Erros, ausência de marcador e timeout não podem deixar PASS/hash atual.
 
-Rede local continua EPERM antes de proxy/DNS/TLS e toolchain Android ausente; nenhum novo APK nesta correção. O executor que já funcionou deve usar o commit final exato e checkout limpo, preservar chave debug, seguir os comandos do relatório, conferir manifesto 24/36/permissões, assinatura e novo SHA-256. Não renomear o APK antigo como artefato da correção; físicos restantes NOT_RUN, sem CI/merge/M1.
+Na tentativa inicial, a rede padrão estava em EPERM e a toolchain ausente. Esse diagnóstico é histórico: a exportação local concluída abaixo usa a permissão suportada por comando e cache Android gravável. O APK antigo não foi renomeado como artefato da correção; o novo tem origem/hash próprios. Físicos restantes NOT_RUN, sem CI/merge/M1.
+
+
+## Exportação local concluída — 03/11/2026 UTC
+
+O desenvolvedor gerou o APK fonte 2858a75 aqui, após conceder rede adicional ao comando e configurar cache Android gravável e proxy JVM. A negativa EPERM do comando padrão não comprovava impossibilidade de exportação sob todas as permissões suportadas. As instruções anteriores para outro executor permanecem históricas; a compilação da entrega é responsabilidade do desenvolvedor. [Relatório e evidências do APK](../reports/M0_1_LOCAL_APK_2858A75_REPORT.md).
+
+Neste ambiente, antes de setup/export, definir ANDROID_USER_HOME="$VILA_ROOT/.tools/android-user" e criar seu subdiretório cache. O setup foi executado com propriedades JVM http.proxyHost/http.proxyPort/https.proxyHost/https.proxyPort derivadas do proxy herdado, mais seu truststore já previsto no instalador; não substituir HOME/proxy/CA. A chamada do executor precisa de additional_permissions.network.enabled=true para os hosts oficiais. Templates/JDK/command-line tools mantiveram seus hashes; SDK instalado é Platform-Tools 37.0.1/Build-Tools 36.1.0/Platform 36. Não usar --update.
+
+APK 2858a75 real: gate de conteúdo/runtime, assinatura v2/v3, manifesto 24/36/compile36 e hash PASS; Android físico NOT_RUN. A chave debug ficou em .tools/debug.keystore fora do Git e é diferente da chave do APK 60f2491; avisar que desinstalar o antigo apaga save local, sem solicitar perda de dados por inferência. ZIP/APK da tarefa incluem instruções, origem e SHA256SUMS; sem release, CI, merge ou M1.

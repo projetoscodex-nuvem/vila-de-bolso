@@ -1,5 +1,7 @@
 # M0.1 — Fundação, câmera e tentativa Android
 
+**Continuação local em03/11/2026 UTC:** novo APK real do fonte2858a75 gerado pelo desenvolvedor neste ambiente, com checkout limpo, gate de runtime, assinatura e manifesto PASS. [Relatório atual](M0_1_LOCAL_APK_2858A75_REPORT.md). Os BLOCKED/READY/FAIL abaixo pertencem aos snapshots/artefatos históricos descritos; novo Android físico NOT_RUN.
+
 **Atualização de 03/11/2026 UTC:** o proprietário instalou o APK60f2491 e relatou tela clara/sem menu: inicialização visual **FAIL**, demais físicos **NOT_RUN**. O READY_FOR_OWNER_SMOKE e os PASS de build abaixo são históricos. Ver [correção de inicialização/empacotamento](M0_1_STARTUP_FIX_REPORT.md); novo APK ainda não produzido neste processo. Resultados/logs históricos preservados.
 
 Registro histórico das primeiras tentativas de 02/11/2026 (UTC), então PARCIAL/BLOCKED. O estado atual passou a READY_FOR_OWNER_SMOKE; consulte [relatório de build Android](M0_1_ANDROID_BUILD_REPORT.md). As evidências anteriores abaixo foram preservadas, sem converter resultados históricos em sucesso retroativo.

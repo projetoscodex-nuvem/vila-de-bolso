@@ -1,5 +1,7 @@
 # M0.1 — APK de teste gerado
 
+**Continuação local em03/11/2026 UTC:** novo APK real do fonte2858a75 gerado pelo desenvolvedor neste ambiente, com checkout limpo, gate de runtime, assinatura e manifesto PASS. [Relatório atual](M0_1_LOCAL_APK_2858A75_REPORT.md). Os BLOCKED/READY/FAIL abaixo pertencem aos snapshots/artefatos históricos descritos; novo Android físico NOT_RUN.
+
 **Atualização de 03/11/2026 UTC:** o proprietário instalou o APK60f2491 e relatou tela clara/sem menu: inicialização visual **FAIL**, demais físicos **NOT_RUN**. O READY_FOR_OWNER_SMOKE e os PASS de build abaixo são históricos. Ver [correção de inicialização/empacotamento](M0_1_STARTUP_FIX_REPORT.md); novo APK ainda não produzido neste processo. Resultados/logs históricos preservados.
 
 Data: 02/11/2026 (America/Sao_Paulo). Estado: **READY_FOR_OWNER_SMOKE**. M0.1 ainda aguarda teste físico e aceite; M1 não iniciado.

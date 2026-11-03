@@ -1,5 +1,7 @@
 # M0.1 — Correção do fechamento de dependências e inicialização
 
+**Continuação local em03/11/2026 UTC:** novo APK real do fonte2858a75 gerado pelo desenvolvedor neste ambiente, com checkout limpo, gate de runtime, assinatura e manifesto PASS. [Relatório atual](M0_1_LOCAL_APK_2858A75_REPORT.md). Os BLOCKED/READY/FAIL abaixo pertencem aos snapshots/artefatos históricos descritos; novo Android físico NOT_RUN.
+
 03/11/2026 (UTC). **PARCIAL/BLOCKED para novo APK; M0.1 não aprovado.** Branch feat/m0-1-foundation, PR #2 draft/sem merge. Cabeça inicial local/remota conferida em 0c4296ccec588b3699db3c78571a02d6e1b0572f, sem alteração posterior nesse momento. Sem subagentes, CI, release, M1 ou alteração de D026.
 
 ## Falha física e evidência externa

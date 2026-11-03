@@ -1,6 +1,6 @@
 # Passagem de contexto
 
-03/11/2026 (UTC). **M0.1 STARTUP_FIX_PARTIAL_BLOCKED**, sem aceite. Leia AGENTS.md, PROJECT_CONTEXT.md, PROJECT_STATE.md e [relatório atual](reports/M0_1_STARTUP_FIX_REPORT.md).
+03/11/2026 (UTC). **M0.1 READY_FOR_OWNER_RETEST**, sem aceite; APK novo real gerado neste ambiente. Leia AGENTS.md, PROJECT_CONTEXT.md, PROJECT_STATE.md e [relatório atual](reports/M0_1_STARTUP_FIX_REPORT.md).
 
 ## Escopo e estado Git
 
@@ -14,10 +14,10 @@ OWNER_REPORTED: instalou APK fonte 60f2491f1a04001d4903d6e8d12c519df6bafd1b, SHA
 
 Preset resources lista cena, seis scripts e ícone; inclui dados/licença e exclui testes/ferramentas/relatórios/privados. SDKs vazios/Gradle falso/ETC2-ASTC mantidos. Validador de PCK/ZIP/assets do APK usa Godot em bootstrap temporário separado da fonte, resolve remaps/compilados, carrega cena e verifica menu/botões na árvore UI. Exportador bloqueia PASS/hash se esse gate falhar.
 
-PASS local: 40 testes Python (fixtures identificadas), 163 checks Godot, 44 Input sintéticos, smoke 15 frames, 15 casos de pacote incluindo ZIP/PCK reais, proveniência/links/parâmetros e diff. Headless não comprova pixels/toque/driver Android. Novo APK não produzido: processo continua EPERM antes de proxy/DNS/TLS e sem toolchain Android; não repetir downloads bloqueados. O [build histórico](reports/M0_1_ANDROID_BUILD_REPORT.md) e logs/hash originais foram preservados; não representam aprovação física nem APK da correção.
+PASS local: 40 testes Python (fixtures identificadas), 163 checks Godot, 44 Input sintéticos, smoke 15 frames, 15 casos de pacote incluindo ZIP/PCK reais, proveniência/links/parâmetros e diff. Headless não comprova pixels/toque/driver Android. Novo APK produzido com fonte 2858a75 e checkout limpo: runtime/assets do APK, assinatura v2/v3 e manifesto 24/36/compile36 PASS; SHA-256 6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73,56.448.943 bytes. A permissão adicional de rede por comando e ANDROID_USER_HOME local resolveram o setup; versões/hashes mantidos, sem alterar HOME ou política global. O [build histórico](reports/M0_1_ANDROID_BUILD_REPORT.md) e logs/hash originais foram preservados; não representam aprovação física nem APK da correção.
 
-## Próximos comandos e limites
+## Próximo passo e limites
 
-No executor que já exportou: preservar alterações e chave debug, atualizar por fast-forward e confirmar SHA final/checkout limpo. Executar scripts/setup.sh --android (reutilizando tools/cache fixados), scripts/verify.sh, scripts/export_android.sh; conferir aapt 24/36/permissões, apksigner e SHA-256 conforme roteiro exato do relatório. O gate de runtime já inspeciona o APK produzido; salvar resultado/attempt_id/logs e entregar binário/hash sem comitar SDK/APK/chave. SHA pós-commit testado fica no PR #2/resposta final.
+O desenvolvedor concluiu setup/exportação nesta máquina, sem delegar ao ChatGPT Work/proprietário. O fonte exato do APK é 2858a75b8742b3cf63d81293f7728d32647674b3; os commits seguintes apenas registram documentos/evidências. Entrega na pasta build/delivery_2858a75/ e ZIP build/Vila_de_Bolso_M0_1_2858a75_Android.zip, fora do Git. [Relatório local do APK e roteiro](reports/M0_1_LOCAL_APK_2858A75_REPORT.md). Preservar chave debug fora do Git; ambiente instalado não comprova persistência em outra VM.
 
-Proprietário instalar atualização sem apagar dados por inferência, abrir offline e conferir menu. Se falhar, obter logcat e origem/hash/modelo/Android; demais testes continuam NOT_RUN. Se menu aparecer, seguir Explorar/Entrar/Retomar, gestos/HUD e persistência. Não aprovar M0.1 nem iniciar M1 automaticamente; não resolver D026 nesta tarefa.
+Certificado debug diferente do antigo: o Android pode recusar atualizar. Desinstalar apaga o save de navegação/câmeras; só remover se o proprietário aceitar perder esses dados, sem inferir consentimento. Proprietário testar primeiro menu offline com novo APK e informar modelo/Android/PASS/FAIL; se falhar, coletar logcat e origem/hash. Demais físicos do novo binário NOT_RUN. Não aprovar M0.1, iniciar M1/CI/merge ou resolver D026 automaticamente.

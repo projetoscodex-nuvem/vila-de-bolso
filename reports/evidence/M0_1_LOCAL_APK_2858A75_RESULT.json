@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "attempt_id": "20261103T033447825235Z-e21f9e15",
+  "started_at": "2026-11-03T03:34:47.825343+00:00",
+  "finished_at": "2026-11-03T03:35:04.801400+00:00",
+  "status": "PASS",
+  "stage": "complete",
+  "command": [
+    "/opt/godot/4.6.3/Godot_v4.6.3-stable_linux.x86_64",
+    "--headless",
+    "--path",
+    "/workspace/vila-de-bolso",
+    "--export-debug",
+    "Android Debug",
+    "/workspace/vila-de-bolso/build/vila-de-bolso-m0.1-debug.apk"
+  ],
+  "exit_code": 0,
+  "missing_dependencies": [],
+  "previous_artifacts": {
+    "result": "/workspace/vila-de-bolso/build/export_attempts/20261103T033447825235Z-e21f9e15/previous_result.json",
+    "previous-export_android.log": "/workspace/vila-de-bolso/build/export_attempts/20261103T033447825235Z-e21f9e15/previous-export_android.log"
+  },
+  "attempt_directory": "/workspace/vila-de-bolso/build/export_attempts/20261103T033447825235Z-e21f9e15",
+  "runtime_validation_exit_code": 0,
+  "signature_exit_code": 0,
+  "apk": "/workspace/vila-de-bolso/build/vila-de-bolso-m0.1-debug.apk",
+  "sha256": "6a6dbeaa9c6f20c9cf8b4c8ce331afa51870d12d2b91585007908c6883f21a73",
+  "bytes": 56448943,
+  "wrapper_exit_code": 0
+}
